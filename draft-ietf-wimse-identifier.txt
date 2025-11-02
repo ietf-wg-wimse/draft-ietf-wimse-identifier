@@ -5,12 +5,12 @@
 Workload Identity in Multi System Environments              Y. Rosomakho
 Internet-Draft                                                   Zscaler
 Intended status: Standards Track                              J. Salowey
-Expires: 3 April 2026                                           CyberArk
-                                                       30 September 2025
+Expires: 6 May 2026                                             CyberArk
+                                                         2 November 2025
 
 
                           Workload Identifier
-                draft-rosomakho-wimse-identifier-latest
+                   draft-ietf-wimse-identifier-latest
 
 Abstract
 
@@ -28,11 +28,10 @@ About This Document
 
    This note is to be removed before publishing as an RFC.
 
-   The latest revision of this draft can be found at
-   https://yaroslavros.github.io/wimse-identifier/draft-rosomakho-wimse-
+   The latest revision of this draft can be found at https://ietf-wg-
+   wimse.github.io/draft-ietf-wimse-identifier/draft-ietf-wimse-
    identifier.html.  Status information for this document may be found
-   at https://datatracker.ietf.org/doc/draft-rosomakho-wimse-
-   identifier/.
+   at https://datatracker.ietf.org/doc/draft-ietf-wimse-identifier/.
 
    Discussion of this document takes place on the Workload Identity in
    Multi System Environments mailing list (mailto:wimse@ietf.org), which
@@ -40,7 +39,7 @@ About This Document
    Subscribe at https://www.ietf.org/mailman/listinfo/wimse/.
 
    Source for this draft and an issue tracker can be found at
-   https://github.com/yaroslavros/wimse-identifier.
+   https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier.
 
 Status of This Memo
 
@@ -57,7 +56,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 3 April 2026.
+   This Internet-Draft will expire on 6 May 2026.
 
 Copyright Notice
 
@@ -229,7 +228,7 @@ wimse://trust.corp.example.com/workload/af3e86cb-7013-4e33-b717-11c4edd25679
 
    *  Specific code for an application role
 
-  spiffe://prod.trust.domaain/foo-service#@sha256:
+  spiffe://prod.trust.domaain/foo-servce#@sha256:
         c4dbb1a06030e142cb0ed4be61421967618289a19c0c7760bdd745ac67779ca7
 
    Other concepts may be defined within the trust domain depending on
@@ -399,9 +398,9 @@ wimse://trust.corp.example.com/workload/af3e86cb-7013-4e33-b717-11c4edd25679
    [ARCH]     Salowey, J. A., Rosomakho, Y., and H. Tschofenig,
               "Workload Identity in a Multi System Environment (WIMSE)
               Architecture", Work in Progress, Internet-Draft, draft-
-              ietf-wimse-arch-05, 7 July 2025,
+              ietf-wimse-arch-06, 30 September 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-wimse-
-              arch-05>.
+              arch-06>.
 
    [JWT]      Jones, M., Bradley, J., and N. Sakimura, "JSON Web Token
               (JWT)", RFC 7519, DOI 10.17487/RFC7519, May 2015,
