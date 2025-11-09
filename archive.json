@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-11-04T01:23:20.391141+00:00",
+  "timestamp": "2025-11-09T01:27:26.326241+00:00",
   "repo": "ietf-wg-wimse/draft-ietf-wimse-identifier",
   "labels": [
     {
@@ -381,6 +381,38 @@
       "body": "[SPIFFE-ID](https://github.com/spiffe/spiffe/blob/main/standards/SPIFFE-ID.md) has the following restrictions:\n\n- host MUST NOT be empty\n- userinfo and port MUST be empty\n- host MUST be lowercase\n- host MUST contain only [a-z0-9.-_], path may contain uppercase A-Z on top of that\n- host and path MUST not contain percent-encoded characters\n- path MUST NOT include trailing /\n- path MUST not include relative modifiers\n- URI length up to 2048 MUST be supported and SHOULD not exceed that limit\n\nObviously, we are not going to relax SPIFFE specific requirements, but we don't have to inherit exact same limitations which could be too limiting for other schemes. For example, allowing IPv4 addresses in host portion, but not IPv6 seems wrong.\n\nI would propose to:\n\n- let schemes define their own path restriction\n- inherit URI length requirement and recommendation\n- add host MUST NOT be empty and userinfo and port MUST be empty\n- relax requirements to host compared to SPIFFE - allow any valid non-empty hostname\n\nAnd add security considerations about percent-encoding and equivalency matching of URIs.\n\n@jsalowey what do you think? Should we bring this up at the architecture interim?",
       "createdAt": "2025-09-30T14:22:30Z",
       "updatedAt": "2025-09-30T14:22:30Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 24,
+      "id": "I_kwDOOowVDc7Wb-Yy",
+      "title": "Is there a need for WIMSE identifier scheme registery?",
+      "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/24",
+      "state": "OPEN",
+      "author": "gffletch",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "Given the following statement\n> The scheme and scheme specific part are not defined by this specification.\n\nIt seems like this document is not defining much by saying that the semantics are defined by the scheme.",
+      "createdAt": "2025-11-06T21:07:19Z",
+      "updatedAt": "2025-11-06T21:07:19Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 25,
+      "id": "I_kwDOOowVDc7WcAyT",
+      "title": "I believe the `wimse` scheme needs to define semantics",
+      "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/25",
+      "state": "OPEN",
+      "author": "gffletch",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "I worry that defining a `wimse` scheme without any semantics will create multiple teams defining their own semantics for the scheme likely resulting in mutually exclusive semantics.",
+      "createdAt": "2025-11-06T21:09:56Z",
+      "updatedAt": "2025-11-06T21:09:56Z",
       "closedAt": null,
       "comments": []
     }
