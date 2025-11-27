@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-11-09T01:27:26.326241+00:00",
+  "timestamp": "2025-11-27T01:23:29.790018+00:00",
   "repo": "ietf-wg-wimse/draft-ietf-wimse-identifier",
   "labels": [
     {
@@ -74,11 +74,13 @@
       "state": "OPEN",
       "author": "jsalowey",
       "authorAssociation": "COLLABORATOR",
-      "assignees": [],
+      "assignees": [
+        "jsalowey"
+      ],
       "labels": [],
       "body": "The format of the credentials is discussed in the s2s spec.  My initial thoughts are that the definition of how the identifier fits in a credential should remain there as it talks about how the identifier is used in that credential.",
       "createdAt": "2025-05-28T16:13:01Z",
-      "updatedAt": "2025-05-28T16:13:01Z",
+      "updatedAt": "2025-11-25T17:40:30Z",
       "closedAt": null,
       "comments": []
     },
@@ -119,16 +121,24 @@
       "id": "I_kwDOOowVDc6-VOFv",
       "title": "Should we support schema-specific trust domains?",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/8",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "For example in case of [ARN](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html) \"trust domain\" would be `partition:service:region:account-id`. However it would be easy to convert it to something more sane such as `account-id.region.service.partition`.",
       "createdAt": "2025-07-01T17:12:39Z",
-      "updatedAt": "2025-07-01T17:12:39Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2025-11-25T17:41:06Z",
+      "closedAt": "2025-11-25T17:41:05Z",
+      "comments": [
+        {
+          "author": "yaroslavros",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Closing for now",
+          "createdAt": "2025-11-25T17:41:06Z",
+          "updatedAt": "2025-11-25T17:41:06Z"
+        }
+      ]
     },
     {
       "number": 9,
@@ -138,11 +148,13 @@
       "state": "OPEN",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
-      "assignees": [],
+      "assignees": [
+        "yaroslavros"
+      ],
       "labels": [],
       "body": "SPIFFE limits maximum ID length to 2048. Should we introduce a similar limitation?",
       "createdAt": "2025-07-01T17:14:38Z",
-      "updatedAt": "2025-07-01T17:14:38Z",
+      "updatedAt": "2025-11-25T17:41:18Z",
       "closedAt": null,
       "comments": []
     },
@@ -154,11 +166,13 @@
       "state": "OPEN",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
-      "assignees": [],
+      "assignees": [
+        "yaroslavros"
+      ],
       "labels": [],
       "body": "To reduce security risks of mis-parsing URIs SPIFFE prohibits usage of non-ascii characters and percent encoding in IDs. Should we do the same here?",
       "createdAt": "2025-07-01T17:15:25Z",
-      "updatedAt": "2025-07-01T17:15:25Z",
+      "updatedAt": "2025-11-25T17:41:23Z",
       "closedAt": null,
       "comments": []
     },
@@ -170,11 +184,13 @@
       "state": "OPEN",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
-      "assignees": [],
+      "assignees": [
+        "jsalowey"
+      ],
       "labels": [],
       "body": "This document defines a number of terms that are vary slightly from definitions in other specifications. We need to align this.",
       "createdAt": "2025-07-03T13:00:22Z",
-      "updatedAt": "2025-07-03T13:00:22Z",
+      "updatedAt": "2025-11-25T17:41:57Z",
       "closedAt": null,
       "comments": []
     },
@@ -186,11 +202,13 @@
       "state": "OPEN",
       "author": "yaronf",
       "authorAssociation": "NONE",
-      "assignees": [],
+      "assignees": [
+        "yaroslavros"
+      ],
       "labels": [],
       "body": "The document (possibly in Sec. 4.4) should be more explicit about what the identifier denotes. For example, if I have a service running in 2 regions with 4 instances in each one, would I have 1 identifier for all of them (I think yes).\n\n",
       "createdAt": "2025-07-04T12:08:51Z",
-      "updatedAt": "2025-07-31T13:36:55Z",
+      "updatedAt": "2025-11-25T17:42:17Z",
       "closedAt": null,
       "comments": [
         {
@@ -210,11 +228,13 @@
       "state": "OPEN",
       "author": "yaronf",
       "authorAssociation": "NONE",
-      "assignees": [],
+      "assignees": [
+        "yaroslavros"
+      ],
       "labels": [],
       "body": "\"This specification is intended to be generic and reusable beyond the context of any single system or architecture, including but not limited to the Workload Identity in Multi-System Environments (WIMSE) architecture [[ARCH](https://www.ietf.org/archive/id/draft-rosomakho-wimse-identifier-00.html#ARCH)]\" - I think it's better to focus on WIMSE.\n\n",
       "createdAt": "2025-07-04T12:08:53Z",
-      "updatedAt": "2025-07-04T12:08:53Z",
+      "updatedAt": "2025-11-25T17:42:50Z",
       "closedAt": null,
       "comments": []
     },
@@ -376,11 +396,13 @@
       "state": "OPEN",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
-      "assignees": [],
+      "assignees": [
+        "yaroslavros"
+      ],
       "labels": [],
       "body": "[SPIFFE-ID](https://github.com/spiffe/spiffe/blob/main/standards/SPIFFE-ID.md) has the following restrictions:\n\n- host MUST NOT be empty\n- userinfo and port MUST be empty\n- host MUST be lowercase\n- host MUST contain only [a-z0-9.-_], path may contain uppercase A-Z on top of that\n- host and path MUST not contain percent-encoded characters\n- path MUST NOT include trailing /\n- path MUST not include relative modifiers\n- URI length up to 2048 MUST be supported and SHOULD not exceed that limit\n\nObviously, we are not going to relax SPIFFE specific requirements, but we don't have to inherit exact same limitations which could be too limiting for other schemes. For example, allowing IPv4 addresses in host portion, but not IPv6 seems wrong.\n\nI would propose to:\n\n- let schemes define their own path restriction\n- inherit URI length requirement and recommendation\n- add host MUST NOT be empty and userinfo and port MUST be empty\n- relax requirements to host compared to SPIFFE - allow any valid non-empty hostname\n\nAnd add security considerations about percent-encoding and equivalency matching of URIs.\n\n@jsalowey what do you think? Should we bring this up at the architecture interim?",
       "createdAt": "2025-09-30T14:22:30Z",
-      "updatedAt": "2025-09-30T14:22:30Z",
+      "updatedAt": "2025-11-25T17:45:18Z",
       "closedAt": null,
       "comments": []
     },
