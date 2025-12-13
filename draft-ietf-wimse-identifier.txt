@@ -5,8 +5,8 @@
 Workload Identity in Multi System Environments              Y. Rosomakho
 Internet-Draft                                                   Zscaler
 Intended status: Standards Track                              J. Salowey
-Expires: 6 May 2026                                             CyberArk
-                                                         2 November 2025
+Expires: 16 June 2026                                           CyberArk
+                                                        13 December 2025
 
 
                           Workload Identifier
@@ -56,7 +56,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 6 May 2026.
+   This Internet-Draft will expire on 16 June 2026.
 
 Copyright Notice
 
@@ -223,13 +223,11 @@ wimse://trust.corp.example.com/workload/af3e86cb-7013-4e33-b717-11c4edd25679
 
    *  Specific instance of application role
 
-   spiffe://prod.trust.domain/ns/prod-01/sa/foo-service/iid-
-         1f814646-87b5-4e26-bb55-1d13caccdd8d
+spiffe://prod.trust.domain/ns/prod-01/sa/foo-service/iid-1f814646-87b5-4e26-bb55-1d13caccdd8d
 
    *  Specific code for an application role
 
-  spiffe://prod.trust.domaain/foo-servce#@sha256:
-        c4dbb1a06030e142cb0ed4be61421967618289a19c0c7760bdd745ac67779ca7
+spiffe://prod.trust.domain/foo-service/sha256/c4dbb1a06030e142cb0ed4be61421967618289a19c0c7760bdd745ac67779ca7
 
    Other concepts may be defined within the trust domain depending on
    what is important in the system and what information is available
