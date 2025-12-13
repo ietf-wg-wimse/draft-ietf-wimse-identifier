@@ -84,11 +84,12 @@ Table of Contents
      4.4.  Stability and Uniqueness
    5.  Usage in Credentials and Tokens
    6.  Security Considerations
-     6.1.  Identifier Authenticity
-     6.2.  Trust Domain Validation
-     6.3.  Identifier Reuse and Collision
-     6.4.  Information Disclosure
-     6.5.  Wildcard and Prefix Matching
+     6.1.  URI Parsing and Processing Considerations
+     6.2.  Identifier Authenticity
+     6.3.  Trust Domain Validation
+     6.4.  Identifier Reuse and Collision
+     6.5.  Information Disclosure
+     6.6.  Wildcard and Prefix Matching
    7.  IANA Considerations
    8.  References
      8.1.  Normative References
@@ -184,15 +185,29 @@ Table of Contents
 4.1.   URI Requirements
 
    A Workload Identifier MUST be an absolute URI, as defined in
-   Section 4.3 of [URI].  In addition the URI MUST include an authority
-   that identifies the trust domain within which the identifier is
-   scoped.  The scheme and scheme specific part are not defined by this
+   Section 4.3 of [URI].  In addition the URI MUST include a non-empty
+   authority component that identifies the trust domain within which the
+   identifier is scoped.
+
+   The scheme and scheme-specific syntax are not defined by this
    specification.  The URI format allows different schemes (e.g., spiffe
    as defined in [SPIFFE-ID], wimse) depending on deployment
    requirements.  Example identifiers:
 
 spiffe://incubation.example.org/ns/experimental/analytics/ingest
 wimse://trust.corp.example.com/workload/af3e86cb-7013-4e33-b717-11c4edd25679
+
+   A Workload Identifier URI MUST NOT contain a query component, a
+   fragment component, user information, or a port component.
+
+   Implementations that generate, parse, or otherwise process Workload
+   Identifiers MUST support identifiers with a total length of at least
+   2048 bytes.  Workload Identifiers SHOULD NOT exceed 2048 bytes in
+   length.
+
+   Individual Workload Identifier schemes MAY define additional syntax
+   or processing requirements, provided they do not conflict with the
+   requirements defined in this document.
 
    (Note that the wimse scheme is used as an example and is not defined
    in this document).
@@ -284,7 +299,29 @@ spiffe://prod.trust.domain/foo-service/sha256/c4dbb1a06030e142cb0ed4be6142196761
    and misinterpretation.  This section outlines security considerations
    for issuers, consumers, and system designers.
 
-6.1.  Identifier Authenticity
+6.1.  URI Parsing and Processing Considerations
+
+   Workload Identifiers are encoded as URIs and therefore rely on
+   correct and secure URI parsing.  Implementations MUST apply a
+   standards-compliant URI parser.
+
+   Incorrect URI parsing can result in misinterpretation of identifier
+   components, security policy bypass, or inconsistent trust domain
+   evaluation across implementations.
+
+   Implementations MUST enforce the URI requirements defined in this
+   document, including the absence of query, fragment, user information,
+   and port components.  Failure to validate these constraints may allow
+   identifiers to carry unintended or ambiguous semantics.
+
+   Implementations MUST also take care to handle Workload Identifiers of
+   the maximum supported length without causing excessive memory
+   allocation, resource exhaustion, or denial-of-service conditions.
+   Parsers SHOULD impose reasonable internal limits and reject
+   identifiers that exceed implementation-defined constraints,
+   consistent with the length requirements in this document.
+
+6.2.  Identifier Authenticity
 
    Workload Identifiers MUST only be considered valid when presented in
    a credential or token that has been cryptographically verified.  An
@@ -295,7 +332,7 @@ spiffe://prod.trust.domain/foo-service/sha256/c4dbb1a06030e142cb0ed4be6142196761
    credential or token before considering Workload Identifier as
    authenticated.
 
-6.2.  Trust Domain Validation
+6.3.  Trust Domain Validation
 
    Consumers MUST validate that the trust domain in the Workload
    Identifier matches an expected or explicitly trusted domain.  Failure
@@ -305,7 +342,7 @@ spiffe://prod.trust.domain/foo-service/sha256/c4dbb1a06030e142cb0ed4be6142196761
    Where appropriate, consumers should maintain an allowlist of trusted
    domains or trusted issuing authorities.
 
-6.3.  Identifier Reuse and Collision
+6.4.  Identifier Reuse and Collision
 
    Issuers SHOULD ensure that Workload Identifiers are not reused across
    different workloads unless such reuse is intentional and well-scoped.
@@ -315,7 +352,7 @@ spiffe://prod.trust.domain/foo-service/sha256/c4dbb1a06030e142cb0ed4be6142196761
    Consumers SHOULD assume that identifiers are permanent within their
    domain of interpretation and treat unexpected reuse with suspicion.
 
-6.4.  Information Disclosure
+6.5.  Information Disclosure
 
    Because Workload Identifiers may encode topological or semantic
    information, they may inadvertently reveal deployment details.
@@ -326,7 +363,7 @@ spiffe://prod.trust.domain/foo-service/sha256/c4dbb1a06030e142cb0ed4be6142196761
    avoid exposing internal implementation details unless necessary for
    interoperation.
 
-6.5.  Wildcard and Prefix Matching
+6.6.  Wildcard and Prefix Matching
 
    Consumers SHOULD NOT interpret Workload Identifiers using wildcard or
    prefix matching unless explicitly specified by policy.  For example,
