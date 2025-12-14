@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-11-27T01:23:29.790018+00:00",
+  "timestamp": "2025-12-14T01:43:38.360252+00:00",
   "repo": "ietf-wg-wimse/draft-ietf-wimse-identifier",
   "labels": [
     {
@@ -537,21 +537,21 @@
       "id": "PR_kwDOOowVDc6rUdZL",
       "title": "Refer to s2s-protocol for Usage in Credentials and Tokens",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/20",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2025-09-30T12:07:30Z",
-      "updatedAt": "2025-09-30T12:08:29Z",
+      "updatedAt": "2025-12-12T16:59:15Z",
       "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "baseRefName": "main",
       "baseRefOid": "0e56b9c4837cf78aff68cb1e1c85a61a3a982e6f",
       "headRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "headRefName": "refer-s2s",
       "headRefOid": "c8cb30b6cffb8cbdac68c7a469e5cab32b10e8e6",
-      "closedAt": null,
+      "closedAt": "2025-12-12T16:59:15Z",
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
@@ -563,21 +563,21 @@
       "id": "PR_kwDOOowVDc6rUhLr",
       "title": "Fixed typo in sample URI",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/21",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2025-09-30T12:12:05Z",
-      "updatedAt": "2025-09-30T12:12:05Z",
+      "updatedAt": "2025-12-12T17:00:53Z",
       "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "baseRefName": "main",
       "baseRefOid": "0e56b9c4837cf78aff68cb1e1c85a61a3a982e6f",
       "headRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "headRefName": "typo",
       "headRefOid": "1bb94f196e7725e1bdac1cac8c5060803238a596",
-      "closedAt": null,
+      "closedAt": "2025-12-12T17:00:53Z",
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
@@ -611,6 +611,220 @@
       },
       "comments": [],
       "reviews": []
+    },
+    {
+      "number": 26,
+      "id": "PR_kwDOOowVDc64mfRS",
+      "title": "Added Workload Identifier Scope section",
+      "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/26",
+      "state": "OPEN",
+      "author": "yaroslavros",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-12-12T16:29:16Z",
+      "updatedAt": "2025-12-13T22:03:47Z",
+      "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
+      "baseRefName": "main",
+      "baseRefOid": "58a74c6d4d6a0112a0f84691c9bdd98a493d504d",
+      "headRepository": "yaroslavros/draft-ietf-wimse-identifier",
+      "headRefName": "main",
+      "headRefOid": "21ed9e58293da23f5ff6395bb5a99dcc35116d6a",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "yaroslavros",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@jsalowey-cyberark, I have simplified and cleaned up wording a bit. Does this work better?",
+          "createdAt": "2025-12-13T21:36:16Z",
+          "updatedAt": "2025-12-13T21:36:16Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOOowVDc7VD034",
+          "commit": {
+            "abbreviatedOid": "038ec7c"
+          },
+          "author": "jsalowey-cyberark",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-12-13T20:26:01Z",
+          "updatedAt": "2025-12-13T20:26:01Z",
+          "comments": [
+            {
+              "originalPosition": 8,
+              "body": "How are scope, trust domain and administrative domain.  It seems that two scopes with the same trust domain and different URI schemes would refer to the same administrative domains and different namespaces with respect to the path portion. I think it would make sense to say that  scope defines namespace, but I am not sure it defines an administrative domain. ",
+              "createdAt": "2025-12-13T20:26:01Z",
+              "updatedAt": "2025-12-13T20:26:02Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOOowVDc7VD1fB",
+          "commit": {
+            "abbreviatedOid": "038ec7c"
+          },
+          "author": "jsalowey-cyberark",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-12-13T20:33:21Z",
+          "updatedAt": "2025-12-13T20:33:21Z",
+          "comments": [
+            {
+              "originalPosition": 10,
+              "body": "IT seems that a scope could have specific semantics defined by its scheme. But I think I may understand what you are trying to say.  Perhaps  something like \"In general the scope portion of an identifier just defines a namespace, however scheme can define semantics for the path portion of the Identifier. \"  \r\nI'm not sure what you are trying to get at with the second sentence.  It seems ike it may be problematic if different application protocols treat scope differently?",
+              "createdAt": "2025-12-13T20:33:21Z",
+              "updatedAt": "2025-12-13T20:33:22Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOOowVDc7VD9am",
+          "commit": {
+            "abbreviatedOid": "21ed9e5"
+          },
+          "author": "jsalowey-cyberark",
+          "authorAssociation": "NONE",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-12-13T22:03:47Z",
+          "updatedAt": "2025-12-13T22:03:47Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 27,
+      "id": "PR_kwDOOowVDc64murR",
+      "title": "Added extra URI requirements as discussed at IETF124",
+      "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/27",
+      "state": "MERGED",
+      "author": "yaroslavros",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-12-12T16:50:31Z",
+      "updatedAt": "2025-12-13T21:28:58Z",
+      "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
+      "baseRefName": "main",
+      "baseRefOid": "15a5da2b072828e1efe3ee0d223ba8a636d48d0a",
+      "headRepository": "yaroslavros/draft-ietf-wimse-identifier",
+      "headRefName": "requirements",
+      "headRefOid": "97d794609895386477a294f277782de8c710855b",
+      "closedAt": "2025-12-13T21:28:58Z",
+      "mergedAt": "2025-12-13T21:28:58Z",
+      "mergedBy": "yaroslavros",
+      "mergeCommit": {
+        "oid": "58a74c6d4d6a0112a0f84691c9bdd98a493d504d"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOOowVDc7VD1ot",
+          "commit": {
+            "abbreviatedOid": "97d7946"
+          },
+          "author": "jsalowey-cyberark",
+          "authorAssociation": "NONE",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-12-13T20:35:23Z",
+          "updatedAt": "2025-12-13T20:35:23Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 28,
+      "id": "PR_kwDOOowVDc64m0fQ",
+      "title": "Removed usage in credentials and tokens specifics",
+      "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/28",
+      "state": "MERGED",
+      "author": "yaroslavros",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Replaced with a reference to s2s-creds",
+      "createdAt": "2025-12-12T16:58:34Z",
+      "updatedAt": "2025-12-13T21:28:46Z",
+      "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
+      "baseRefName": "main",
+      "baseRefOid": "15a5da2b072828e1efe3ee0d223ba8a636d48d0a",
+      "headRepository": "yaroslavros/draft-ietf-wimse-identifier",
+      "headRefName": "credentials",
+      "headRefOid": "fef1147610fc28050b352fdef412d72c550dce23",
+      "closedAt": "2025-12-13T21:28:46Z",
+      "mergedAt": "2025-12-13T21:28:46Z",
+      "mergedBy": "yaroslavros",
+      "mergeCommit": {
+        "oid": "36f2c4e6b0f80a20df1a599f4bc5d80bc52f7519"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOOowVDc7VD1qU",
+          "commit": {
+            "abbreviatedOid": "fef1147"
+          },
+          "author": "jsalowey-cyberark",
+          "authorAssociation": "NONE",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-12-13T20:35:46Z",
+          "updatedAt": "2025-12-13T20:35:46Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 29,
+      "id": "PR_kwDOOowVDc64m3iG",
+      "title": "Corrected example URIs",
+      "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/29",
+      "state": "MERGED",
+      "author": "yaroslavros",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-12-12T17:02:34Z",
+      "updatedAt": "2025-12-13T21:28:34Z",
+      "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
+      "baseRefName": "main",
+      "baseRefOid": "15a5da2b072828e1efe3ee0d223ba8a636d48d0a",
+      "headRepository": "yaroslavros/draft-ietf-wimse-identifier",
+      "headRefName": "uri-fix",
+      "headRefOid": "3dec305dc8398a470fc362d3d2aced200b9ec95f",
+      "closedAt": "2025-12-13T21:28:34Z",
+      "mergedAt": "2025-12-13T21:28:34Z",
+      "mergedBy": "yaroslavros",
+      "mergeCommit": {
+        "oid": "df809672285e040e522667b128ba5e4af7cb1668"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOOowVDc7VD1sb",
+          "commit": {
+            "abbreviatedOid": "3dec305"
+          },
+          "author": "jsalowey-cyberark",
+          "authorAssociation": "NONE",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-12-13T20:36:22Z",
+          "updatedAt": "2025-12-13T20:36:22Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
