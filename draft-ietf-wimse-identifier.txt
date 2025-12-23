@@ -5,8 +5,8 @@
 Workload Identity in Multi System Environments              Y. Rosomakho
 Internet-Draft                                                   Zscaler
 Intended status: Standards Track                              J. Salowey
-Expires: 16 June 2026                                           CyberArk
-                                                        13 December 2025
+Expires: 26 June 2026                                           CyberArk
+                                                        23 December 2025
 
 
                           Workload Identifier
@@ -56,7 +56,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 16 June 2026.
+   This Internet-Draft will expire on 26 June 2026.
 
 Copyright Notice
 
@@ -82,6 +82,7 @@ Table of Contents
      4.2.  Scheme Specific Portion
      4.3.  Trust Domain Association
      4.4.  Stability and Uniqueness
+     4.5.  Workload Identifier Scope
    5.  Usage in Credentials and Tokens
    6.  Security Considerations
      6.1.  URI Parsing and Processing Considerations
@@ -282,6 +283,22 @@ spiffe://prod.trust.domain/foo-service/sha256/c4dbb1a06030e142cb0ed4be6142196761
 
    spiffe://dev.example.com/ns/default/database/backend
    spiffe://prod.example.com/ns/default/database/backend
+
+4.5.  Workload Identifier Scope
+
+   A Workload Identifier Scope is a specification of a namespace under
+   which a Workload Identifier is meaningful for a given use case.  A
+   scope consists of the URI scheme and trust domain components of a
+   Workload Identifier, omitting the path component.
+
+   Workload Identifier Scopes serve as hints about the set of
+   identifiers an entity may present in a particular protocol instance
+   or usage context without revealing specific identifier.
+
+   Examples of Workload Identifier Scopes:
+
+   spiffe://prod.trust.domain
+   wimse://trust.corp.example.com
 
 5.  Usage in Credentials and Tokens
 
