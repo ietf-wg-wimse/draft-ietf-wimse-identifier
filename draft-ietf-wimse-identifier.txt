@@ -5,8 +5,8 @@
 Workload Identity in Multi System Environments              Y. Rosomakho
 Internet-Draft                                                   Zscaler
 Intended status: Standards Track                              J. Salowey
-Expires: 26 June 2026                                           CyberArk
-                                                        23 December 2025
+Expires: 2 July 2026                                            CyberArk
+                                                        29 December 2025
 
 
                           Workload Identifier
@@ -56,7 +56,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 26 June 2026.
+   This Internet-Draft will expire on 2 July 2026.
 
 Copyright Notice
 
@@ -95,7 +95,9 @@ Table of Contents
    8.  References
      8.1.  Normative References
      8.2.  Informative References
-   Acknowledgments
+   Appendix A.  Acknowledgments
+   Appendix B.  Changelog
+     B.1.  since draft-ietf-wimse-identifier-00
    Authors' Addresses
 
 1.  Introduction
@@ -436,10 +438,24 @@ spiffe://prod.trust.domain/foo-service/sha256/c4dbb1a06030e142cb0ed4be6142196761
               <https://github.com/spiffe/spiffe/blob/main/standards/
               SPIFFE-ID.md>.
 
-Acknowledgments
+Appendix A.  Acknowledgments
 
    Authors would like to thank Evan Gilman for his review of the initial
    text of this document and his guidance.
+
+Appendix B.  Changelog
+
+   *RFC Editor's Note:* Please remove this section prior to publication
+   of a final version of this document.
+
+B.1.  since draft-ietf-wimse-identifier-00
+
+   *  Defined Workload Identifier Scope
+
+   *  Replaced specifics of usage in credentials and tokens with a
+      reference to s2s-creds draft
+
+   *  Added URI requirements
 
 Authors' Addresses
 
