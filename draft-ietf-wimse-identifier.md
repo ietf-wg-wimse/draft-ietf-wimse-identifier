@@ -238,6 +238,15 @@ This document has no IANA actions.
 --- back
 
 # Acknowledgments
-{:numbered="false"}
 
 Authors would like to thank Evan Gilman for his review of the initial text of this document and his guidance.
+
+# Changelog
+
+**RFC Editor's Note:**  Please remove this section prior to publication of a final version of this document.
+
+## since draft-ietf-wimse-identifier-00
+
+* Defined Workload Identifier Scope
+* Replaced specifics of usage in credentials and tokens with a reference to s2s-creds draft
+* Added URI requirements
