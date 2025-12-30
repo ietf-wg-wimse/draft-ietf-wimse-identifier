@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-12-25T01:38:57.529195+00:00",
+  "timestamp": "2025-12-30T01:39:24.206106+00:00",
   "repo": "ietf-wg-wimse/draft-ietf-wimse-identifier",
   "labels": [
     {
@@ -833,26 +833,42 @@
       "id": "PR_kwDOOowVDc66V2tP",
       "title": "Added changelog",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/30",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2025-12-23T14:42:54Z",
-      "updatedAt": "2025-12-23T14:42:54Z",
+      "updatedAt": "2025-12-29T15:42:06Z",
       "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "baseRefName": "main",
       "baseRefOid": "32163cf4f8a91f6a5c774f2fa4276bd7f4fced6b",
       "headRepository": "yaroslavros/draft-ietf-wimse-identifier",
       "headRefName": "main",
       "headRefOid": "8fef920c7da11b2b1f9724130356129ccc5a4d70",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-12-29T15:42:06Z",
+      "mergedAt": "2025-12-29T15:42:06Z",
+      "mergedBy": "jsalowey",
+      "mergeCommit": {
+        "oid": "960857562f1d79be5395446d6b6f8979d4d36789"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOOowVDc7XikU6",
+          "commit": {
+            "abbreviatedOid": "8fef920"
+          },
+          "author": "jsalowey-cyberark",
+          "authorAssociation": "NONE",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-12-29T15:40:16Z",
+          "updatedAt": "2025-12-29T15:40:16Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
