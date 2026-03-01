@@ -171,13 +171,13 @@ spiffe://dev.example.com/ns/default/database/backend
 spiffe://prod.example.com/ns/default/database/backend
 ~~~
 
-## Workload Identifier Scope
+## Workload Identifier Origin
 
-A Workload Identifier Scope is a specification of a namespace under which a Workload Identifier is meaningful for a given use case. A scope consists of the URI scheme and trust domain components of a Workload Identifier, omitting the path component.
+A Workload Identifier Origin is a specification of a namespace under which a Workload Identifier is meaningful for a given use case. An origin consists of the URI scheme and trust domain components of a Workload Identifier, omitting the path component.
 
-Workload Identifier Scopes serve as hints about the set of identifiers an entity may present in a particular protocol instance or usage context without revealing specific identifier.
+Workload Identifier Origins serve as hints about the set of identifiers an entity may present in a particular protocol instance or usage context without revealing specific identifier.
 
-Examples of Workload Identifier Scopes:
+Examples of Workload Identifier Origins:
 
 ~~~
 spiffe://prod.trust.domain
