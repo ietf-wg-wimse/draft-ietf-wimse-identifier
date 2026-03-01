@@ -56,7 +56,7 @@ In modern distributed systems, workloads such as services, applications, or cont
 
 This document defines the Workload Identifier, a URI-based {{!URI=RFC3986}} identifier intended to uniquely represent a workload within the context of an issuing authority. The identifier is designed to be stable, globally unique within a given trust domain, and suitable for use in digital credentials such as X.509 certificates , JSON Web Tokens (JWTs, {{?JWT=RFC7519}}), and other security artifacts.
 
-The Workload Identifier format is simple yet expressive. It enables organisations to define trust boundaries, delegate identity management, and reason about workloads in a uniform way across service meshes, cloud environments, and on-premises infrastructure. This specification is intended to be generic and reusable beyond the context of any single system or architecture, including but not limited to the Workload Identity in Multi-System Environments (WIMSE) architecture {{?ARCH=I-D.ietf-wimse-arch}}.
+The Workload Identifier format is simple yet expressive. It enables organisations to define trust boundaries, delegate identity management, and reason about workloads in a uniform way across service meshes, cloud environments, and on-premises infrastructure. This specification defines the Workload Identifier used by the Workload Identity in Multi-System Environments (WIMSE) architecture {{?ARCH=I-D.ietf-wimse-arch}}. The format is defined in a general manner so that it can also be used by other systems that require stable, URI-based workload identities.
 
 The primary goals of this specification are:
 
