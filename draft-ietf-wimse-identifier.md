@@ -184,9 +184,23 @@ spiffe://prod.trust.domain
 wimse://trust.corp.example.com
 ~~~
 
+# Identifier Interpretation and Mapping
+
+Workload Identifiers are carried in credentials and tokens and are used for authentication, authorization, and auditing. However, the identifier itself does not define how a workload is reached over the network.
+
+In many deployments, workloads are accessed using external handles such as DNS names, service names, load balancer addresses, or routing paths. These handles are deployment-specific and do not necessarily match the Workload Identifier presented in credentials.
+
+To enable correct authentication decisions, implementations MUST support a deployment-defined mapping between the external handle used to access a workload and the Workload Identifier expected for that workload.
+
+This mapping is outside the scope of this specification and MAY be provided by configuration, service discovery systems, orchestration platforms, or other local policy mechanisms.
+
+Consumers MUST NOT assume that the Workload Identifier can be derived from network-layer information such as IP address, DNS name, or request path without such mapping.
+
+Deployments using Workload Identifiers with the WIMSE credential formats defined in {{!WIMSE-CREDENTIALS=I-D.ietf-wimse-workload-creds}} MUST ensure that a consistent mapping exists between workload access handles and the Workload Identifiers contained in credentials.
+
 # Usage in Credentials and Tokens
 
-Workload Identifiers are designed to be embedded in cryptographic credentials and security tokens that are used to assert the identity of workloads during authentication, authorisation, and auditing. Representation of workload identifier in commonly used formats is defined in {{!WIMSE-CREDENTIALS=I-D.ietf-wimse-workload-creds}}.
+Workload Identifiers are designed to be embedded in cryptographic credentials and security tokens that are used to assert the identity of workloads during authentication, authorisation, and auditing. Representation of workload identifier in commonly used formats is defined in {{WIMSE-CREDENTIALS}}.
 
 # Security Considerations
 
