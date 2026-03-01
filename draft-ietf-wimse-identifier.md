@@ -81,7 +81,7 @@ Workload:
 
 Workload Identifier:
 
-: A URI-based identifier that uniquely represents a workload within a specific trust domain. It is intended to be included in security credentials and interpreted within the scope of an issuing authority.
+: A URI-based identifier that uniquely represents a workload within a specific trust domain. A Workload Identifier MAY refer to a logical workload consisting of multiple instances, or to a specific workload instance, depending on the policies of the trust domain that issued the identifier. The identifier is intended to be included in security credentials and interpreted within the scope of an issuing authority.
 
 Trust Domain:
 
@@ -122,7 +122,15 @@ Individual Workload Identifier schemes MAY define additional syntax or processin
 
 ## Scheme Specific Portion
 
-The format and semantics scheme specific part of the URI that follows the identity is determined by the issuer in the trust domain. What the identity refers to is also determined by the issuer. For example a workload identity may refer to a specific instance of a running piece of software or it may refer just to a specific software version running in a particular environment, or it may refer to the role that the software performs within the system.  The scheme specific part of the URI may just be an opaque unique identifier used to look up the additional identity information in another system. Some examples of these concepts are given below:
+The format and semantics of the scheme-specific part of the URI are determined by the issuer within the trust domain. The issuer defines the granularity at which identities are assigned.
+
+A Workload Identifier MAY represent a specific workload instance, or a logical workload consisting of multiple instances that share the same identity within the trust domain.
+
+Multiple instances MAY share the same Workload Identifier when they are intended to be treated as the same workload for the purpose of authentication, authorization, and auditing.
+
+The scheme-specific part of the URI MAY be an opaque value that is only meaningful to the issuing authority, or it MAY encode structured information used within the trust domain.
+
+Some examples of these concepts are given below:
 
 * Opaque identifier
 
@@ -160,16 +168,7 @@ Issuers within a trust domain MUST ensure uniqueness of all Workload Identifiers
 
 ## Stability and Uniqueness
 
-Workload Identifiers are intended to be stable over time. An identifier assigned to a specific workload should not be reassigned to a different workload unless explicitly intended by the policies of the trust domain.
-
-Workload Identifiers are globally unique when the trust domain is globally unique. This is typically achieved by using a fully qualified domain name (FQDN) under organisational control.
-
-For example, the following contains identifiers of two distinct globally unique Workload Identifiers
-
-~~~
-spiffe://dev.example.com/ns/default/database/backend
-spiffe://prod.example.com/ns/default/database/backend
-~~~
+Workload Identifiers are intended to be stable over time. An identifier assigned to a workload SHOULD NOT be reassigned to a different workload unless explicitly intended by the policies of the trust domain. Multiple workload instances MAY share the same Workload Identifier when they represent the same logical workload within the trust domain.
 
 ## Workload Identifier Scope
 
