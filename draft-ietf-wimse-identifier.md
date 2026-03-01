@@ -206,7 +206,9 @@ Implementations MUST also take care to handle Workload Identifiers of the maximu
 
 Workload Identifiers MUST only be considered valid when presented in a credential or token that has been cryptographically verified. An identifier received outside such a context, such as a plaintext string in a request, MUST NOT be treated as authenticated.
 
-Consumers MUST verify the signature, issuer, and validity of the credential or token before considering Workload Identifier as authenticated.
+Consumers MUST treat a Workload Identifier as authenticated only when it is obtained from a credential or token that has been successfully validated according to the rules of the credential format and the deployment policy.
+
+Validation requirements for credentials carrying Workload Identifiers are defined in {{WIMSE-CREDENTIALS}} and in the protocols that use those credentials.
 
 ## Trust Domain Validation
 
