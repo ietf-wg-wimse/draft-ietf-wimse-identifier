@@ -101,11 +101,11 @@ A Workload Identifier is a URI {{URI}} that uniquely identifies a workload. It e
 
 The identifier is designed to be stable and suitable for inclusion in digital credentials such as X.509 certificates and security tokens. This section defines the format, structure, and associated requirements for Workload Identifiers.
 
-## URI Requirements
+## URI Requirements {#uri-requirements}
 
 A Workload Identifier MUST be an absolute URI, as defined in {{Section 4.3 of URI}}. In addition the URI MUST include a non-empty authority component that identifies the trust domain within which the identifier is scoped.
 
-The scheme and scheme-specific syntax are not defined by this specification. The URI format allows different schemes (e.g., `spiffe` as defined in {{SPIFFE-ID}}, `wimse`) depending on deployment requirements.  Example identifiers:
+The scheme and scheme-specific syntax are not defined by this specification. The URI format allows different schemes (e.g., `spiffe` as defined in {{SPIFFE-ID}}, `wimse` defined in {{wimse-scheme}}) depending on deployment requirements.  Example identifiers:
 
 ~~~
 spiffe://incubation.example.org/ns/experimental/analytics/ingest
@@ -117,8 +117,6 @@ A Workload Identifier URI MUST NOT contain a query component, a fragment compone
 Implementations that generate, parse, or otherwise process Workload Identifiers MUST support identifiers with a total length of at least 2048 bytes. Workload Identifiers SHOULD NOT exceed 2048 bytes in length.
 
 Individual Workload Identifier schemes MAY define additional syntax or processing requirements, provided they do not conflict with the requirements defined in this document.
-
-(Note that the wimse scheme is used as an example and is not defined in this document).
 
 ## Scheme Specific Portion
 
@@ -157,6 +155,26 @@ The authority component of the URI defines the trust domain which is responsible
 Workload Identifiers are interpreted in the context of the trust domain that issued the credential. Identifiers with identical path components but different trust domains represent different workloads.
 
 Issuers within a trust domain MUST ensure uniqueness of all Workload Identifiers they assign.
+
+## The "wimse" URI Scheme {#wimse-scheme}
+
+A Workload Identifier using the `wimse` scheme has the generic form:
+
+~~~
+wimse://<trust-domain>/<path>
+~~~
+
+The URI MUST satisfy all requirements defined in {{uri-requirements}}.
+
+The structure of the path component is deployment-specific and is not interpreted by this specification.
+
+Examples:
+
+~~~
+wimse://trust.example.com/service/payment
+wimse://trust.example.com/service/payment/instance/1234
+wimse://prod.corp.example/workload/89a6ec51-f877-44c0-9501-b213597f2d1d
+~~~
 
 ## Stability and Uniqueness
 
@@ -232,8 +250,33 @@ Consumers SHOULD NOT interpret Workload Identifiers using wildcard or prefix mat
 
 # IANA Considerations
 
-This document has no IANA actions.
+## URI Scheme Registration
 
+IANA is requested to register the "wimse" scheme to the "URI Schemes" registry {{?IANA-URISCHEMES=IANA.uri-schemes}}:
+
+Scheme name:
+
+: wimse
+
+Status:
+
+: permanent
+
+Applications/protocols that use this scheme name:
+
+: any application and protocol interacting with workload identifiers.
+
+Contact:
+
+: IETF Chair chair@ietf.org
+
+Change controller:
+
+: IESG iesg@ietf.org
+
+References:
+
+{{wimse-scheme}} of this document.
 
 --- back
 
