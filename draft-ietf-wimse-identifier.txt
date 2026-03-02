@@ -5,8 +5,8 @@
 Workload Identity in Multi System Environments              Y. Rosomakho
 Internet-Draft                                                   Zscaler
 Intended status: Standards Track                              J. Salowey
-Expires: 2 July 2026                                            CyberArk
-                                                        29 December 2025
+Expires: 3 September 2026                                       CyberArk
+                                                            2 March 2026
 
 
                           Workload Identifier
@@ -56,11 +56,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 2 July 2026.
+   This Internet-Draft will expire on 3 September 2026.
 
 Copyright Notice
 
-   Copyright (c) 2025 IETF Trust and the persons identified as the
+   Copyright (c) 2026 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -157,9 +157,12 @@ Table of Contents
       initiate or receive network communications.
 
    Workload Identifier:  A URI-based identifier that uniquely represents
-      a workload within a specific trust domain.  It is intended to be
-      included in security credentials and interpreted within the scope
-      of an issuing authority.
+      a workload within a specific trust domain.  A Workload Identifier
+      MAY refer to a logical workload consisting of multiple instances,
+      or to a specific workload instance, depending on the policies of
+      the trust domain that issued the identifier.  The identifier is
+      intended to be included in security credentials and interpreted
+      within the scope of an issuing authority.
 
    Trust Domain:  A security boundary defined and controlled by a single
       administrative authority.  A trust domain establishes its own
@@ -217,16 +220,23 @@ wimse://trust.corp.example.com/workload/af3e86cb-7013-4e33-b717-11c4edd25679
 
 4.2.  Scheme Specific Portion
 
-   The format and semantics scheme specific part of the URI that follows
-   the identity is determined by the issuer in the trust domain.  What
-   the identity refers to is also determined by the issuer.  For example
-   a workload identity may refer to a specific instance of a running
-   piece of software or it may refer just to a specific software version
-   running in a particular environment, or it may refer to the role that
-   the software performs within the system.  The scheme specific part of
-   the URI may just be an opaque unique identifier used to look up the
-   additional identity information in another system.  Some examples of
-   these concepts are given below:
+   The format and semantics of the scheme-specific part of the URI are
+   determined by the issuer within the trust domain.  The issuer defines
+   the granularity at which identities are assigned.
+
+   A Workload Identifier MAY represent a specific workload instance, or
+   a logical workload consisting of multiple instances that share the
+   same identity within the trust domain.
+
+   Multiple instances MAY share the same Workload Identifier when they
+   are intended to be treated as the same workload for the purpose of
+   authentication, authorization, and auditing.
+
+   The scheme-specific part of the URI MAY be an opaque value that is
+   only meaningful to the issuing authority, or it MAY encode structured
+   information used within the trust domain.
+
+   Some examples of these concepts are given below:
 
    *  Opaque identifier
 
@@ -272,19 +282,11 @@ spiffe://prod.trust.domain/foo-service/sha256/c4dbb1a06030e142cb0ed4be6142196761
 4.4.  Stability and Uniqueness
 
    Workload Identifiers are intended to be stable over time.  An
-   identifier assigned to a specific workload should not be reassigned
-   to a different workload unless explicitly intended by the policies of
-   the trust domain.
-
-   Workload Identifiers are globally unique when the trust domain is
-   globally unique.  This is typically achieved by using a fully
-   qualified domain name (FQDN) under organisational control.
-
-   For example, the following contains identifiers of two distinct
-   globally unique Workload Identifiers
-
-   spiffe://dev.example.com/ns/default/database/backend
-   spiffe://prod.example.com/ns/default/database/backend
+   identifier assigned to a workload SHOULD NOT be reassigned to a
+   different workload unless explicitly intended by the policies of the
+   trust domain.  Multiple workload instances MAY share the same
+   Workload Identifier when they represent the same logical workload
+   within the trust domain.
 
 4.5.  Workload Identifier Scope
 
@@ -424,9 +426,9 @@ spiffe://prod.trust.domain/foo-service/sha256/c4dbb1a06030e142cb0ed4be6142196761
    [ARCH]     Salowey, J. A., Rosomakho, Y., and H. Tschofenig,
               "Workload Identity in a Multi System Environment (WIMSE)
               Architecture", Work in Progress, Internet-Draft, draft-
-              ietf-wimse-arch-06, 30 September 2025,
+              ietf-wimse-arch-07, 2 March 2026,
               <https://datatracker.ietf.org/doc/html/draft-ietf-wimse-
-              arch-06>.
+              arch-07>.
 
    [JWT]      Jones, M., Bradley, J., and N. Sakimura, "JSON Web Token
               (JWT)", RFC 7519, DOI 10.17487/RFC7519, May 2015,

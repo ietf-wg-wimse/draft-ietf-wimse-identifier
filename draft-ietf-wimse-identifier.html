@@ -19,14 +19,14 @@
     Python 3.12.12
     ConfigArgParse 1.7
     google-i18n-address 3.1.1
-    intervaltree 3.1.0
+    intervaltree 3.2.1
     Jinja2 3.1.6
     lxml 6.0.2
     platformdirs 4.5.1
     pycountry 24.6.1
     PyYAML 6.0.3
     requests 2.32.5
-    wcwidth 0.2.14
+    wcwidth 0.3.0
 -->
 <link href="draft-ietf-wimse-identifier.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
@@ -167,7 +167,7 @@
   font-weight: 400;
   font-display: swap;
   src: local('Oxygen Mono'), local('OxygenMono-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/oxygenmono-regular-latin-ext.woff2') format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 @font-face {
   font-family: 'Oxygen Mono';
@@ -175,7 +175,8 @@
   font-weight: 400;
   font-display: swap;
   src: local('Oxygen Mono'), local('OxygenMono-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/oxygenmono-regular-latin.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 }
 
 @font-face {
@@ -567,6 +568,7 @@ aside, blockquote {
 }
 blockquote {
   margin: 1em 0;
+  border-left: 2px var(--pilcrow-strong) solid;
 }
 cite {
   display: block;
@@ -637,7 +639,7 @@ a.pilcrow {
   }
 }
 @media not print {
-  :hover > a.pilcrow {
+  :hover > a.pilcrow, a.pilcrow:focus {
     opacity: 1;
   }
   a.pilcrow[href]:hover {
@@ -1045,11 +1047,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">Workload Identifier</td>
-<td class="right">December 2025</td>
+<td class="right">March 2026</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Rosomakho &amp; Salowey</td>
-<td class="center">Expires 2 July 2026</td>
+<td class="center">Expires 3 September 2026</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1062,12 +1064,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-ietf-wimse-identifier-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2025-12-29" class="published">29 December 2025</time>
+<time datetime="2026-03-02" class="published">2 March 2026</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2026-07-02">2 July 2026</time></dd>
+<dd class="expires"><time datetime="2026-09-03">3 September 2026</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1121,7 +1123,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 2 July 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 3 September 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1130,7 +1132,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <a href="#name-copyright-notice" class="section-name selfRef">Copyright Notice</a>
         </h2>
 <p id="section-boilerplate.2-1">
-            Copyright (c) 2025 IETF Trust and the persons identified as the
+            Copyright (c) 2026 IETF Trust and the persons identified as the
             document authors. All rights reserved.<a href="#section-boilerplate.2-1" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.2-2">
             This document is subject to BCP 78 and the IETF Trust's Legal
@@ -1285,7 +1287,7 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
         <dd class="break"></dd>
 <dt id="section-3-2.3">Workload Identifier:</dt>
         <dd style="margin-left: 1.5em" id="section-3-2.4">
-          <p id="section-3-2.4.1">A URI-based identifier that uniquely represents a workload within a specific trust domain. It is intended to be included in security credentials and interpreted within the scope of an issuing authority.<a href="#section-3-2.4.1" class="pilcrow">¶</a></p>
+          <p id="section-3-2.4.1">A URI-based identifier that uniquely represents a workload within a specific trust domain. A Workload Identifier <span class="bcp14">MAY</span> refer to a logical workload consisting of multiple instances, or to a specific workload instance, depending on the policies of the trust domain that issued the identifier. The identifier is intended to be included in security credentials and interpreted within the scope of an issuing authority.<a href="#section-3-2.4.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
 <dt id="section-3-2.5">Trust Domain:</dt>
@@ -1337,48 +1339,52 @@ wimse://trust.corp.example.com/workload/af3e86cb-7013-4e33-b717-11c4edd25679
         <h3 id="name-scheme-specific-portion">
 <a href="#section-4.2" class="section-number selfRef">4.2. </a><a href="#name-scheme-specific-portion" class="section-name selfRef">Scheme Specific Portion</a>
         </h3>
-<p id="section-4.2-1">The format and semantics scheme specific part of the URI that follows the identity is determined by the issuer in the trust domain. What the identity refers to is also determined by the issuer. For example a workload identity may refer to a specific instance of a running piece of software or it may refer just to a specific software version running in a particular environment, or it may refer to the role that the software performs within the system.  The scheme specific part of the URI may just be an opaque unique identifier used to look up the additional identity information in another system. Some examples of these concepts are given below:<a href="#section-4.2-1" class="pilcrow">¶</a></p>
-<ul class="normal">
-<li class="normal" id="section-4.2-2.1">
-            <p id="section-4.2-2.1.1">Opaque identifier<a href="#section-4.2-2.1.1" class="pilcrow">¶</a></p>
-</li>
-        </ul>
-<div class="alignLeft art-text artwork" id="section-4.2-3">
-<pre>
-spiffe://prod.trust.domain/89a6ec51-f877-44c0-9501-b213597f2d1d
-</pre><a href="#section-4.2-3" class="pilcrow">¶</a>
-</div>
-<ul class="normal">
-<li class="normal" id="section-4.2-4.1">
-            <p id="section-4.2-4.1.1">Application role<a href="#section-4.2-4.1.1" class="pilcrow">¶</a></p>
-</li>
-        </ul>
-<div class="alignLeft art-text artwork" id="section-4.2-5">
-<pre>
-spiffe://prod.trust.domain/ns/prod-01/sa/foo-service
-</pre><a href="#section-4.2-5" class="pilcrow">¶</a>
-</div>
+<p id="section-4.2-1">The format and semantics of the scheme-specific part of the URI are determined by the issuer within the trust domain. The issuer defines the granularity at which identities are assigned.<a href="#section-4.2-1" class="pilcrow">¶</a></p>
+<p id="section-4.2-2">A Workload Identifier <span class="bcp14">MAY</span> represent a specific workload instance, or a logical workload consisting of multiple instances that share the same identity within the trust domain.<a href="#section-4.2-2" class="pilcrow">¶</a></p>
+<p id="section-4.2-3">Multiple instances <span class="bcp14">MAY</span> share the same Workload Identifier when they are intended to be treated as the same workload for the purpose of authentication, authorization, and auditing.<a href="#section-4.2-3" class="pilcrow">¶</a></p>
+<p id="section-4.2-4">The scheme-specific part of the URI <span class="bcp14">MAY</span> be an opaque value that is only meaningful to the issuing authority, or it <span class="bcp14">MAY</span> encode structured information used within the trust domain.<a href="#section-4.2-4" class="pilcrow">¶</a></p>
+<p id="section-4.2-5">Some examples of these concepts are given below:<a href="#section-4.2-5" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-4.2-6.1">
-            <p id="section-4.2-6.1.1">Specific instance of application role<a href="#section-4.2-6.1.1" class="pilcrow">¶</a></p>
+            <p id="section-4.2-6.1.1">Opaque identifier<a href="#section-4.2-6.1.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 <div class="alignLeft art-text artwork" id="section-4.2-7">
 <pre>
-spiffe://prod.trust.domain/ns/prod-01/sa/foo-service/iid-1f814646-87b5-4e26-bb55-1d13caccdd8d
+spiffe://prod.trust.domain/89a6ec51-f877-44c0-9501-b213597f2d1d
 </pre><a href="#section-4.2-7" class="pilcrow">¶</a>
 </div>
 <ul class="normal">
 <li class="normal" id="section-4.2-8.1">
-            <p id="section-4.2-8.1.1">Specific code for an application role<a href="#section-4.2-8.1.1" class="pilcrow">¶</a></p>
+            <p id="section-4.2-8.1.1">Application role<a href="#section-4.2-8.1.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 <div class="alignLeft art-text artwork" id="section-4.2-9">
 <pre>
-spiffe://prod.trust.domain/foo-service/sha256/c4dbb1a06030e142cb0ed4be61421967618289a19c0c7760bdd745ac67779ca7
+spiffe://prod.trust.domain/ns/prod-01/sa/foo-service
 </pre><a href="#section-4.2-9" class="pilcrow">¶</a>
 </div>
-<p id="section-4.2-10">Other concepts may be defined within the trust domain depending on what is important in the system and what information is available when the identity is issued. A trust domain should define the scheme specific portion of the URI to meet their auditing and authorization needs.<a href="#section-4.2-10" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-4.2-10.1">
+            <p id="section-4.2-10.1.1">Specific instance of application role<a href="#section-4.2-10.1.1" class="pilcrow">¶</a></p>
+</li>
+        </ul>
+<div class="alignLeft art-text artwork" id="section-4.2-11">
+<pre>
+spiffe://prod.trust.domain/ns/prod-01/sa/foo-service/iid-1f814646-87b5-4e26-bb55-1d13caccdd8d
+</pre><a href="#section-4.2-11" class="pilcrow">¶</a>
+</div>
+<ul class="normal">
+<li class="normal" id="section-4.2-12.1">
+            <p id="section-4.2-12.1.1">Specific code for an application role<a href="#section-4.2-12.1.1" class="pilcrow">¶</a></p>
+</li>
+        </ul>
+<div class="alignLeft art-text artwork" id="section-4.2-13">
+<pre>
+spiffe://prod.trust.domain/foo-service/sha256/c4dbb1a06030e142cb0ed4be61421967618289a19c0c7760bdd745ac67779ca7
+</pre><a href="#section-4.2-13" class="pilcrow">¶</a>
+</div>
+<p id="section-4.2-14">Other concepts may be defined within the trust domain depending on what is important in the system and what information is available when the identity is issued. A trust domain should define the scheme specific portion of the URI to meet their auditing and authorization needs.<a href="#section-4.2-14" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="trust-domain-association">
@@ -1396,15 +1402,7 @@ spiffe://prod.trust.domain/foo-service/sha256/c4dbb1a06030e142cb0ed4be6142196761
         <h3 id="name-stability-and-uniqueness">
 <a href="#section-4.4" class="section-number selfRef">4.4. </a><a href="#name-stability-and-uniqueness" class="section-name selfRef">Stability and Uniqueness</a>
         </h3>
-<p id="section-4.4-1">Workload Identifiers are intended to be stable over time. An identifier assigned to a specific workload should not be reassigned to a different workload unless explicitly intended by the policies of the trust domain.<a href="#section-4.4-1" class="pilcrow">¶</a></p>
-<p id="section-4.4-2">Workload Identifiers are globally unique when the trust domain is globally unique. This is typically achieved by using a fully qualified domain name (FQDN) under organisational control.<a href="#section-4.4-2" class="pilcrow">¶</a></p>
-<p id="section-4.4-3">For example, the following contains identifiers of two distinct globally unique Workload Identifiers<a href="#section-4.4-3" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="section-4.4-4">
-<pre>
-spiffe://dev.example.com/ns/default/database/backend
-spiffe://prod.example.com/ns/default/database/backend
-</pre><a href="#section-4.4-4" class="pilcrow">¶</a>
-</div>
+<p id="section-4.4-1">Workload Identifiers are intended to be stable over time. An identifier assigned to a workload <span class="bcp14">SHOULD NOT</span> be reassigned to a different workload unless explicitly intended by the policies of the trust domain. Multiple workload instances <span class="bcp14">MAY</span> share the same Workload Identifier when they represent the same logical workload within the trust domain.<a href="#section-4.4-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="workload-identifier-scope">
@@ -1542,7 +1540,7 @@ wimse://trust.corp.example.com
 <dl class="references">
 <dt id="ARCH">[ARCH]</dt>
         <dd>
-<span class="refAuthor">Salowey, J. A.</span>, <span class="refAuthor">Rosomakho, Y.</span>, and <span class="refAuthor">H. Tschofenig</span>, <span class="refTitle">"Workload Identity in a Multi System Environment (WIMSE) Architecture"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-wimse-arch-06</span>, <time datetime="2025-09-30" class="refDate">30 September 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-wimse-arch-06">https://datatracker.ietf.org/doc/html/draft-ietf-wimse-arch-06</a>&gt;</span>. </dd>
+<span class="refAuthor">Salowey, J. A.</span>, <span class="refAuthor">Rosomakho, Y.</span>, and <span class="refAuthor">H. Tschofenig</span>, <span class="refTitle">"Workload Identity in a Multi System Environment (WIMSE) Architecture"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-wimse-arch-07</span>, <time datetime="2026-03-02" class="refDate">2 March 2026</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-wimse-arch-07">https://datatracker.ietf.org/doc/html/draft-ietf-wimse-arch-07</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="JWT">[JWT]</dt>
         <dd>
