@@ -235,7 +235,7 @@ Implementations MUST also take care to handle Workload Identifiers of the maximu
 
 ## Identifier Authenticity
 
-Workload Identifiers MUST only be considered valid when presented in a credential or token that has been cryptographically verified. An identifier received outside such a context, such as a plaintext string in a request, MUST NOT be treated as authenticated.
+Workload Identifiers MUST only be considered authenticated when presented in a credential or token that has been cryptographically verified. An identifier received outside such a context, such as a plaintext string in a request, MUST NOT be treated as authenticated.
 
 Consumers MUST verify the signature, issuer, and validity of the credential or token before considering Workload Identifier as authenticated.
 
