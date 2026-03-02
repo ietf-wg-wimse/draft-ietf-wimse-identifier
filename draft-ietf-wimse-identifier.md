@@ -56,7 +56,7 @@ In modern distributed systems, workloads such as services, applications, or cont
 
 This document defines the Workload Identifier, a URI-based {{!URI=RFC3986}} identifier intended to uniquely represent a workload within the context of an issuing authority. The identifier is designed to be stable, globally unique within a given trust domain, and suitable for use in digital credentials such as X.509 certificates , JSON Web Tokens (JWTs, {{?JWT=RFC7519}}), and other security artifacts.
 
-The Workload Identifier format is simple yet expressive. It enables organisations to define trust boundaries, delegate identity management, and identify workload instances and and logical workloads in a uniform way across service meshes, cloud environments, and on-premises infrastructure. This specification is intended to be generic and reusable beyond the context of any single system or architecture, including but not limited to the Workload Identity in Multi-System Environments (WIMSE) architecture {{?ARCH=I-D.ietf-wimse-arch}}.
+The Workload Identifier format is simple yet expressive. It enables organisations to define trust boundaries, delegate identity management, and identify workload instances and logical workloads in a uniform way across service meshes, cloud environments, and on-premises infrastructure. This specification defines the Workload Identifier used by the Workload Identity in Multi-System Environments (WIMSE) architecture {{?ARCH=I-D.ietf-wimse-arch}}. The format is defined in a general manner so that it can also be used by other systems that require stable, URI-based workload identities.
 
 The primary goals of this specification are:
 
@@ -81,7 +81,7 @@ Workload:
 
 Workload Identifier:
 
-: A URI-based identifier that uniquely represents a workload within a specific trust domain. It is intended to be included in security credentials and interpreted within the scope of an issuing authority.
+: A URI-based identifier that uniquely represents a workload within a specific trust domain. A Workload Identifier MAY refer to a logical workload consisting of multiple instances, or to a specific workload instance, depending on the policies of the trust domain that issued the identifier. The identifier is intended to be included in security credentials and interpreted within the scope of an issuing authority.
 
 Trust Domain:
 
@@ -101,11 +101,11 @@ A Workload Identifier is a URI {{URI}} that uniquely identifies a workload. It e
 
 The identifier is designed to be stable and suitable for inclusion in digital credentials such as X.509 certificates and security tokens. This section defines the format, structure, and associated requirements for Workload Identifiers.
 
-## URI Requirements
+## URI Requirements {#uri-requirements}
 
 A Workload Identifier MUST be an absolute URI, as defined in {{Section 4.3 of URI}}. In addition the URI MUST include a non-empty authority component that identifies the trust domain within which the identifier is scoped.
 
-The scheme and scheme-specific syntax are not defined by this specification. The URI format allows different schemes (e.g., `spiffe` as defined in {{SPIFFE-ID}}, `wimse`) depending on deployment requirements.  Example identifiers:
+The scheme and scheme-specific syntax are not defined by this specification. The URI format allows different schemes (e.g., `spiffe` as defined in {{SPIFFE-ID}}, `wimse` defined in {{wimse-scheme}}) depending on deployment requirements.  Example identifiers:
 
 ~~~
 spiffe://incubation.example.org/ns/experimental/analytics/ingest
@@ -118,11 +118,17 @@ Implementations that generate, parse, or otherwise process Workload Identifiers 
 
 Individual Workload Identifier schemes MAY define additional syntax or processing requirements, provided they do not conflict with the requirements defined in this document.
 
-(Note that the wimse scheme is used as an example and is not defined in this document).
-
 ## Scheme Specific Portion
 
-The format and semantics scheme specific part of the URI that follows the identity is determined by the issuer in the trust domain. What the identity refers to is also determined by the issuer. For example a workload identity may refer to a specific instance of a running piece of software or it may refer just to a specific software version running in a particular environment, or it may refer to the role that the software performs within the system.  The scheme specific part of the URI may just be an opaque unique identifier used to look up the additional identity information in another system. Some examples of these concepts are given below:
+The format and semantics of the scheme-specific part of the URI are determined by the issuer within the trust domain. The issuer defines the granularity at which identities are assigned.
+
+A Workload Identifier MAY represent a specific workload instance, or a logical workload consisting of multiple instances that share the same identity within the trust domain.
+
+Multiple instances MAY share the same Workload Identifier when they are intended to be treated as the same workload for the purpose of authentication, authorization, and auditing.
+
+The scheme-specific part of the URI MAY be an opaque value that is only meaningful to the issuing authority, or it MAY encode structured information used within the trust domain.
+
+Some examples of these concepts are given below:
 
 * Opaque identifier
 
@@ -158,18 +164,29 @@ Workload Identifiers are interpreted in the context of the trust domain that iss
 
 Issuers within a trust domain MUST ensure uniqueness of all Workload Identifiers they assign.
 
+## The "wimse" URI Scheme {#wimse-scheme}
+
+A Workload Identifier using the `wimse` scheme has the generic form:
+
+~~~
+wimse://<trust-domain>/<path>
+~~~
+
+The URI MUST satisfy all requirements defined in {{uri-requirements}}.
+
+The structure of the path component is deployment-specific and is not interpreted by this specification.
+
+Examples:
+
+~~~
+wimse://trust.example.com/service/payment
+wimse://trust.example.com/service/payment/instance/1234
+wimse://prod.corp.example/workload/89a6ec51-f877-44c0-9501-b213597f2d1d
+~~~
+
 ## Stability and Uniqueness
 
-Workload Identifiers are intended to be stable over time. An identifier assigned to a specific workload should not be reassigned to a different workload unless explicitly intended by the policies of the trust domain.
-
-Workload Identifiers are globally unique when the trust domain is globally unique. This is typically achieved by using a fully qualified domain name (FQDN) under organisational control.
-
-For example, the following contains identifiers of two distinct globally unique Workload Identifiers
-
-~~~
-spiffe://dev.example.com/ns/default/database/backend
-spiffe://prod.example.com/ns/default/database/backend
-~~~
+Workload Identifiers are intended to be stable over time. An identifier assigned to a workload SHOULD NOT be reassigned to a different workload unless explicitly intended by the policies of the trust domain. Multiple workload instances MAY share the same Workload Identifier when they represent the same logical workload within the trust domain.
 
 ## Workload Identifier Scope
 
@@ -184,9 +201,23 @@ spiffe://prod.trust.domain
 wimse://trust.corp.example.com
 ~~~
 
+# Identifier Interpretation and Mapping
+
+Workload Identifiers are carried in credentials and tokens and are used for authentication, authorization, and auditing. However, the identifier itself does not define how a workload is reached over the network.
+
+In many deployments, workloads are accessed using external handles such as DNS names, service names, load balancer addresses, or routing paths. These handles are deployment-specific and do not necessarily match the Workload Identifier presented in credentials.
+
+To enable correct authentication decisions, implementations MUST support a deployment-defined mapping between the external handle used to access a workload and the Workload Identifier expected for that workload.
+
+This mapping is outside the scope of this specification and MAY be provided by configuration, service discovery systems, orchestration platforms, or other local policy mechanisms.
+
+Consumers MUST NOT assume that the Workload Identifier can be derived from network-layer information such as IP address, DNS name, or request path without such mapping.
+
+Deployments using Workload Identifiers with the WIMSE credential formats defined in {{!WIMSE-CREDENTIALS=I-D.ietf-wimse-workload-creds}} MUST ensure that a consistent mapping exists between workload access handles and the Workload Identifiers contained in credentials.
+
 # Usage in Credentials and Tokens
 
-Workload Identifiers are designed to be embedded in cryptographic credentials and security tokens that are used to assert the identity of workloads during authentication, authorisation, and auditing. Representation of workload identifier in commonly used formats is defined in {{!WIMSE-CREDENTIALS=I-D.ietf-wimse-workload-creds}}.
+Workload Identifiers are designed to be embedded in cryptographic credentials and security tokens that are used to assert the identity of workloads during authentication, authorisation, and auditing. Representation of workload identifier in commonly used formats is defined in {{WIMSE-CREDENTIALS}}.
 
 # Security Considerations
 
@@ -232,8 +263,33 @@ Consumers SHOULD NOT interpret Workload Identifiers using wildcard or prefix mat
 
 # IANA Considerations
 
-This document has no IANA actions.
+## URI Scheme Registration
 
+IANA is requested to register the "wimse" scheme to the "URI Schemes" registry {{?IANA-URISCHEMES=IANA.uri-schemes}}:
+
+Scheme name:
+
+: wimse
+
+Status:
+
+: permanent
+
+Applications/protocols that use this scheme name:
+
+: any application and protocol interacting with workload identifiers.
+
+Contact:
+
+: IETF Chair chair@ietf.org
+
+Change controller:
+
+: IESG iesg@ietf.org
+
+References:
+
+{{wimse-scheme}} of this document.
 
 --- back
 
