@@ -1180,7 +1180,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
                 <p id="section-toc.1-1.4.2.5.1"><a href="#section-4.5" class="auto internal xref">4.5</a>.  <a href="#name-stability-and-uniqueness" class="internal xref">Stability and Uniqueness</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.6">
-                <p id="section-toc.1-1.4.2.6.1"><a href="#section-4.6" class="auto internal xref">4.6</a>.  <a href="#name-workload-identifier-scope" class="internal xref">Workload Identifier Scope</a></p>
+                <p id="section-toc.1-1.4.2.6.1"><a href="#section-4.6" class="auto internal xref">4.6</a>.  <a href="#name-workload-identifier-origin" class="internal xref">Workload Identifier Origin</a></p>
 </li>
             </ul>
 </li>
@@ -1438,14 +1438,14 @@ wimse://prod.corp.example/workload/89a6ec51-f877-44c0-9501-b213597f2d1d
 <p id="section-4.5-1">Workload Identifiers are intended to be stable over time. An identifier assigned to a workload <span class="bcp14">SHOULD NOT</span> be reassigned to a different workload unless explicitly intended by the policies of the trust domain. Multiple workload instances <span class="bcp14">MAY</span> share the same Workload Identifier when they represent the same logical workload within the trust domain.<a href="#section-4.5-1" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="workload-identifier-scope">
+<div id="workload-identifier-origin">
 <section id="section-4.6">
-        <h3 id="name-workload-identifier-scope">
-<a href="#section-4.6" class="section-number selfRef">4.6. </a><a href="#name-workload-identifier-scope" class="section-name selfRef">Workload Identifier Scope</a>
+        <h3 id="name-workload-identifier-origin">
+<a href="#section-4.6" class="section-number selfRef">4.6. </a><a href="#name-workload-identifier-origin" class="section-name selfRef">Workload Identifier Origin</a>
         </h3>
-<p id="section-4.6-1">A Workload Identifier Scope is a specification of a namespace under which a Workload Identifier is meaningful for a given use case. A scope consists of the URI scheme and trust domain components of a Workload Identifier, omitting the path component.<a href="#section-4.6-1" class="pilcrow">¶</a></p>
-<p id="section-4.6-2">Workload Identifier Scopes serve as hints about the set of identifiers an entity may present in a particular protocol instance or usage context without revealing specific identifier.<a href="#section-4.6-2" class="pilcrow">¶</a></p>
-<p id="section-4.6-3">Examples of Workload Identifier Scopes:<a href="#section-4.6-3" class="pilcrow">¶</a></p>
+<p id="section-4.6-1">A Workload Identifier Origin is a specification of a namespace under which a Workload Identifier is meaningful for a given use case. An origin consists of the URI scheme and trust domain components of a Workload Identifier, omitting the path component.<a href="#section-4.6-1" class="pilcrow">¶</a></p>
+<p id="section-4.6-2">Workload Identifier Origins serve as hints about the set of identifiers an entity may present in a particular protocol instance or usage context without revealing specific identifier.<a href="#section-4.6-2" class="pilcrow">¶</a></p>
+<p id="section-4.6-3">Examples of Workload Identifier Origins:<a href="#section-4.6-3" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-4.6-4">
 <pre>
 spiffe://prod.trust.domain
