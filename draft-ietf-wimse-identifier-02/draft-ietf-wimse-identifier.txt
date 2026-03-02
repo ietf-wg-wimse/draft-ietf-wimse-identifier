@@ -101,6 +101,7 @@ Table of Contents
    Appendix A.  Acknowledgments
    Appendix B.  Changelog
      B.1.  since draft-ietf-wimse-identifier-00
+     B.2.  since draft-ietf-wimse-identifier-01
    Authors' Addresses
 
 1.  Introduction
@@ -533,6 +534,18 @@ B.1.  since draft-ietf-wimse-identifier-00
       reference to s2s-creds draft
 
    *  Added URI requirements
+
+B.2.  since draft-ietf-wimse-identifier-01
+
+   *  Changed the term "Scope" to "Origin"
+
+   *  Added wimse URI scheme definition
+
+   *  Added more alignement and reduced overlap with draft-ietf-wimse-
+      workload-creds
+
+   *  Clarified separation of specific workload instances and logical
+      workloads
 
 Authors' Addresses
 
