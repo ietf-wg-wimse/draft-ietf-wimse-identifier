@@ -120,10 +120,11 @@ Table of Contents
    organisations to define trust boundaries, delegate identity
    management, and reason about workloads in a uniform way across
    service meshes, cloud environments, and on-premises infrastructure.
-   This specification is intended to be generic and reusable beyond the
-   context of any single system or architecture, including but not
-   limited to the Workload Identity in Multi-System Environments (WIMSE)
-   architecture [ARCH].
+   This specification defines the Workload Identifier used by the
+   Workload Identity in Multi-System Environments (WIMSE) architecture
+   [ARCH].  The format is defined in a general manner so that it can
+   also be used by other systems that require stable, URI-based workload
+   identities.
 
    The primary goals of this specification are:
 
