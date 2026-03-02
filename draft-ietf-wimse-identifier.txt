@@ -121,13 +121,13 @@ Table of Contents
 
    The Workload Identifier format is simple yet expressive.  It enables
    organisations to define trust boundaries, delegate identity
-   management, and reason about workloads in a uniform way across
-   service meshes, cloud environments, and on-premises infrastructure.
-   This specification defines the Workload Identifier used by the
-   Workload Identity in Multi-System Environments (WIMSE) architecture
-   [ARCH].  The format is defined in a general manner so that it can
-   also be used by other systems that require stable, URI-based workload
-   identities.
+   management, and identify workload instances and logical workloads in
+   a uniform way across service meshes, cloud environments, and on-
+   premises infrastructure.  This specification defines the Workload
+   Identifier used by the Workload Identity in Multi-System Environments
+   (WIMSE) architecture [ARCH].  The format is defined in a general
+   manner so that it can also be used by other systems that require
+   stable, URI-based workload identities.
 
    The primary goals of this specification are:
 
