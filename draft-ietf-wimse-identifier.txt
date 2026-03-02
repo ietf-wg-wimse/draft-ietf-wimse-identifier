@@ -83,18 +83,19 @@ Table of Contents
      4.3.  Trust Domain Association
      4.4.  Stability and Uniqueness
      4.5.  Workload Identifier Scope
-   5.  Usage in Credentials and Tokens
-   6.  Security Considerations
-     6.1.  URI Parsing and Processing Considerations
-     6.2.  Identifier Authenticity
-     6.3.  Trust Domain Validation
-     6.4.  Identifier Reuse and Collision
-     6.5.  Information Disclosure
-     6.6.  Wildcard and Prefix Matching
-   7.  IANA Considerations
-   8.  References
-     8.1.  Normative References
-     8.2.  Informative References
+   5.  Identifier Interpretation and Mapping
+   6.  Usage in Credentials and Tokens
+   7.  Security Considerations
+     7.1.  URI Parsing and Processing Considerations
+     7.2.  Identifier Authenticity
+     7.3.  Trust Domain Validation
+     7.4.  Identifier Reuse and Collision
+     7.5.  Information Disclosure
+     7.6.  Wildcard and Prefix Matching
+   8.  IANA Considerations
+   9.  References
+     9.1.  Normative References
+     9.2.  Informative References
    Appendix A.  Acknowledgments
    Appendix B.  Changelog
      B.1.  since draft-ietf-wimse-identifier-00
@@ -305,7 +306,37 @@ spiffe://prod.trust.domain/foo-service/sha256/c4dbb1a06030e142cb0ed4be6142196761
    spiffe://prod.trust.domain
    wimse://trust.corp.example.com
 
-5.  Usage in Credentials and Tokens
+5.  Identifier Interpretation and Mapping
+
+   Workload Identifiers are carried in credentials and tokens and are
+   used for authentication, authorization, and auditing.  However, the
+   identifier itself does not define how a workload is reached over the
+   network.
+
+   In many deployments, workloads are accessed using external handles
+   such as DNS names, service names, load balancer addresses, or routing
+   paths.  These handles are deployment-specific and do not necessarily
+   match the Workload Identifier presented in credentials.
+
+   To enable correct authentication decisions, implementations MUST
+   support a deployment-defined mapping between the external handle used
+   to access a workload and the Workload Identifier expected for that
+   workload.
+
+   This mapping is outside the scope of this specification and MAY be
+   provided by configuration, service discovery systems, orchestration
+   platforms, or other local policy mechanisms.
+
+   Consumers MUST NOT assume that the Workload Identifier can be derived
+   from network-layer information such as IP address, DNS name, or
+   request path without such mapping.
+
+   Deployments using Workload Identifiers with the WIMSE credential
+   formats defined in [WIMSE-CREDENTIALS] MUST ensure that a consistent
+   mapping exists between workload access handles and the Workload
+   Identifiers contained in credentials.
+
+6.  Usage in Credentials and Tokens
 
    Workload Identifiers are designed to be embedded in cryptographic
    credentials and security tokens that are used to assert the identity
@@ -313,7 +344,7 @@ spiffe://prod.trust.domain/foo-service/sha256/c4dbb1a06030e142cb0ed4be6142196761
    Representation of workload identifier in commonly used formats is
    defined in [WIMSE-CREDENTIALS].
 
-6.  Security Considerations
+7.  Security Considerations
 
    The Workload Identifier is intended to be used as a stable,
    verifiable identity for workloads.  Its use in cryptographic
@@ -321,7 +352,7 @@ spiffe://prod.trust.domain/foo-service/sha256/c4dbb1a06030e142cb0ed4be6142196761
    and misinterpretation.  This section outlines security considerations
    for issuers, consumers, and system designers.
 
-6.1.  URI Parsing and Processing Considerations
+7.1.  URI Parsing and Processing Considerations
 
    Workload Identifiers are encoded as URIs and therefore rely on
    correct and secure URI parsing.  Implementations MUST apply a
@@ -343,7 +374,7 @@ spiffe://prod.trust.domain/foo-service/sha256/c4dbb1a06030e142cb0ed4be6142196761
    identifiers that exceed implementation-defined constraints,
    consistent with the length requirements in this document.
 
-6.2.  Identifier Authenticity
+7.2.  Identifier Authenticity
 
    Workload Identifiers MUST only be considered valid when presented in
    a credential or token that has been cryptographically verified.  An
@@ -354,7 +385,7 @@ spiffe://prod.trust.domain/foo-service/sha256/c4dbb1a06030e142cb0ed4be6142196761
    credential or token before considering Workload Identifier as
    authenticated.
 
-6.3.  Trust Domain Validation
+7.3.  Trust Domain Validation
 
    Consumers MUST validate that the trust domain in the Workload
    Identifier matches an expected or explicitly trusted domain.  Failure
@@ -364,7 +395,7 @@ spiffe://prod.trust.domain/foo-service/sha256/c4dbb1a06030e142cb0ed4be6142196761
    Where appropriate, consumers should maintain an allowlist of trusted
    domains or trusted issuing authorities.
 
-6.4.  Identifier Reuse and Collision
+7.4.  Identifier Reuse and Collision
 
    Issuers SHOULD ensure that Workload Identifiers are not reused across
    different workloads unless such reuse is intentional and well-scoped.
@@ -374,7 +405,7 @@ spiffe://prod.trust.domain/foo-service/sha256/c4dbb1a06030e142cb0ed4be6142196761
    Consumers SHOULD assume that identifiers are permanent within their
    domain of interpretation and treat unexpected reuse with suspicion.
 
-6.5.  Information Disclosure
+7.5.  Information Disclosure
 
    Because Workload Identifiers may encode topological or semantic
    information, they may inadvertently reveal deployment details.
@@ -385,20 +416,20 @@ spiffe://prod.trust.domain/foo-service/sha256/c4dbb1a06030e142cb0ed4be6142196761
    avoid exposing internal implementation details unless necessary for
    interoperation.
 
-6.6.  Wildcard and Prefix Matching
+7.6.  Wildcard and Prefix Matching
 
    Consumers SHOULD NOT interpret Workload Identifiers using wildcard or
    prefix matching unless explicitly specified by policy.  For example,
    treating all identifiers under prefix of spiffe://example.org/ns/db/
    as equivalent may lead to incorrect authorisation.
 
-7.  IANA Considerations
+8.  IANA Considerations
 
    This document has no IANA actions.
 
-8.  References
+9.  References
 
-8.1.  Normative References
+9.1.  Normative References
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
@@ -422,7 +453,7 @@ spiffe://prod.trust.domain/foo-service/sha256/c4dbb1a06030e142cb0ed4be6142196761
               <https://datatracker.ietf.org/doc/html/draft-ietf-wimse-
               workload-creds-00>.
 
-8.2.  Informative References
+9.2.  Informative References
 
    [ARCH]     Salowey, J. A., Rosomakho, Y., and H. Tschofenig,
               "Workload Identity in a Multi System Environment (WIMSE)
