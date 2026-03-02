@@ -308,3 +308,10 @@ Authors would like to thank Evan Gilman for his review of the initial text of th
 * Defined Workload Identifier Scope
 * Replaced specifics of usage in credentials and tokens with a reference to s2s-creds draft
 * Added URI requirements
+
+## since draft-ietf-wimse-identifier-01
+
+* Changed the term "Scope" to "Origin"
+* Added wimse URI scheme definition
+* Added more alignement and reduced overlap with draft-ietf-wimse-workload-creds
+* Clarified separation of specific workload instances and logical workloads
