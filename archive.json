@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-01-15T01:40:20.916202+00:00",
+  "timestamp": "2026-03-03T02:03:24.470489+00:00",
   "repo": "ietf-wg-wimse/draft-ietf-wimse-identifier",
   "labels": [
     {
@@ -80,9 +80,17 @@
       "labels": [],
       "body": "The format of the credentials is discussed in the s2s spec.  My initial thoughts are that the definition of how the identifier fits in a credential should remain there as it talks about how the identifier is used in that credential.",
       "createdAt": "2025-05-28T16:13:01Z",
-      "updatedAt": "2025-11-25T17:40:30Z",
+      "updatedAt": "2026-03-01T20:34:54Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "yaroslavros",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I think current text does not go too much into details and this issue can be closed.\n\n> Workload Identifiers are designed to be embedded in cryptographic credentials and security tokens that are used to assert the identity of workloads during authentication, authorisation, and auditing. Representation of workload identifier in commonly used formats is defined in {{!WIMSE-CREDENTIALS=I-D.ietf-wimse-workload-creds}}.",
+          "createdAt": "2026-03-01T20:34:54Z",
+          "updatedAt": "2026-03-01T20:34:54Z"
+        }
+      ]
     },
     {
       "number": 3,
@@ -145,7 +153,7 @@
       "id": "I_kwDOOowVDc6-VPa-",
       "title": "Maximum URI length",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/9",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -154,16 +162,24 @@
       "labels": [],
       "body": "SPIFFE limits maximum ID length to 2048. Should we introduce a similar limitation?",
       "createdAt": "2025-07-01T17:14:38Z",
-      "updatedAt": "2025-11-25T17:41:18Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2026-03-01T21:42:17Z",
+      "closedAt": "2026-03-01T21:42:17Z",
+      "comments": [
+        {
+          "author": "yaroslavros",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Resolved in https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/27",
+          "createdAt": "2026-03-01T20:35:47Z",
+          "updatedAt": "2026-03-01T20:35:47Z"
+        }
+      ]
     },
     {
       "number": 10,
       "id": "I_kwDOOowVDc6-VP2f",
       "title": "Non-ascii characters and percent encoding",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/10",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -172,8 +188,8 @@
       "labels": [],
       "body": "To reduce security risks of mis-parsing URIs SPIFFE prohibits usage of non-ascii characters and percent encoding in IDs. Should we do the same here?",
       "createdAt": "2025-07-01T17:15:25Z",
-      "updatedAt": "2025-11-25T17:41:23Z",
-      "closedAt": null,
+      "updatedAt": "2026-03-01T21:42:27Z",
+      "closedAt": "2026-03-01T21:42:27Z",
       "comments": []
     },
     {
@@ -208,7 +224,7 @@
       "labels": [],
       "body": "The document (possibly in Sec. 4.4) should be more explicit about what the identifier denotes. For example, if I have a service running in 2 regions with 4 instances in each one, would I have 1 identifier for all of them (I think yes).\n\n",
       "createdAt": "2025-07-04T12:08:51Z",
-      "updatedAt": "2025-11-25T17:42:17Z",
+      "updatedAt": "2026-03-01T20:50:13Z",
       "closedAt": null,
       "comments": [
         {
@@ -217,6 +233,13 @@
           "body": "One more on uniqueness. This paragraph is simply incorrect:\n> Workload Identifiers are globally unique when the trust domain is globally unique. This is typically achieved by using a fully qualified domain name (FQDN) under organisational control.\n\nAn FQDN is used only for trust domains, if the whole Identifier is to be unique, the path portion needs to be managed for uniqueness by the organization.\n\nAlso, I'm not quite sure the IETF does UK English spelling...",
           "createdAt": "2025-07-31T13:36:55Z",
           "updatedAt": "2025-07-31T13:36:55Z"
+        },
+        {
+          "author": "yaroslavros",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@yaronf please confirm if https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/42 addresses this.",
+          "createdAt": "2026-03-01T20:50:13Z",
+          "updatedAt": "2026-03-01T20:50:13Z"
         }
       ]
     },
@@ -234,9 +257,17 @@
       "labels": [],
       "body": "\"This specification is intended to be generic and reusable beyond the context of any single system or architecture, including but not limited to the Workload Identity in Multi-System Environments (WIMSE) architecture [[ARCH](https://www.ietf.org/archive/id/draft-rosomakho-wimse-identifier-00.html#ARCH)]\" - I think it's better to focus on WIMSE.\n\n",
       "createdAt": "2025-07-04T12:08:53Z",
-      "updatedAt": "2025-11-25T17:42:50Z",
+      "updatedAt": "2026-03-01T20:55:14Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "yaroslavros",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@yaronf is this better https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/43 ?\nI think there is value to allowing non-WIMSE use",
+          "createdAt": "2026-03-01T20:55:14Z",
+          "updatedAt": "2026-03-01T20:55:14Z"
+        }
+      ]
     },
     {
       "number": 14,
@@ -250,9 +281,17 @@
       "labels": [],
       "body": "We have been debating in S2S how these identifiers can be validated, resulting in [a new section](https://ietf-wg-wimse.github.io/draft-ietf-wimse-s2s-protocol/draft-ietf-wimse-s2s-protocol.html#name-workload-identifiers-and-au). Do we want to extend the current document to describe how external handles (the hostname+path used to call into a service) can be mapped into WL identifiers? This seems to be critical in practice.\n\n",
       "createdAt": "2025-07-04T12:08:54Z",
-      "updatedAt": "2025-07-04T12:08:54Z",
+      "updatedAt": "2026-03-01T21:02:49Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "yaroslavros",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Please check https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/44",
+          "createdAt": "2026-03-01T21:02:49Z",
+          "updatedAt": "2026-03-01T21:02:49Z"
+        }
+      ]
     },
     {
       "number": 15,
@@ -266,7 +305,7 @@
       "labels": [],
       "body": "This is an ongoing discussion, and IMO someone needs to make the jump and define a \"wimse\" scheme. Why not here? See also [this issue](https://github.com/ietf-wg-wimse/draft-ietf-wimse-s2s-protocol/issues/123).\n\n",
       "createdAt": "2025-07-04T12:08:56Z",
-      "updatedAt": "2025-10-01T08:35:38Z",
+      "updatedAt": "2026-03-01T21:41:51Z",
       "closedAt": null,
       "comments": [
         {
@@ -282,6 +321,13 @@
           "body": "In the meantime we defined it in S2S, and the WG seems to be happy with it (IIRC we brought it up in Madrid). Still possible to move it to this document once it gets adopted.",
           "createdAt": "2025-10-01T08:35:38Z",
           "updatedAt": "2025-10-01T08:35:38Z"
+        },
+        {
+          "author": "yaroslavros",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@yaronf please check https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/45",
+          "createdAt": "2026-03-01T21:41:51Z",
+          "updatedAt": "2026-03-01T21:41:51Z"
         }
       ]
     },
@@ -290,15 +336,15 @@
       "id": "I_kwDOOowVDc6-4kz-",
       "title": "Scheme specific portion - versions?",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/16",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "yaronf",
       "authorAssociation": "NONE",
       "assignees": [],
       "labels": [],
       "body": "Does it ever make sense for the WL identifier to refer to a specific version? That  would make it nearly unusable for defining authorization policies.\n\n",
       "createdAt": "2025-07-04T12:08:57Z",
-      "updatedAt": "2025-09-30T12:16:00Z",
-      "closedAt": null,
+      "updatedAt": "2026-03-01T21:04:22Z",
+      "closedAt": "2026-03-01T21:04:22Z",
       "comments": [
         {
           "author": "yaroslavros",
@@ -314,15 +360,15 @@
       "id": "I_kwDOOowVDc6-4k5S",
       "title": "Editorial",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/17",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "yaronf",
       "authorAssociation": "NONE",
       "assignees": [],
       "labels": [],
       "body": "Typo: foo-servce\n\n",
       "createdAt": "2025-07-04T12:08:58Z",
-      "updatedAt": "2025-09-30T12:12:21Z",
-      "closedAt": null,
+      "updatedAt": "2026-03-01T21:06:08Z",
+      "closedAt": "2026-03-01T21:06:08Z",
       "comments": [
         {
           "author": "yaroslavros",
@@ -338,15 +384,15 @@
       "id": "I_kwDOOowVDc6-4k6M",
       "title": "Usage in credentials and tokens",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/18",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "yaronf",
       "authorAssociation": "NONE",
       "assignees": [],
       "labels": [],
       "body": "Arguably this is out of scope for this document, and should be defined by the relevant protocols.\n\n",
       "createdAt": "2025-07-04T12:09:00Z",
-      "updatedAt": "2025-10-01T08:30:55Z",
-      "closedAt": null,
+      "updatedAt": "2026-03-01T21:05:17Z",
+      "closedAt": "2026-03-01T21:05:17Z",
       "comments": [
         {
           "author": "yaroslavros",
@@ -369,15 +415,15 @@
       "id": "I_kwDOOowVDc6-4k7M",
       "title": "JSON Web Tokens",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/19",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "yaronf",
       "authorAssociation": "NONE",
       "assignees": [],
       "labels": [],
       "body": "The identifier is also usable in the `aud` claim. Also we might end up using [Subject Identifiers](https://datatracker.ietf.org/doc/rfc9493/). Again, this whole usage section IMO should not belong in this document.\n\n",
       "createdAt": "2025-07-04T12:09:01Z",
-      "updatedAt": "2025-09-30T12:09:05Z",
-      "closedAt": null,
+      "updatedAt": "2026-03-01T21:05:44Z",
+      "closedAt": "2026-03-01T21:05:44Z",
       "comments": [
         {
           "author": "yaroslavros",
@@ -393,7 +439,7 @@
       "id": "I_kwDOOowVDc7O0EqE",
       "title": "Which SPIFFE requirements should we take?",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/22",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -402,8 +448,8 @@
       "labels": [],
       "body": "[SPIFFE-ID](https://github.com/spiffe/spiffe/blob/main/standards/SPIFFE-ID.md) has the following restrictions:\n\n- host MUST NOT be empty\n- userinfo and port MUST be empty\n- host MUST be lowercase\n- host MUST contain only [a-z0-9.-_], path may contain uppercase A-Z on top of that\n- host and path MUST not contain percent-encoded characters\n- path MUST NOT include trailing /\n- path MUST not include relative modifiers\n- URI length up to 2048 MUST be supported and SHOULD not exceed that limit\n\nObviously, we are not going to relax SPIFFE specific requirements, but we don't have to inherit exact same limitations which could be too limiting for other schemes. For example, allowing IPv4 addresses in host portion, but not IPv6 seems wrong.\n\nI would propose to:\n\n- let schemes define their own path restriction\n- inherit URI length requirement and recommendation\n- add host MUST NOT be empty and userinfo and port MUST be empty\n- relax requirements to host compared to SPIFFE - allow any valid non-empty hostname\n\nAnd add security considerations about percent-encoding and equivalency matching of URIs.\n\n@jsalowey what do you think? Should we bring this up at the architecture interim?",
       "createdAt": "2025-09-30T14:22:30Z",
-      "updatedAt": "2025-11-25T17:45:18Z",
-      "closedAt": null,
+      "updatedAt": "2026-03-01T21:42:47Z",
+      "closedAt": "2026-03-01T21:42:47Z",
       "comments": []
     },
     {
@@ -418,9 +464,17 @@
       "labels": [],
       "body": "Given the following statement\n> The scheme and scheme specific part are not defined by this specification.\n\nIt seems like this document is not defining much by saying that the semantics are defined by the scheme.",
       "createdAt": "2025-11-06T21:07:19Z",
-      "updatedAt": "2025-11-06T21:07:19Z",
+      "updatedAt": "2026-03-01T21:41:28Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "yaroslavros",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Is there a reason to explicitly disallow generic URI schemes?",
+          "createdAt": "2026-03-01T21:41:28Z",
+          "updatedAt": "2026-03-01T21:41:28Z"
+        }
+      ]
     },
     {
       "number": 25,
@@ -434,9 +488,17 @@
       "labels": [],
       "body": "I worry that defining a `wimse` scheme without any semantics will create multiple teams defining their own semantics for the scheme likely resulting in mutually exclusive semantics.",
       "createdAt": "2025-11-06T21:09:56Z",
-      "updatedAt": "2025-11-06T21:09:56Z",
+      "updatedAt": "2026-03-01T21:40:39Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "yaroslavros",
+          "authorAssociation": "COLLABORATOR",
+          "body": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/45",
+          "createdAt": "2026-03-01T21:40:39Z",
+          "updatedAt": "2026-03-01T21:40:39Z"
+        }
+      ]
     },
     {
       "number": 31,
@@ -450,9 +512,17 @@
       "labels": [],
       "body": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/blob/960857562f1d79be5395446d6b6f8979d4d36789/draft-ietf-wimse-identifier.md?plain=1#L59\n\nI don't think Workload Identifiers enable you to \"reason about workloads\". Suggest removing that part. ",
       "createdAt": "2026-01-13T23:03:45Z",
-      "updatedAt": "2026-01-13T23:03:45Z",
+      "updatedAt": "2026-03-01T21:49:30Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "yaroslavros",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I agree that \"reason about\" is very vague. What about https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/46?",
+          "createdAt": "2026-03-01T21:49:30Z",
+          "updatedAt": "2026-03-01T21:49:30Z"
+        }
+      ]
     },
     {
       "number": 32,
@@ -466,9 +536,17 @@
       "labels": [],
       "body": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/blob/960857562f1d79be5395446d6b6f8979d4d36789/draft-ietf-wimse-identifier.md?plain=1#L121\n\nThe wimse scheme is defined in the workload credentials draft. ",
       "createdAt": "2026-01-14T01:04:40Z",
-      "updatedAt": "2026-01-14T01:04:40Z",
+      "updatedAt": "2026-03-01T21:43:16Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "yaroslavros",
+          "authorAssociation": "COLLABORATOR",
+          "body": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/45",
+          "createdAt": "2026-03-01T21:43:16Z",
+          "updatedAt": "2026-03-01T21:43:16Z"
+        }
+      ]
     },
     {
       "number": 33,
@@ -578,25 +656,48 @@
       "labels": [],
       "body": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/blob/960857562f1d79be5395446d6b6f8979d4d36789/draft-ietf-wimse-identifier.md?plain=1#L207\n\nI don't think \"valid\" is the right term here - maybe just say \"authenticated\". We can for example encounter workload identifiers without cryptographic verifiers in log messages. ",
       "createdAt": "2026-01-14T01:36:21Z",
-      "updatedAt": "2026-01-14T01:36:21Z",
+      "updatedAt": "2026-03-01T21:55:28Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "yaroslavros",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Good point. https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/47",
+          "createdAt": "2026-03-01T21:55:28Z",
+          "updatedAt": "2026-03-01T21:55:28Z"
+        }
+      ]
     },
     {
       "number": 40,
       "id": "I_kwDOOowVDc7jKf5X",
       "title": "Wimse Identifiers should not specify credential formats",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/40",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "fandreas",
       "authorAssociation": "NONE",
       "assignees": [],
       "labels": [],
       "body": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/blob/960857562f1d79be5395446d6b6f8979d4d36789/draft-ietf-wimse-identifier.md?plain=1#L209\n\nThis sentence is really getting into specifics that are outside of what has been defined in this document and is more part of the credentials document - remove or rephrase accordingly (unless you want to tie the document more explicitly to the credentials document). ",
       "createdAt": "2026-01-14T01:38:37Z",
-      "updatedAt": "2026-01-14T01:38:37Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2026-03-02T15:05:28Z",
+      "closedAt": "2026-03-02T15:05:27Z",
+      "comments": [
+        {
+          "author": "yaroslavros",
+          "authorAssociation": "COLLABORATOR",
+          "body": "What do you think of https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/48 ?",
+          "createdAt": "2026-03-01T21:58:49Z",
+          "updatedAt": "2026-03-01T21:58:49Z"
+        },
+        {
+          "author": "fandreas",
+          "authorAssociation": "NONE",
+          "body": "Seems reasonable. ",
+          "createdAt": "2026-03-02T15:05:27Z",
+          "updatedAt": "2026-03-02T15:05:27Z"
+        }
+      ]
     },
     {
       "number": 41,
@@ -1042,6 +1143,342 @@
           "body": "",
           "createdAt": "2025-12-29T15:40:16Z",
           "updatedAt": "2025-12-29T15:40:16Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 42,
+      "id": "PR_kwDOOowVDc7HLfdG",
+      "title": "Clarified instance and service identifiers",
+      "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/42",
+      "state": "MERGED",
+      "author": "yaroslavros",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "To address https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/12",
+      "createdAt": "2026-03-01T20:49:33Z",
+      "updatedAt": "2026-03-02T17:38:31Z",
+      "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
+      "baseRefName": "main",
+      "baseRefOid": "960857562f1d79be5395446d6b6f8979d4d36789",
+      "headRepository": "yaroslavros/draft-ietf-wimse-identifier",
+      "headRefName": "instances-service",
+      "headRefOid": "e029ee5e94cdcfdf8d70dc5ce00efb17ed2dc804",
+      "closedAt": "2026-03-02T17:38:31Z",
+      "mergedAt": "2026-03-02T17:38:31Z",
+      "mergedBy": "yaroslavros",
+      "mergeCommit": {
+        "oid": "a33d831f8265b20050b03c97400ddd25f0c995ff"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOOowVDc7nIA3K",
+          "commit": {
+            "abbreviatedOid": "e029ee5"
+          },
+          "author": "jsalowey",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-03-02T17:32:19Z",
+          "updatedAt": "2026-03-02T17:32:19Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 43,
+      "id": "PR_kwDOOowVDc7HLhNF",
+      "title": "Focus on WIMSE, but allow other use cases",
+      "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/43",
+      "state": "MERGED",
+      "author": "yaroslavros",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "To address https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/13",
+      "createdAt": "2026-03-01T20:54:39Z",
+      "updatedAt": "2026-03-02T17:38:44Z",
+      "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
+      "baseRefName": "main",
+      "baseRefOid": "960857562f1d79be5395446d6b6f8979d4d36789",
+      "headRepository": "yaroslavros/draft-ietf-wimse-identifier",
+      "headRefName": "wimse-focus",
+      "headRefOid": "6773f3b15b54928a42b842c388fe1bfa978ba53f",
+      "closedAt": "2026-03-02T17:38:44Z",
+      "mergedAt": "2026-03-02T17:38:44Z",
+      "mergedBy": "yaroslavros",
+      "mergeCommit": {
+        "oid": "686e86d1ce4fdaf2c55d6db4eee6f39ed895d129"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOOowVDc7nIB_A",
+          "commit": {
+            "abbreviatedOid": "6773f3b"
+          },
+          "author": "jsalowey",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-03-02T17:32:58Z",
+          "updatedAt": "2026-03-02T17:32:58Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 44,
+      "id": "PR_kwDOOowVDc7HLkC5",
+      "title": "Added Identifier Interpretation and Mapping section",
+      "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/44",
+      "state": "MERGED",
+      "author": "yaroslavros",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "To address https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/14",
+      "createdAt": "2026-03-01T21:02:27Z",
+      "updatedAt": "2026-03-02T17:41:20Z",
+      "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
+      "baseRefName": "main",
+      "baseRefOid": "960857562f1d79be5395446d6b6f8979d4d36789",
+      "headRepository": "yaroslavros/draft-ietf-wimse-identifier",
+      "headRefName": "mapping",
+      "headRefOid": "6d81047daa3c757db12d3c57f2e8d5ecdedc7e77",
+      "closedAt": "2026-03-02T17:41:20Z",
+      "mergedAt": "2026-03-02T17:41:20Z",
+      "mergedBy": "yaroslavros",
+      "mergeCommit": {
+        "oid": "3f1f2306d5f80b920a8ea076c9193c78a4e5ef87"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOOowVDc7nIPra",
+          "commit": {
+            "abbreviatedOid": "6d81047"
+          },
+          "author": "jsalowey",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-03-02T17:41:12Z",
+          "updatedAt": "2026-03-02T17:41:12Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 45,
+      "id": "PR_kwDOOowVDc7HLysN",
+      "title": "Initial definition of wimse scheme",
+      "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/45",
+      "state": "MERGED",
+      "author": "yaroslavros",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-03-01T21:40:15Z",
+      "updatedAt": "2026-03-02T17:42:24Z",
+      "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
+      "baseRefName": "main",
+      "baseRefOid": "960857562f1d79be5395446d6b6f8979d4d36789",
+      "headRepository": "yaroslavros/draft-ietf-wimse-identifier",
+      "headRefName": "wimse-scheme",
+      "headRefOid": "396b3a354d251234fd06e6b5dd288302d3c0f1be",
+      "closedAt": "2026-03-02T17:42:24Z",
+      "mergedAt": "2026-03-02T17:42:24Z",
+      "mergedBy": "yaroslavros",
+      "mergeCommit": {
+        "oid": "309ffda214f3e2853e8eb1d03c6000bc8f1ea831"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOOowVDc7nIQch",
+          "commit": {
+            "abbreviatedOid": "396b3a3"
+          },
+          "author": "jsalowey",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-03-02T17:41:51Z",
+          "updatedAt": "2026-03-02T17:41:51Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 46,
+      "id": "PR_kwDOOowVDc7HL2Ww",
+      "title": "Removed reason",
+      "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/46",
+      "state": "MERGED",
+      "author": "yaroslavros",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-03-01T21:48:57Z",
+      "updatedAt": "2026-03-02T17:44:23Z",
+      "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
+      "baseRefName": "main",
+      "baseRefOid": "309ffda214f3e2853e8eb1d03c6000bc8f1ea831",
+      "headRepository": "yaroslavros/draft-ietf-wimse-identifier",
+      "headRefName": "reason",
+      "headRefOid": "dfbbd69828f32dcc8f1da8dca60a8d4e74ae9d25",
+      "closedAt": "2026-03-02T17:44:23Z",
+      "mergedAt": "2026-03-02T17:44:22Z",
+      "mergedBy": "yaroslavros",
+      "mergeCommit": {
+        "oid": "086ac7a4d3bea6783460217df71fc4dfbd8facb0"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOOowVDc7nIRSb",
+          "commit": {
+            "abbreviatedOid": "afb6704"
+          },
+          "author": "jsalowey",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-03-02T17:42:33Z",
+          "updatedAt": "2026-03-02T17:42:33Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 47,
+      "id": "PR_kwDOOowVDc7HL5RV",
+      "title": "Authenticated workload identifier",
+      "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/47",
+      "state": "MERGED",
+      "author": "yaroslavros",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "To address https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/39",
+      "createdAt": "2026-03-01T21:55:13Z",
+      "updatedAt": "2026-03-02T17:44:34Z",
+      "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
+      "baseRefName": "main",
+      "baseRefOid": "960857562f1d79be5395446d6b6f8979d4d36789",
+      "headRepository": "yaroslavros/draft-ietf-wimse-identifier",
+      "headRefName": "authenticated",
+      "headRefOid": "77f98c5fb11b76b2945b8bc9fbfa94f5a579b344",
+      "closedAt": "2026-03-02T17:44:34Z",
+      "mergedAt": "2026-03-02T17:44:34Z",
+      "mergedBy": "yaroslavros",
+      "mergeCommit": {
+        "oid": "a58ca5c1e8b54892fd5555e09d205f44e47723b6"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOOowVDc7nISKW",
+          "commit": {
+            "abbreviatedOid": "77f98c5"
+          },
+          "author": "jsalowey",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-03-02T17:43:14Z",
+          "updatedAt": "2026-03-02T17:43:14Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 48,
+      "id": "PR_kwDOOowVDc7HL6-4",
+      "title": "Reduce specifics of authentication",
+      "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/48",
+      "state": "MERGED",
+      "author": "yaroslavros",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "To address https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/40",
+      "createdAt": "2026-03-01T21:58:38Z",
+      "updatedAt": "2026-03-02T17:44:47Z",
+      "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
+      "baseRefName": "main",
+      "baseRefOid": "960857562f1d79be5395446d6b6f8979d4d36789",
+      "headRepository": "yaroslavros/draft-ietf-wimse-identifier",
+      "headRefName": "authenticated2",
+      "headRefOid": "0c7b45ad6a1fd9266ff6077e21026ed6dc6b9e42",
+      "closedAt": "2026-03-02T17:44:47Z",
+      "mergedAt": "2026-03-02T17:44:47Z",
+      "mergedBy": "yaroslavros",
+      "mergeCommit": {
+        "oid": "0fbb136288b2a216702c7888a9a6e8cfd5a1ac32"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOOowVDc7nISu_",
+          "commit": {
+            "abbreviatedOid": "0c7b45a"
+          },
+          "author": "jsalowey",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-03-02T17:43:42Z",
+          "updatedAt": "2026-03-02T17:43:42Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 49,
+      "id": "PR_kwDOOowVDc7HL9Y8",
+      "title": "Renamed Scope to Origin",
+      "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/49",
+      "state": "MERGED",
+      "author": "yaroslavros",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-03-01T22:02:59Z",
+      "updatedAt": "2026-03-02T17:44:58Z",
+      "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
+      "baseRefName": "main",
+      "baseRefOid": "960857562f1d79be5395446d6b6f8979d4d36789",
+      "headRepository": "yaroslavros/draft-ietf-wimse-identifier",
+      "headRefName": "origin",
+      "headRefOid": "81371b92cd613371c811591172f33b868e56843a",
+      "closedAt": "2026-03-02T17:44:58Z",
+      "mergedAt": "2026-03-02T17:44:58Z",
+      "mergedBy": "yaroslavros",
+      "mergeCommit": {
+        "oid": "7442043ede4bd3cb935e3f4e9c2915701419578c"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOOowVDc7nITq5",
+          "commit": {
+            "abbreviatedOid": "81371b9"
+          },
+          "author": "jsalowey",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-03-02T17:44:30Z",
+          "updatedAt": "2026-03-02T17:44:30Z",
           "comments": []
         }
       ]
