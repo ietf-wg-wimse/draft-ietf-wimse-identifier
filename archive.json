@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-03-03T02:03:24.470489+00:00",
+  "timestamp": "2026-03-10T01:55:38.982802+00:00",
   "repo": "ietf-wg-wimse/draft-ietf-wimse-identifier",
   "labels": [
     {
@@ -71,7 +71,7 @@
       "id": "I_kwDOOowVDc64pf-v",
       "title": "Usage in Credentials",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/2",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "jsalowey",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -80,8 +80,8 @@
       "labels": [],
       "body": "The format of the credentials is discussed in the s2s spec.  My initial thoughts are that the definition of how the identifier fits in a credential should remain there as it talks about how the identifier is used in that credential.",
       "createdAt": "2025-05-28T16:13:01Z",
-      "updatedAt": "2026-03-01T20:34:54Z",
-      "closedAt": null,
+      "updatedAt": "2026-03-09T23:50:24Z",
+      "closedAt": "2026-03-09T23:50:24Z",
       "comments": [
         {
           "author": "yaroslavros",
