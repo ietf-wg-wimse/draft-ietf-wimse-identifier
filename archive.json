@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-03-10T01:55:38.982802+00:00",
+  "timestamp": "2026-05-07T02:45:20.951378+00:00",
   "repo": "ietf-wg-wimse/draft-ietf-wimse-identifier",
   "labels": [
     {
@@ -712,6 +712,22 @@
       "body": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/blob/960857562f1d79be5395446d6b6f8979d4d36789/draft-ietf-wimse-identifier.md?plain=1#L227\n\nThe sentence is overly restrictive in terms of identifier paths. While we should point out the information disclosure implication, it is really up to the implementer/designer of the system. They may very well want to have descriptive paths. ",
       "createdAt": "2026-01-14T01:41:18Z",
       "updatedAt": "2026-01-14T01:41:18Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 50,
+      "id": "I_kwDOOowVDc8AAAABBU6UqQ",
+      "title": "Is the scheme part of the trust domain?",
+      "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/50",
+      "state": "OPEN",
+      "author": "sorindumitru",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "If I have two identifiers, `spiffe://example.org/workloadA` and `wise://example.org/workloadA`, are these in the same trust domain or not (the identifiers themselves I'd say that they are different, but maybe that's arguable too)\n\nThe 4.6 section hints that these are different, but section 4.3 says:\n```\nWorkload Identifiers are interpreted in the context of the trust domain that issued the credential. Identifiers with identical path components but different trust domains represent different workloads.\n```\n\nSo I'm not sure what to do about the scheme.",
+      "createdAt": "2026-05-05T12:26:50Z",
+      "updatedAt": "2026-05-05T12:26:50Z",
       "closedAt": null,
       "comments": []
     }
