@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-06-09T02:57:55.794458+00:00",
+  "timestamp": "2026-06-11T03:52:36.652755+00:00",
   "repo": "ietf-wg-wimse/draft-ietf-wimse-identifier",
   "labels": [
     {
@@ -274,15 +274,15 @@
       "id": "I_kwDOOowVDc6-4kyN",
       "title": "Mapping from an external handle",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/14",
-      "state": "CLOSED",
+      "state": "OPEN",
       "author": "yaronf",
       "authorAssociation": "NONE",
       "assignees": [],
       "labels": [],
       "body": "We have been debating in S2S how these identifiers can be validated, resulting in [a new section](https://ietf-wg-wimse.github.io/draft-ietf-wimse-s2s-protocol/draft-ietf-wimse-s2s-protocol.html#name-workload-identifiers-and-au). Do we want to extend the current document to describe how external handles (the hostname+path used to call into a service) can be mapped into WL identifiers? This seems to be critical in practice.\n\n",
       "createdAt": "2025-07-04T12:08:54Z",
-      "updatedAt": "2026-06-08T16:38:20Z",
-      "closedAt": "2026-06-08T16:38:20Z",
+      "updatedAt": "2026-06-09T14:55:34Z",
+      "closedAt": null,
       "comments": [
         {
           "author": "yaroslavros",
@@ -290,6 +290,13 @@
           "body": "Please check https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/44",
           "createdAt": "2026-03-01T21:02:49Z",
           "updatedAt": "2026-03-01T21:02:49Z"
+        },
+        {
+          "author": "yaronf",
+          "authorAssociation": "NONE",
+          "body": "@yaroslavros I suggest to reopen this issue as we work together to resolve the corresponding s2s issues, [173](https://github.com/ietf-wg-wimse/draft-ietf-wimse-s2s-protocol/issues/173) +\u00a0 [175](https://github.com/ietf-wg-wimse/draft-ietf-wimse-s2s-protocol/issues/175).",
+          "createdAt": "2026-06-09T06:44:42Z",
+          "updatedAt": "2026-06-09T06:44:42Z"
         }
       ]
     },
