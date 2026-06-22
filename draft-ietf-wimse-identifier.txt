@@ -5,8 +5,8 @@
 Workload Identity in Multi System Environments              Y. Rosomakho
 Internet-Draft                                                   Zscaler
 Intended status: Standards Track                              J. Salowey
-Expires: 3 September 2026                                       CyberArk
-                                                            2 March 2026
+Expires: 24 December 2026                                       CyberArk
+                                                            22 June 2026
 
 
                           Workload Identifier
@@ -56,7 +56,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 3 September 2026.
+   This Internet-Draft will expire on 24 December 2026.
 
 Copyright Notice
 
@@ -169,9 +169,10 @@ Table of Contents
       intended to be included in security credentials and interpreted
       within the scope of an issuing authority.
 
-   Trust Domain:  A security boundary defined and controlled by a single
-      administrative authority.  A trust domain establishes its own
-      rules for identity issuance, validation, and policy enforcement.
+   Trust Domain:  A logical grouping of systems that share a common set
+      of security controls and policies.  A trust domain establishes its
+      own rules for identity issuance, validation, and policy
+      enforcement.
 
    Issuer:  An entity responsible for assigning and validating Workload
       Identifiers.
@@ -489,9 +490,9 @@ spiffe://prod.trust.domain/foo-service/sha256/c4dbb1a06030e142cb0ed4be6142196761
               Campbell, B., Salowey, J. A., Schwenkschuster, A.,
               Sheffer, Y., and Y. Rosomakho, "WIMSE Workload
               Credentials", Work in Progress, Internet-Draft, draft-
-              ietf-wimse-workload-creds-00, 3 November 2025,
+              ietf-wimse-workload-creds-01, 5 May 2026,
               <https://datatracker.ietf.org/doc/html/draft-ietf-wimse-
-              workload-creds-00>.
+              workload-creds-01>.
 
 9.2.  Informative References
 
