@@ -275,9 +275,14 @@ spiffe://prod.trust.domain/foo-service/sha256/c4dbb1a06030e142cb0ed4be6142196761
    except in the case where they are needed for compatibility with
    legacy naming schemes.
 
-   Workload Identifiers are interpreted in the context of the trust
-   domain that issued the credential.  Identifiers with identical path
-   components but different trust domains represent different workloads.
+   Workload Identifiers are interpreted as URIs, including the trust
+   domain carried in the authority component.  The identifier denotes
+   the workload identity at the granularity assigned by the issuing
+   trust domain, which may correspond to a service, workload class,
+   deployment, individual workload instance, or another deployment-
+   defined concept.  Consumers MUST compare and authorize Workload
+   Identifiers using the complete URI, rather than relying only on
+   individual components such as the path.
 
    Issuers within a trust domain MUST ensure uniqueness of all Workload
    Identifiers they assign.
