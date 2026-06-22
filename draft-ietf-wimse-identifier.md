@@ -85,7 +85,7 @@ Workload Identifier:
 
 Trust Domain:
 
-: A security boundary defined and controlled by a single administrative authority. A trust domain establishes its own rules for identity issuance, validation, and policy enforcement.
+: A logical grouping of systems that share a common set of security controls and policies. A trust domain establishes its own rules for identity issuance, validation, and policy enforcement.
 
 Issuer:
 
