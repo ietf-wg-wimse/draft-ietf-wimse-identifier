@@ -364,11 +364,15 @@ spiffe://prod.trust.domain/foo-service/sha256/c4dbb1a06030e142cb0ed4be6142196761
 
 7.  Security Considerations
 
-   The Workload Identifier is intended to be used as a stable,
-   verifiable identity for workloads.  Its use in cryptographic
-   credentials means it must be protected against spoofing, ambiguity,
-   and misinterpretation.  This section outlines security considerations
-   for issuers, consumers, and system designers.
+   A Workload Identifier is intended to be used as a stable identifier
+   for a workload identity.  It is not, by itself, verifiable; instead,
+   it can be carried in cryptographic credentials, such as X.509
+   certificates (Section 4.1 of [WIMSE-CREDENTIALS]) or JWTs
+   (Section 3.1 of [WIMSE-CREDENTIALS]), that bind the identifier to key
+   material.  Because such credentials rely on correct interpretation of
+   the Workload Identifier, identifiers need to be protected against
+   spoofing, ambiguity, and misinterpretation.  This section outlines
+   security considerations for issuers, consumers, and system designers.
 
 7.1.  URI Parsing and Processing Considerations
 

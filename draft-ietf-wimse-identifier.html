@@ -1484,7 +1484,7 @@ wimse://trust.corp.example.com
       <h2 id="name-security-considerations">
 <a href="#section-7" class="section-number selfRef">7. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
       </h2>
-<p id="section-7-1">The Workload Identifier is intended to be used as a stable, verifiable identity for workloads. Its use in cryptographic credentials means it must be protected against spoofing, ambiguity, and misinterpretation. This section outlines security considerations for issuers, consumers, and system designers.<a href="#section-7-1" class="pilcrow">¶</a></p>
+<p id="section-7-1">A Workload Identifier is intended to be used as a stable identifier for a workload identity. It is not, by itself, verifiable; instead, it can be carried in cryptographic credentials, such as X.509 certificates (<span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-wimse-workload-creds-01#section-4.1" class="relref">Section 4.1</a> of [<a href="#WIMSE-CREDENTIALS" class="cite xref">WIMSE-CREDENTIALS</a>]</span>) or JWTs (<span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-wimse-workload-creds-01#section-3.1" class="relref">Section 3.1</a> of [<a href="#WIMSE-CREDENTIALS" class="cite xref">WIMSE-CREDENTIALS</a>]</span>), that bind the identifier to key material. Because such credentials rely on correct interpretation of the Workload Identifier, identifiers need to be protected against spoofing, ambiguity, and misinterpretation. This section outlines security considerations for issuers, consumers, and system designers.<a href="#section-7-1" class="pilcrow">¶</a></p>
 <div id="uri-parsing-and-processing-considerations">
 <section id="section-7.1">
         <h3 id="name-uri-parsing-and-processing-">
