@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-06-21T04:05:36.593040+00:00",
+  "timestamp": "2026-06-23T03:27:29.825025+00:00",
   "repo": "ietf-wg-wimse/draft-ietf-wimse-identifier",
   "labels": [
     {
@@ -274,15 +274,15 @@
       "id": "I_kwDOOowVDc6-4kyN",
       "title": "Mapping from an external handle",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/14",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "yaronf",
       "authorAssociation": "NONE",
       "assignees": [],
       "labels": [],
       "body": "We have been debating in S2S how these identifiers can be validated, resulting in [a new section](https://ietf-wg-wimse.github.io/draft-ietf-wimse-s2s-protocol/draft-ietf-wimse-s2s-protocol.html#name-workload-identifiers-and-au). Do we want to extend the current document to describe how external handles (the hostname+path used to call into a service) can be mapped into WL identifiers? This seems to be critical in practice.\n\n",
       "createdAt": "2025-07-04T12:08:54Z",
-      "updatedAt": "2026-06-09T14:55:34Z",
-      "closedAt": null,
+      "updatedAt": "2026-06-22T16:41:33Z",
+      "closedAt": "2026-06-22T16:41:33Z",
       "comments": [
         {
           "author": "yaroslavros",
@@ -297,6 +297,13 @@
           "body": "@yaroslavros I suggest to reopen this issue as we work together to resolve the corresponding s2s issues, [173](https://github.com/ietf-wg-wimse/draft-ietf-wimse-s2s-protocol/issues/173) +\u00a0 [175](https://github.com/ietf-wg-wimse/draft-ietf-wimse-s2s-protocol/issues/175).",
           "createdAt": "2026-06-09T06:44:42Z",
           "updatedAt": "2026-06-09T06:44:42Z"
+        },
+        {
+          "author": "yaroslavros",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@jsalowey and I believe this is not in scope of the tight identifier draft. There could be multiple application and deployment specific translation profiles that should be specified elsewhere.",
+          "createdAt": "2026-06-22T16:41:33Z",
+          "updatedAt": "2026-06-22T16:41:33Z"
         }
       ]
     },
@@ -585,7 +592,7 @@
       "id": "I_kwDOOowVDc7jKS2H",
       "title": "scheme-specific portion is non-standard",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/34",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "fandreas",
       "authorAssociation": "NONE",
       "assignees": [
@@ -594,8 +601,8 @@
       "labels": [],
       "body": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/blob/960857562f1d79be5395446d6b6f8979d4d36789/draft-ietf-wimse-identifier.md?plain=1#L151\n\nThis paragraph is basically saying the scheme-specific portion is not standardized and trust domains can just define it whichever way they want. That's an interop nightmare and runs counter to why we are trying to standardize this in the first place. If it's truly entirely up to the trust domain, then why have a specification in the first place ? ",
       "createdAt": "2026-01-14T01:12:11Z",
-      "updatedAt": "2026-06-08T16:35:59Z",
-      "closedAt": null,
+      "updatedAt": "2026-06-22T16:36:16Z",
+      "closedAt": "2026-06-22T16:36:16Z",
       "comments": [
         {
           "author": "yaroslavros",
@@ -614,11 +621,13 @@
       "state": "OPEN",
       "author": "fandreas",
       "authorAssociation": "NONE",
-      "assignees": [],
+      "assignees": [
+        "jsalowey"
+      ],
       "labels": [],
       "body": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/blob/960857562f1d79be5395446d6b6f8979d4d36789/draft-ietf-wimse-identifier.md?plain=1#L155\n\nBy requiring the authority domain to also be the domain responsible for issuing, validating, etc. workload identifiers, we effectively do not allow for delegated trust when it comes to issuing identifiers. For example, we will not be able to have foo.com issue identifiers for bar.com, even if a trust relationship exists between the two. What is also unclear (since trust domains are not really defined anywhere) is whether we would allow foo.com to issue identifiers for bar.foo.com. ",
       "createdAt": "2026-01-14T01:16:47Z",
-      "updatedAt": "2026-01-14T01:16:47Z",
+      "updatedAt": "2026-06-22T16:38:32Z",
       "closedAt": null,
       "comments": []
     },
@@ -627,7 +636,7 @@
       "id": "I_kwDOOowVDc7jKWQW",
       "title": "Workload identifiers should be interpreted in the context of their Authority part, but it's all just a URI",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/36",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "fandreas",
       "authorAssociation": "NONE",
       "assignees": [
@@ -636,8 +645,8 @@
       "labels": [],
       "body": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/blob/960857562f1d79be5395446d6b6f8979d4d36789/draft-ietf-wimse-identifier.md?plain=1#L157\n\nPer my previous comment, I believe Workload Identifiers should be interpreted in the context of the authority part of the URI. Regardless, this all seems to be an overly complicated way of simply saying the URI identifies the workload. The second sentence may furthermore be incorrect inasmuch as I haven't seen anything preventing a given workload from having more than one identifier. ",
       "createdAt": "2026-01-14T01:19:14Z",
-      "updatedAt": "2026-06-08T16:30:32Z",
-      "closedAt": null,
+      "updatedAt": "2026-06-22T16:35:57Z",
+      "closedAt": "2026-06-22T16:35:57Z",
       "comments": []
     },
     {
@@ -663,7 +672,7 @@
       "id": "I_kwDOOowVDc7jKeJw",
       "title": "Workload identifiers are not verifiable identities by themselves",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/38",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "fandreas",
       "authorAssociation": "NONE",
       "assignees": [
@@ -672,8 +681,8 @@
       "labels": [],
       "body": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/blob/960857562f1d79be5395446d6b6f8979d4d36789/draft-ietf-wimse-identifier.md?plain=1#L193\n\nI don't believe the first sentence is correct, inasmuch as the workload identifier by itself is not a verifiable identity. However it can be used in other constructs, such as X.509 certificates, JWTs, etc. where it can help provide a verifiable identity. ",
       "createdAt": "2026-01-14T01:34:34Z",
-      "updatedAt": "2026-06-08T16:26:51Z",
-      "closedAt": null,
+      "updatedAt": "2026-06-22T16:35:49Z",
+      "closedAt": "2026-06-22T16:35:49Z",
       "comments": []
     },
     {
@@ -681,7 +690,7 @@
       "id": "I_kwDOOowVDc7jKfAV",
       "title": "What is a \"valid\" workload identifier ?",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/39",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "fandreas",
       "authorAssociation": "NONE",
       "assignees": [
@@ -690,8 +699,8 @@
       "labels": [],
       "body": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/blob/960857562f1d79be5395446d6b6f8979d4d36789/draft-ietf-wimse-identifier.md?plain=1#L207\n\nI don't think \"valid\" is the right term here - maybe just say \"authenticated\". We can for example encounter workload identifiers without cryptographic verifiers in log messages. ",
       "createdAt": "2026-01-14T01:36:21Z",
-      "updatedAt": "2026-06-08T16:26:11Z",
-      "closedAt": null,
+      "updatedAt": "2026-06-22T16:35:39Z",
+      "closedAt": "2026-06-22T16:35:39Z",
       "comments": [
         {
           "author": "yaroslavros",
@@ -790,7 +799,7 @@
       "id": "I_kwDOOowVDc8AAAABEuZbQw",
       "title": "Consistency of Trust Domain Definition",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/51",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "PieterKas",
       "authorAssociation": "NONE",
       "assignees": [
@@ -799,8 +808,8 @@
       "labels": [],
       "body": "The defintiion of trust domain differns in this specification from that used in the WIMSE architecture draft. I would propose that instead of re-defining trust domain here, that it is simply referenced for consistency.",
       "createdAt": "2026-06-08T10:26:25Z",
-      "updatedAt": "2026-06-08T10:26:32Z",
-      "closedAt": null,
+      "updatedAt": "2026-06-22T16:35:15Z",
+      "closedAt": "2026-06-22T16:35:15Z",
       "comments": []
     }
   ],
@@ -1602,24 +1611,26 @@
       "id": "PR_kwDOOowVDc7owzjD",
       "title": "Scheme may apply constraints to path",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/53",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "To address https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/34",
       "createdAt": "2026-06-20T21:33:41Z",
-      "updatedAt": "2026-06-20T21:33:42Z",
+      "updatedAt": "2026-06-22T16:34:15Z",
       "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "baseRefName": "main",
       "baseRefOid": "df0d6abae4e5d7f55263074b17c7f90c3b8598ef",
       "headRepository": "yaroslavros/draft-ietf-wimse-identifier",
       "headRefName": "path-clarification",
       "headRefOid": "c6b9781a4d72ffd952e16ef61c0e14ac2c3ec88e",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-06-22T16:34:15Z",
+      "mergedAt": "2026-06-22T16:34:15Z",
+      "mergedBy": "yaroslavros",
+      "mergeCommit": {
+        "oid": "8f308862c285622d1c45eaebc5e87acf60ed2676"
+      },
       "comments": [],
       "reviews": []
     },
@@ -1628,24 +1639,26 @@
       "id": "PR_kwDOOowVDc7ow2fP",
       "title": "Workload identifier is a full uri",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/54",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "To address https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/36",
       "createdAt": "2026-06-20T21:40:07Z",
-      "updatedAt": "2026-06-20T21:40:08Z",
+      "updatedAt": "2026-06-22T16:33:35Z",
       "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "baseRefName": "main",
       "baseRefOid": "df0d6abae4e5d7f55263074b17c7f90c3b8598ef",
       "headRepository": "yaroslavros/draft-ietf-wimse-identifier",
       "headRefName": "identifier-uri",
       "headRefOid": "3754b6903c06110e289a82ba4ad077ee43dd848c",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-06-22T16:33:35Z",
+      "mergedAt": "2026-06-22T16:33:35Z",
+      "mergedBy": "yaroslavros",
+      "mergeCommit": {
+        "oid": "dc29af3dfb1fdb36409d388098e70242dbc6a65b"
+      },
       "comments": [],
       "reviews": []
     },
@@ -1654,24 +1667,26 @@
       "id": "PR_kwDOOowVDc7ow8Wj",
       "title": "Identifier on its own is not verifiable",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/55",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "To address https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/38",
       "createdAt": "2026-06-20T21:52:12Z",
-      "updatedAt": "2026-06-20T21:52:13Z",
+      "updatedAt": "2026-06-22T16:32:50Z",
       "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "baseRefName": "main",
       "baseRefOid": "df0d6abae4e5d7f55263074b17c7f90c3b8598ef",
       "headRepository": "yaroslavros/draft-ietf-wimse-identifier",
       "headRefName": "identifier-not-credential",
       "headRefOid": "d4dea9b8cf22c5f3aff5507eeea311baaf9c6537",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-06-22T16:32:50Z",
+      "mergedAt": "2026-06-22T16:32:50Z",
+      "mergedBy": "yaroslavros",
+      "mergeCommit": {
+        "oid": "7471f91652fbd0a7e98988a374a985c67112f59d"
+      },
       "comments": [],
       "reviews": []
     },
@@ -1680,24 +1695,26 @@
       "id": "PR_kwDOOowVDc7ow-Ee",
       "title": "Sync up trust domain definition with architecture",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/56",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Addresses https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/51",
       "createdAt": "2026-06-20T21:56:02Z",
-      "updatedAt": "2026-06-20T21:56:20Z",
+      "updatedAt": "2026-06-22T16:31:56Z",
       "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "baseRefName": "main",
       "baseRefOid": "df0d6abae4e5d7f55263074b17c7f90c3b8598ef",
       "headRepository": "yaroslavros/draft-ietf-wimse-identifier",
       "headRefName": "trust-domain-definition",
       "headRefOid": "4b944a87a0bd9875f1160e2d632ab940c4db1b5e",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-06-22T16:31:56Z",
+      "mergedAt": "2026-06-22T16:31:56Z",
+      "mergedBy": "yaroslavros",
+      "mergeCommit": {
+        "oid": "87757dad27b6fdbf220d80d8ab01f4c13d37f5aa"
+      },
       "comments": [],
       "reviews": []
     }
