@@ -121,7 +121,7 @@ Individual Workload Identifier schemes MAY define additional syntax or processin
 ## Scheme Specific Portion
 
 This specification does not define additional structure or semantics for the Workload Identifier beyond the generic URI syntax and the trust domain carried in the authority component.
-The path component is deployment-specific and is interpreted according to the policy of the trust domain, as implemented by the issuer or issuers authorized for that trust domain.
+The structure of path component can be constrained by the scheme. Its contents are deployment-specific and are interpreted according to the scheme, policy of the trust domain, as implemented by the issuer or issuers authorized for that trust domain.
 The issuer defines the granularity at which identities are assigned.
 
 A Workload Identifier MAY represent a specific workload instance, or a logical workload consisting of multiple instances that share the same identity within the trust domain.
