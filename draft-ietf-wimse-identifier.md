@@ -156,11 +156,11 @@ The authority component of the URI defines the trust domain which is responsible
 
 Workload Identifiers are interpreted in the context of the trust domain that issued the credential. Identifiers with identical path components but different trust domains represent different workloads.
 
-Issuers within a trust domain MUST ensure uniqueness of all Workload Identifiers they assign.
+Issuers within a trust domain are seponsible for managing the uniqueness of all Workload Identifiers they assign.
 
 ## Stability and Uniqueness
 
-Workload Identifiers are intended to be stable over time. An identifier assigned to a specific workload should not be reassigned to a different workload unless explicitly intended by the policies of the trust domain.
+Workload Identifiers are intended to be stable over time. An identifier assigned to a specific workload MUST NOT be reassigned to a different workload unless explicitly intended by the policies of the trust domain.
 
 Workload Identifiers are globally unique when the trust domain is globally unique. This is typically achieved by using a fully qualified domain name (FQDN) under organisational control.
 
