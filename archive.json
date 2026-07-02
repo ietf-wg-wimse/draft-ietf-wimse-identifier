@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-06-23T03:27:29.825025+00:00",
+  "timestamp": "2026-07-02T03:27:57.058580+00:00",
   "repo": "ietf-wg-wimse/draft-ietf-wimse-identifier",
   "labels": [
     {
@@ -574,7 +574,7 @@
       "id": "I_kwDOOowVDc7jKQkx",
       "title": "Scheme definition is unclear",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/33",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "fandreas",
       "authorAssociation": "NONE",
       "assignees": [
@@ -583,8 +583,8 @@
       "labels": [],
       "body": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/blob/960857562f1d79be5395446d6b6f8979d4d36789/draft-ietf-wimse-identifier.md?plain=1#L125\n\n1. It is unclear what \"the identity\" refers to in this sentence, since the \"identity\" term hasn't been defined anywhere. \n\n2. The sentence seems to imply there is some kind of internal structure to the URI, however that hasn't been defined anywhere either. ",
       "createdAt": "2026-01-14T01:07:14Z",
-      "updatedAt": "2026-06-08T16:37:03Z",
-      "closedAt": null,
+      "updatedAt": "2026-06-30T20:41:22Z",
+      "closedAt": "2026-06-30T20:41:21Z",
       "comments": []
     },
     {
@@ -627,9 +627,17 @@
       "labels": [],
       "body": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/blob/960857562f1d79be5395446d6b6f8979d4d36789/draft-ietf-wimse-identifier.md?plain=1#L155\n\nBy requiring the authority domain to also be the domain responsible for issuing, validating, etc. workload identifiers, we effectively do not allow for delegated trust when it comes to issuing identifiers. For example, we will not be able to have foo.com issue identifiers for bar.com, even if a trust relationship exists between the two. What is also unclear (since trust domains are not really defined anywhere) is whether we would allow foo.com to issue identifiers for bar.foo.com. ",
       "createdAt": "2026-01-14T01:16:47Z",
-      "updatedAt": "2026-06-22T16:38:32Z",
+      "updatedAt": "2026-06-30T05:49:49Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "jsalowey",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@fandreas  my view is that a trust domain can only issue identities that have a trust domain that exactly matches the trust domain.  This means that foo.com cannot issue identifiers for bar.com and foo.com cannot issue identifiers for bar.foo.com",
+          "createdAt": "2026-06-30T05:49:49Z",
+          "updatedAt": "2026-06-30T05:49:49Z"
+        }
+      ]
     },
     {
       "number": 36,
@@ -654,7 +662,7 @@
       "id": "I_kwDOOowVDc7jKcNU",
       "title": "Are Workload Identifiers truly unique and for how long ?",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/37",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "fandreas",
       "authorAssociation": "NONE",
       "assignees": [
@@ -663,9 +671,17 @@
       "labels": [],
       "body": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/blob/960857562f1d79be5395446d6b6f8979d4d36789/draft-ietf-wimse-identifier.md?plain=1#L159-L163\n\n1) These two paragraphs seems to at odds with each other (first one says identifiers MUST be unique, whereas the second one relaxes that requirement). Section 6.4 (Identifier Reuse and Collision) as well. \n\n2) Also, in the second paragraph, I believe \"should not\" should be \"SHOULD NOT\", but that may of course all change depending on how the paragraph inconsistencies are resolved. \n\n3) Related to the above, it's unclear how long they are required to be unique, although subsequent sections to some extent get into that indirectly by saying they don't actually have to be unique anyway as long as that's intentional. More clarity and clear requirements would be helpful. ",
       "createdAt": "2026-01-14T01:31:27Z",
-      "updatedAt": "2026-06-08T16:28:52Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2026-06-30T20:36:49Z",
+      "closedAt": "2026-06-30T20:36:49Z",
+      "comments": [
+        {
+          "author": "jsalowey",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@fandreas the text in the document for these sections have been updated and I think they address your specific concerns above. ",
+          "createdAt": "2026-06-30T06:07:18Z",
+          "updatedAt": "2026-06-30T06:07:18Z"
+        }
+      ]
     },
     {
       "number": 38,
@@ -751,12 +767,12 @@
       "author": "fandreas",
       "authorAssociation": "NONE",
       "assignees": [
-        "jsalowey"
+        "yaroslavros"
       ],
       "labels": [],
       "body": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/blob/960857562f1d79be5395446d6b6f8979d4d36789/draft-ietf-wimse-identifier.md?plain=1#L227\n\nThe sentence is overly restrictive in terms of identifier paths. While we should point out the information disclosure implication, it is really up to the implementer/designer of the system. They may very well want to have descriptive paths. ",
       "createdAt": "2026-01-14T01:41:18Z",
-      "updatedAt": "2026-06-08T16:25:33Z",
+      "updatedAt": "2026-06-30T20:43:35Z",
       "closedAt": null,
       "comments": [
         {
@@ -1585,26 +1601,69 @@
       "id": "PR_kwDOOowVDc7owxnD",
       "title": "Clarified \"Scheme Specific Portion\"",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/52",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "To address https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/33",
       "createdAt": "2026-06-20T21:29:31Z",
-      "updatedAt": "2026-06-20T21:29:32Z",
+      "updatedAt": "2026-06-30T20:41:14Z",
       "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "baseRefName": "main",
       "baseRefOid": "df0d6abae4e5d7f55263074b17c7f90c3b8598ef",
       "headRepository": "yaroslavros/draft-ietf-wimse-identifier",
       "headRefName": "main",
-      "headRefOid": "bb75f856dfedb08a9bc0a74293e58bbbce79ba5a",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "97506754882c147f5bf43f1560435bf92ba0fb0b",
+      "closedAt": "2026-06-30T20:41:14Z",
+      "mergedAt": "2026-06-30T20:41:14Z",
+      "mergedBy": "yaroslavros",
+      "mergeCommit": {
+        "oid": "c114b0af3123a18176efeb16448d9596a15d457a"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOOowVDc8AAAABEgn0cw",
+          "commit": {
+            "abbreviatedOid": "bb75f85"
+          },
+          "author": "jsalowey",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-06-30T05:44:01Z",
+          "updatedAt": "2026-06-30T05:44:01Z",
+          "comments": [
+            {
+              "originalPosition": 6,
+              "body": "Future defined schemes may further specify the structure and semantics of the path portion of the URL. ",
+              "createdAt": "2026-06-30T05:44:01Z",
+              "updatedAt": "2026-06-30T05:44:01Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOOowVDc8AAAABEmqOzw",
+          "commit": {
+            "abbreviatedOid": "bb75f85"
+          },
+          "author": "yaroslavros",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-06-30T20:40:12Z",
+          "updatedAt": "2026-06-30T20:40:12Z",
+          "comments": [
+            {
+              "originalPosition": 6,
+              "body": "```suggestion\nThe structure of path component can be constrained by the scheme. Its contents are deployment-specific and are interpreted according to the scheme, policy of the trust domain, as implemented by the issuer or issuers authorized for that trust domain.\n```",
+              "createdAt": "2026-06-30T20:40:12Z",
+              "updatedAt": "2026-06-30T20:40:12Z"
+            }
+          ]
+        }
+      ]
     },
     {
       "number": 53,
@@ -1715,6 +1774,32 @@
       "mergeCommit": {
         "oid": "87757dad27b6fdbf220d80d8ab01f4c13d37f5aa"
       },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 57,
+      "id": "PR_kwDOOowVDc7sFiwm",
+      "title": "Issue 37",
+      "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/57",
+      "state": "CLOSED",
+      "author": "jsalowey",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Removed explicit uniqueness requirement and made it such that an identifier MUST NOT be reassigned unless intended by policy",
+      "createdAt": "2026-06-30T06:01:25Z",
+      "updatedAt": "2026-06-30T06:05:42Z",
+      "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
+      "baseRefName": "main",
+      "baseRefOid": "8f308862c285622d1c45eaebc5e87acf60ed2676",
+      "headRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
+      "headRefName": "issue-37-stability",
+      "headRefOid": "28b340906c66d82ee16d7b845d804b1f81199c10",
+      "closedAt": "2026-06-30T06:05:42Z",
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
       "comments": [],
       "reviews": []
     }
