@@ -5,8 +5,8 @@
 Workload Identity in Multi System Environments              Y. Rosomakho
 Internet-Draft                                                   Zscaler
 Intended status: Standards Track                              J. Salowey
-Expires: 1 January 2027                                         CyberArk
-                                                            30 June 2026
+Expires: 5 January 2027                                         CyberArk
+                                                             4 July 2026
 
 
                           Workload Identifier
@@ -56,7 +56,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 1 January 2027.
+   This Internet-Draft will expire on 5 January 2027.
 
 Copyright Notice
 
@@ -275,10 +275,10 @@ spiffe://prod.trust.domain/foo-service/sha256/c4dbb1a06030e142cb0ed4be6142196761
    Identifiers within its scope.  The trust domain SHOULD be a fully
    qualified domain name belonging to the organization defining the
    trust domain to help provide uniqueness for the trust domain
-   identifier.  While IP addresses are allowed as host names in the URI
-   encoding rules, they MUST NOT be used to represent trust domains
-   except in the case where they are needed for compatibility with
-   legacy naming schemes.
+   identifier.  The trust domain is treated as an opaque string.  While
+   IP addresses are allowed as host names in the URI encoding rules,
+   they MUST NOT be used to represent trust domains except in the case
+   where they are needed for compatibility with legacy naming schemes.
 
    Workload Identifiers are interpreted as URIs, including the trust
    domain carried in the authority component.  The identifier denotes
@@ -504,9 +504,9 @@ spiffe://prod.trust.domain/foo-service/sha256/c4dbb1a06030e142cb0ed4be6142196761
               Campbell, B., Salowey, J. A., Schwenkschuster, A.,
               Sheffer, Y., and Y. Rosomakho, "WIMSE Workload
               Credentials", Work in Progress, Internet-Draft, draft-
-              ietf-wimse-workload-creds-01, 5 May 2026,
+              ietf-wimse-workload-creds-02, 2 July 2026,
               <https://datatracker.ietf.org/doc/html/draft-ietf-wimse-
-              workload-creds-01>.
+              workload-creds-02>.
 
 9.2.  Informative References
 
