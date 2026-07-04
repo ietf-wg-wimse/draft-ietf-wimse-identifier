@@ -257,7 +257,7 @@ Consumers SHOULD assume that identifiers are permanent within their domain of in
 
 Because Workload Identifiers may encode topological or semantic information, they may inadvertently reveal deployment details. Issuers and system designers should take care not to expose sensitive naming conventions in externally visible identifiers.
 
-Where possible, identifier paths SHOULD be minimally descriptive and avoid exposing internal implementation details unless necessary for interoperation.
+Descriptive identifier paths are allowed and may be useful for auditing, authorization, and operations. However, deployments that use descriptive paths should evaluate the information disclosure trade-offs and avoid exposing details that are not intended to be visible to relying parties.
 
 ## Wildcard and Prefix Matching
 
