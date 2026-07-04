@@ -160,7 +160,7 @@ Other concepts may be represented in the Workload Identifier depending on what i
 
 ## Trust Domain Association
 
-The authority component of the URI defines the trust domain which is responsible for issuing, validating, and managing Workload Identifiers within its scope.  The trust domain SHOULD be a fully qualified domain name belonging to the organization defining the trust domain to help provide uniqueness for the trust domain identifier. While IP addresses are allowed as host names in the URI encoding rules, they MUST NOT be used to represent trust domains except in the case where they are needed for compatibility with legacy naming schemes.
+The authority component of the URI defines the trust domain which is responsible for issuing, validating, and managing Workload Identifiers within its scope.  The trust domain SHOULD be a fully qualified domain name belonging to the organization defining the trust domain to help provide uniqueness for the trust domain identifier. The trust domain is treated as an opaque string. While IP addresses are allowed as host names in the URI encoding rules, they MUST NOT be used to represent trust domains except in the case where they are needed for compatibility with legacy naming schemes.
 
 Workload Identifiers are interpreted as URIs, including the trust domain carried in the authority component. The identifier denotes the workload identity at the granularity assigned by the issuing trust domain, which may correspond to a service, workload class, deployment, individual workload instance, or another deployment-defined concept. Consumers MUST compare and authorize Workload Identifiers using the complete URI, rather than relying only on individual components such as the path.
 
