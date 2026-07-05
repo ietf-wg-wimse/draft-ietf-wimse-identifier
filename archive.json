@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-07-02T03:27:57.058580+00:00",
+  "timestamp": "2026-07-05T02:57:10.649629+00:00",
   "repo": "ietf-wg-wimse/draft-ietf-wimse-identifier",
   "labels": [
     {
@@ -618,7 +618,7 @@
       "id": "I_kwDOOowVDc7jKVT0",
       "title": "Issuer and Authority Component should be allowed to differ to support delegated trust.",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/35",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "fandreas",
       "authorAssociation": "NONE",
       "assignees": [
@@ -627,8 +627,8 @@
       "labels": [],
       "body": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/blob/960857562f1d79be5395446d6b6f8979d4d36789/draft-ietf-wimse-identifier.md?plain=1#L155\n\nBy requiring the authority domain to also be the domain responsible for issuing, validating, etc. workload identifiers, we effectively do not allow for delegated trust when it comes to issuing identifiers. For example, we will not be able to have foo.com issue identifiers for bar.com, even if a trust relationship exists between the two. What is also unclear (since trust domains are not really defined anywhere) is whether we would allow foo.com to issue identifiers for bar.foo.com. ",
       "createdAt": "2026-01-14T01:16:47Z",
-      "updatedAt": "2026-06-30T05:49:49Z",
-      "closedAt": null,
+      "updatedAt": "2026-07-05T00:20:13Z",
+      "closedAt": "2026-07-05T00:20:13Z",
       "comments": [
         {
           "author": "jsalowey",
@@ -763,7 +763,7 @@
       "id": "I_kwDOOowVDc7jKg5L",
       "title": "Identifier path formats should be up to the implementer",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/41",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "fandreas",
       "authorAssociation": "NONE",
       "assignees": [
@@ -772,8 +772,8 @@
       "labels": [],
       "body": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/blob/960857562f1d79be5395446d6b6f8979d4d36789/draft-ietf-wimse-identifier.md?plain=1#L227\n\nThe sentence is overly restrictive in terms of identifier paths. While we should point out the information disclosure implication, it is really up to the implementer/designer of the system. They may very well want to have descriptive paths. ",
       "createdAt": "2026-01-14T01:41:18Z",
-      "updatedAt": "2026-06-30T20:43:35Z",
-      "closedAt": null,
+      "updatedAt": "2026-07-05T00:21:59Z",
+      "closedAt": "2026-07-05T00:21:59Z",
       "comments": [
         {
           "author": "yaroslavros",
@@ -789,7 +789,7 @@
       "id": "I_kwDOOowVDc8AAAABBU6UqQ",
       "title": "Is the scheme part of the trust domain?",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/50",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "sorindumitru",
       "authorAssociation": "NONE",
       "assignees": [
@@ -798,8 +798,8 @@
       "labels": [],
       "body": "If I have two identifiers, `spiffe://example.org/workloadA` and `wise://example.org/workloadA`, are these in the same trust domain or not (the identifiers themselves I'd say that they are different, but maybe that's arguable too)\n\nThe 4.6 section hints that these are different, but section 4.3 says:\n```\nWorkload Identifiers are interpreted in the context of the trust domain that issued the credential. Identifiers with identical path components but different trust domains represent different workloads.\n```\n\nSo I'm not sure what to do about the scheme.",
       "createdAt": "2026-05-05T12:26:50Z",
-      "updatedAt": "2026-06-08T16:21:40Z",
-      "closedAt": null,
+      "updatedAt": "2026-07-05T00:20:46Z",
+      "closedAt": "2026-07-05T00:20:46Z",
       "comments": [
         {
           "author": "yaroslavros",
@@ -1802,6 +1802,97 @@
       "mergeCommit": null,
       "comments": [],
       "reviews": []
+    },
+    {
+      "number": 58,
+      "id": "PR_kwDOOowVDc7t5tcI",
+      "title": "Clarify trust domain and scheme",
+      "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/58",
+      "state": "MERGED",
+      "author": "jsalowey",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Clarified that a trust domain is scoped by the scheme and that by default it is an opaque string.  A scheme can override this behavior.  \r\n\r\nNot that the change in line 163 reverts a change I inadvertently committed to main.  If we reject this PR then we should probably revert that commit.  \r\n\r\nThis closes #35  and #50 ",
+      "createdAt": "2026-07-04T17:33:49Z",
+      "updatedAt": "2026-07-05T00:20:12Z",
+      "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
+      "baseRefName": "main",
+      "baseRefOid": "7b66a35c8f48f44ee78411aceae1b778dc29a43e",
+      "headRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
+      "headRefName": "jas-trust-domain",
+      "headRefOid": "19e9fcae3f6cc34b490e40ae52b39e57f96d98b7",
+      "closedAt": "2026-07-05T00:20:12Z",
+      "mergedAt": "2026-07-05T00:20:12Z",
+      "mergedBy": "jsalowey",
+      "mergeCommit": {
+        "oid": "8fea5f00c465663128230aa6a5f97182a07a26cc"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOOowVDc8AAAABE_wp1A",
+          "commit": {
+            "abbreviatedOid": "66768c7"
+          },
+          "author": "yaroslavros",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-07-04T21:05:43Z",
+          "updatedAt": "2026-07-04T21:06:01Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "```suggestion\nThis specification does not define additional structure or semantics for the Workload Identifier beyond the generic URI syntax and the trust domain carried in the authority component. Trust domains are opaque strings formatted according to {{Section 3.2.2 of URI}}. A particular scheme may define additional semantics and constraints for the trust domain. The same trust domain may have different meaning within different schemes.\n```\n\nI think \"by default\" can be misleading.",
+              "createdAt": "2026-07-04T21:05:43Z",
+              "updatedAt": "2026-07-04T21:06:01Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 59,
+      "id": "PR_kwDOOowVDc7t7ocv",
+      "title": "Soften Information Disclosure considerations",
+      "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/59",
+      "state": "MERGED",
+      "author": "yaroslavros",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "To address https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/41",
+      "createdAt": "2026-07-04T21:15:44Z",
+      "updatedAt": "2026-07-05T00:21:47Z",
+      "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
+      "baseRefName": "main",
+      "baseRefOid": "7b66a35c8f48f44ee78411aceae1b778dc29a43e",
+      "headRepository": "yaroslavros/draft-ietf-wimse-identifier",
+      "headRefName": "trust-domain-definition",
+      "headRefOid": "3f503f2c74f83efe2f63502d33784f5921f7051d",
+      "closedAt": "2026-07-05T00:21:47Z",
+      "mergedAt": "2026-07-05T00:21:47Z",
+      "mergedBy": "jsalowey",
+      "mergeCommit": {
+        "oid": "5dcd846ebadd0beef1c6acf252b5f18553559304"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOOowVDc8AAAABE_74EQ",
+          "commit": {
+            "abbreviatedOid": "3f503f2"
+          },
+          "author": "jsalowey",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-07-05T00:21:26Z",
+          "updatedAt": "2026-07-05T00:21:26Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
