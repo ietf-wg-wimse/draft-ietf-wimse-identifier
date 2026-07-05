@@ -5,7 +5,7 @@
 Workload Identity in Multi System Environments              Y. Rosomakho
 Internet-Draft                                                   Zscaler
 Intended status: Standards Track                              J. Salowey
-Expires: 6 January 2027                                         CyberArk
+Expires: 6 January 2027                               Palo Alto Networks
                                                              5 July 2026
 
 
@@ -576,5 +576,5 @@ Authors' Addresses
 
 
    Joe Salowey
-   CyberArk
+   Palo Alto Networks
    Email: joe@salowey.net
