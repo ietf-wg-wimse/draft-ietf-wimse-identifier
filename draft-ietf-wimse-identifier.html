@@ -1532,7 +1532,7 @@ wimse://trust.corp.example.com
 <a href="#section-7.5" class="section-number selfRef">7.5. </a><a href="#name-information-disclosure" class="section-name selfRef">Information Disclosure</a>
         </h3>
 <p id="section-7.5-1">Because Workload Identifiers may encode topological or semantic information, they may inadvertently reveal deployment details. Issuers and system designers should take care not to expose sensitive naming conventions in externally visible identifiers.<a href="#section-7.5-1" class="pilcrow">¶</a></p>
-<p id="section-7.5-2">Where possible, identifier paths <span class="bcp14">SHOULD</span> be minimally descriptive and avoid exposing internal implementation details unless necessary for interoperation.<a href="#section-7.5-2" class="pilcrow">¶</a></p>
+<p id="section-7.5-2">Descriptive identifier paths are allowed and may be useful for auditing, authorization, and operations. However, deployments that use descriptive paths should evaluate the information disclosure trade-offs and avoid exposing details that are not intended to be visible to relying parties.<a href="#section-7.5-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="wildcard-and-prefix-matching">
