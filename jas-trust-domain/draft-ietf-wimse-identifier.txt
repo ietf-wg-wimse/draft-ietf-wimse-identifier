@@ -5,8 +5,8 @@
 Workload Identity in Multi System Environments              Y. Rosomakho
 Internet-Draft                                                   Zscaler
 Intended status: Standards Track                              J. Salowey
-Expires: 5 January 2027                                         CyberArk
-                                                             4 July 2026
+Expires: 6 January 2027                                         CyberArk
+                                                             5 July 2026
 
 
                           Workload Identifier
@@ -56,7 +56,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 5 January 2027.
+   This Internet-Draft will expire on 6 January 2027.
 
 Copyright Notice
 
@@ -225,11 +225,11 @@ wimse://trust.corp.example.com/workload/af3e86cb-7013-4e33-b717-11c4edd25679
 
    This specification does not define additional structure or semantics
    for the Workload Identifier beyond the generic URI syntax and the
-   trust domain carried in the authority component.  By default, trust
-   domains are opaque strings defined within the scope of a scheme.  A
-   particular scheme may define additional semantics for the trust
-   domain.  The same trust domain may have different meaning within
-   different schemes.  The structure of path component can be
+   trust domain carried in the authority component.  Trust domains are
+   opaque strings formatted according to Section 3.2.2 of [URI].  A
+   particular scheme may define additional semantics and constraints for
+   the trust domain.  The same trust domain may have different meaning
+   within different schemes.  The structure of path component can be
    constrained by the scheme.  Its contents are deployment-specific and
    are interpreted according to the scheme, policy of the trust domain,
    as implemented by the issuer or issuers authorized for that trust
