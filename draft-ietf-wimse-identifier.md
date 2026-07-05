@@ -45,18 +45,18 @@ informative:
 
 --- abstract
 
-This document defines a canonical identifier for workloads, referred to as the Workload Identifier. A Workload Identifier is a URI that uniquely identifies a workload within the context of a specific trust domain. This identifier can be embedded in digital credentials, including X.509 certificates and security tokens, to support authentication, authorization, and policy enforcement across diverse systems. The Workload Identifier format ensures interoperability, facilitates secure identity federation, and enables consistent identity semantics.
+This document defines a canonical identifier for workloads, referred to as the Workload Identifier. A Workload Identifier is a URI that uniquely identifies a workload within the context of a specific trust domain. This identifier can be embedded in Workload Identity Credentials, including X.509 certificates and JWT-based tokens, to support authentication, authorization, and policy enforcement across diverse systems. The Workload Identifier format ensures interoperability, facilitates secure identity federation, and enables consistent identity semantics.
 
 
 --- middle
 
 # Introduction
 
-In modern distributed systems, workloads such as services, applications, or containerised tasks require cryptographically verifiable identities to support secure communication, access control, and auditability. As systems scale across trust domains, administrative boundaries, and heterogeneous platforms, the need for a consistent and interoperable identifier format becomes critical.
+In modern distributed systems, workloads such as services, applications, or containerized tasks require cryptographically verifiable identities to support secure communication, access control, and auditability. As systems scale across trust domains, administrative boundaries, and heterogeneous platforms, the need for a consistent and interoperable identifier format becomes critical.
 
 This document defines the Workload Identifier, a URI-based {{!URI=RFC3986}} identifier intended to uniquely represent a workload within the context of an issuing authority. The identifier is designed to be stable, globally unique within a given trust domain, and suitable for use in digital credentials such as X.509 certificates , JSON Web Tokens (JWTs, {{?JWT=RFC7519}}), and other security artifacts.
 
-The Workload Identifier format is simple yet expressive. It enables organisations to define trust boundaries, delegate identity management, and identify workload instances and logical workloads in a uniform way across service meshes, cloud environments, and on-premises infrastructure. This specification defines the Workload Identifier used by the Workload Identity in Multi-System Environments (WIMSE) architecture {{?ARCH=I-D.ietf-wimse-arch}}. The format is defined in a general manner so that it can also be used by other systems that require stable, URI-based workload identities.
+The Workload Identifier format is simple yet expressive. It enables organizations to define trust boundaries, delegate identity management, and identify workload instances and logical workloads in a uniform way across service meshes, cloud environments, and on-premises infrastructure. This specification defines the Workload Identifier used by the Workload Identity in Multi-System Environments (WIMSE) architecture {{?ARCH=I-D.ietf-wimse-arch}}. The format is defined in a general manner so that it can also be used by other systems that require stable, URI-based workload identities.
 
 The primary goals of this specification are:
 
@@ -77,11 +77,11 @@ The following terms are used throughout this document:
 
 Workload:
 
-: An independently addressable and executable software entity. This may include microservices, containers, virtual machines, serverless functions, or similar components that initiate or receive network communications.
+: Software executing for a specific purpose, potentially comprising one or more running instances. This may include microservices, containers, virtual machines, serverless functions, or similar components that initiate or receive network communications.
 
 Workload Identifier:
 
-: A URI-based identifier that uniquely represents a workload within a specific trust domain. A Workload Identifier MAY refer to a logical workload consisting of multiple instances, or to a specific workload instance, depending on the policies of the trust domain that issued the identifier. The identifier is intended to be included in security credentials and interpreted within the scope of an issuing authority.
+: A URI-based identifier assigned to a workload. A Workload Identifier MAY refer to a logical workload consisting of multiple instances, or to a specific workload instance, depending on the policy of the trust domain. The identifier is intended to be included in Workload Identity Credentials and interpreted as a complete URI according to the applicable URI scheme and policy of the trust domain.
 
 Trust Domain:
 
@@ -89,15 +89,15 @@ Trust Domain:
 
 Issuer:
 
-: An entity responsible for assigning and validating Workload Identifiers.
+: An entity authorized by a trust domain to assign Workload Identifiers.
 
 Consumer:
 
-: An entity that evaluates, verifies or uses a Workload Identifier, typically as part of authentication or authorisation decisions. This includes relying parties, verifiers, and policy enforcement points.
+: An entity that evaluates, verifies or uses a Workload Identifier for authentication, authorization, or auditing purposes, typically after obtaining it from a validated Workload Identity Credential. This includes relying parties, verifiers, and policy enforcement points.
 
 # Workload Identifier Specification
 
-A Workload Identifier is a URI {{URI}} that uniquely identifies a workload. It encodes both the trust domain and a workload-specific path, enabling unambiguous identification of workloads across administrative and organisational boundaries.
+A Workload Identifier is a URI {{URI}} that uniquely identifies a workload. It encodes both the trust domain and a workload-specific path, enabling unambiguous identification of workloads across administrative and organizational boundaries.
 
 The identifier is designed to be stable and suitable for inclusion in digital credentials such as X.509 certificates and security tokens. This section defines the format, structure, and associated requirements for Workload Identifiers.
 
@@ -128,7 +128,7 @@ A Workload Identifier MAY represent a specific workload instance, or a logical w
 
 Multiple instances MAY share the same Workload Identifier when they are intended to be treated as the same workload for the purpose of authentication, authorization, and auditing.
 
-The scheme-specific part of the URI MAY be an opaque value that is only meaningful to the issuing authority, or it MAY encode structured information used within the trust domain.
+The path component of the URI MAY be an opaque value that is only meaningful to the issuing authority, or it MAY encode structured information used within the trust domain.
 
 Some examples of these concepts are given below:
 
@@ -219,7 +219,7 @@ Deployments using Workload Identifiers with the WIMSE credential formats defined
 
 # Usage in Credentials and Tokens
 
-Workload Identifiers are designed to be embedded in cryptographic credentials and security tokens that are used to assert the identity of workloads during authentication, authorisation, and auditing. Representation of workload identifier in commonly used formats is defined in {{WIMSE-CREDENTIALS}}.
+Workload Identifiers are designed to be embedded in cryptographic credentials and security tokens that are used to assert the identity of workloads during authentication, authorization, and auditing. The representation of Workload Identifiers in WIMSE credentials formats is defined in {{WIMSE-CREDENTIALS}}.
 
 # Security Considerations
 
@@ -245,7 +245,7 @@ Validation requirements for credentials carrying Workload Identifiers are define
 
 ## Trust Domain Validation
 
-Consumers MUST validate that the trust domain in the Workload Identifier matches an expected or explicitly trusted domain. Failure to do so may allow identifiers from unauthorised domains to be accepted as legitimate.
+Consumers MUST validate that the trust domain in the Workload Identifier matches an expected or explicitly trusted domain. Failure to do so may allow identifiers from unauthorized domains to be accepted as legitimate.
 
 Where appropriate, consumers should maintain an allowlist of trusted domains or trusted issuing authorities.
 
@@ -263,7 +263,7 @@ Descriptive identifier paths are allowed and may be useful for auditing, authori
 
 ## Wildcard and Prefix Matching
 
-Consumers SHOULD NOT interpret Workload Identifiers using wildcard or prefix matching unless explicitly specified by policy. For example, treating all identifiers under prefix of `spiffe://example.org/ns/db/` as equivalent may lead to incorrect authorisation.
+Consumers SHOULD NOT interpret Workload Identifiers using wildcard or prefix matching unless explicitly specified by policy. For example, treating all identifiers under prefix of `spiffe://example.org/ns/db/` as equivalent may lead to incorrect authorization.
 
 # IANA Considerations
 
