@@ -317,3 +317,9 @@ Authors would like to thank Evan Gilman for his review of the initial text of th
 * Added wimse URI scheme definition
 * Added more alignement and reduced overlap with draft-ietf-wimse-workload-creds
 * Clarified separation of specific workload instances and logical workloads
+
+## since draft-ietf-wimse-identifier-02
+
+* Soften Information Disclosure considerations
+* Clarified various definitions
+* Synced up terminology with other documents
