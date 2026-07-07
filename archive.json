@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-07-05T02:57:10.649629+00:00",
+  "timestamp": "2026-07-07T02:57:07.166053+00:00",
   "repo": "ietf-wg-wimse/draft-ietf-wimse-identifier",
   "labels": [
     {
@@ -197,17 +197,17 @@
       "id": "I_kwDOOowVDc6-sahu",
       "title": "Align terminology",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/11",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
-        "jsalowey"
+        "yaroslavros"
       ],
       "labels": [],
       "body": "This document defines a number of terms that are vary slightly from definitions in other specifications. We need to align this.",
       "createdAt": "2025-07-03T13:00:22Z",
-      "updatedAt": "2025-11-25T17:41:57Z",
-      "closedAt": null,
+      "updatedAt": "2026-07-06T16:08:18Z",
+      "closedAt": "2026-07-06T16:08:18Z",
       "comments": []
     },
     {
@@ -1890,6 +1890,90 @@
           "body": "",
           "createdAt": "2026-07-05T00:21:26Z",
           "updatedAt": "2026-07-05T00:21:26Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 60,
+      "id": "PR_kwDOOowVDc7uH-8t",
+      "title": "Terminology sync and spelling",
+      "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/60",
+      "state": "MERGED",
+      "author": "yaroslavros",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "To address https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/11",
+      "createdAt": "2026-07-05T22:58:21Z",
+      "updatedAt": "2026-07-06T16:07:30Z",
+      "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
+      "baseRefName": "main",
+      "baseRefOid": "072ce1e077d81269f0404d1d9b398c0d2b29fd2d",
+      "headRepository": "yaroslavros/draft-ietf-wimse-identifier",
+      "headRefName": "main",
+      "headRefOid": "1077fccf95b3c60821cf5f89fb86560ac90923cc",
+      "closedAt": "2026-07-06T16:07:30Z",
+      "mergedAt": "2026-07-06T16:07:30Z",
+      "mergedBy": "jsalowey",
+      "mergeCommit": {
+        "oid": "4c883c810d710f6623667e71a78cc7ffd6327e1e"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOOowVDc8AAAABFGzv9A",
+          "commit": {
+            "abbreviatedOid": "1077fcc"
+          },
+          "author": "jsalowey",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-07-06T16:07:23Z",
+          "updatedAt": "2026-07-06T16:07:23Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 61,
+      "id": "PR_kwDOOowVDc7uW6Ud",
+      "title": "Added changelog for -02 draft",
+      "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/61",
+      "state": "MERGED",
+      "author": "yaroslavros",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-07-06T13:05:13Z",
+      "updatedAt": "2026-07-06T16:07:57Z",
+      "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
+      "baseRefName": "main",
+      "baseRefOid": "072ce1e077d81269f0404d1d9b398c0d2b29fd2d",
+      "headRepository": "yaroslavros/draft-ietf-wimse-identifier",
+      "headRefName": "changelog-02",
+      "headRefOid": "db3d16fb97b446f0c143d134719834383e248bc3",
+      "closedAt": "2026-07-06T16:07:57Z",
+      "mergedAt": "2026-07-06T16:07:57Z",
+      "mergedBy": "jsalowey",
+      "mergeCommit": {
+        "oid": "70a396559efd7d392be3d43daa88e65a537cb955"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOOowVDc8AAAABFGz7Yg",
+          "commit": {
+            "abbreviatedOid": "db3d16f"
+          },
+          "author": "jsalowey",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-07-06T16:07:49Z",
+          "updatedAt": "2026-07-06T16:07:49Z",
           "comments": []
         }
       ]
