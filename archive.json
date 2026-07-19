@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-07-07T02:57:07.166053+00:00",
+  "timestamp": "2026-07-19T02:34:05.606036+00:00",
   "repo": "ietf-wg-wimse/draft-ietf-wimse-identifier",
   "labels": [
     {
@@ -1977,6 +1977,32 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 62,
+      "id": "PR_kwDOOowVDc7ycvq4",
+      "title": "Updated IANA considerations",
+      "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/62",
+      "state": "OPEN",
+      "author": "yaroslavros",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Addresses feedback from IANA",
+      "createdAt": "2026-07-16T10:04:13Z",
+      "updatedAt": "2026-07-16T10:04:14Z",
+      "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
+      "baseRefName": "main",
+      "baseRefOid": "70a396559efd7d392be3d43daa88e65a537cb955",
+      "headRepository": "yaroslavros/draft-ietf-wimse-identifier",
+      "headRefName": "main",
+      "headRefOid": "469020470c87e772cb526552a295ae631bef6917",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
