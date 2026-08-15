@@ -89,7 +89,7 @@ Trust Domain:
 
 Issuer:
 
-: An entity authorized by a trust domain to assign Workload Identifiers.
+: An entity authorized to assign Workload Identifiers within one or more Workload Identifier Origins.
 
 Consumer:
 
@@ -194,6 +194,8 @@ Workload Identifiers are intended to be stable over time. An identifier assigned
 
 A Workload Identifier Origin is a specification of a namespace under which a Workload Identifier is meaningful for a given use case. An origin consists of the URI scheme and trust domain components of a Workload Identifier, omitting the path component.
 
+The URI scheme is part of the origin's security boundary. Two origins with different schemes are distinct even when they contain the same trust domain string.
+
 Workload Identifier Origins serve as hints about the set of identifiers an entity may present in a particular protocol instance or usage context without revealing specific identifier.
 
 Examples of Workload Identifier Origins:
@@ -243,11 +245,15 @@ Consumers MUST treat a Workload Identifier as authenticated only when it is obta
 
 Validation requirements for credentials carrying Workload Identifiers are defined in {{WIMSE-CREDENTIALS}} and in the protocols that use those credentials.
 
-## Trust Domain Validation
+## Origin and Issuer Validation
 
-Consumers MUST validate that the trust domain in the Workload Identifier matches an expected or explicitly trusted domain. Failure to do so may allow identifiers from unauthorized domains to be accepted as legitimate.
+Consumers MUST validate that the Workload Identifier Origin, including both the URI scheme and trust domain, matches an expected or explicitly trusted origin. Failure to do so may allow identifiers from unauthorized origins to be accepted as legitimate.
 
-Where appropriate, consumers should maintain an allowlist of trusted domains or trusted issuing authorities.
+Consumers MUST maintain a local binding from each accepted Workload Identifier Origin to the credential issuers, signing keys, certification paths, or trust anchors authorized to assert identifiers within that origin. Before treating a Workload Identifier as authenticated, the consumer MUST verify that the issuer and trust material established during credential validation are authorized for the identifier's exact origin.
+
+Successful cryptographic validation and an accepted trust domain string are not sufficient when the URI scheme is unknown or is not authorized for the authenticated issuer and trust material. A consumer MUST reject a Workload Identifier when no issuer-to-origin binding exists. This requirement MAY be implemented as an origin-to-issuer mapping, an issuer-to-origin mapping, or an equivalent binding defined by the credential format or deployment policy. A deployment that accepts exactly one fixed URI scheme MAY satisfy this requirement by explicitly configuring and enforcing that restriction before credential acceptance.
+
+For example, authorizing an issuer for `spiffe://trust.example` does not authorize that issuer for `wimse://trust.example`. A policy that checks only the `trust.example` string can accept a valid credential under the wrong namespace and grant privileges belonging to an identifier in the target origin. The attack does not require forgery or compromise of a signing key authorized for the target origin.
 
 ## Identifier Reuse and Collision
 
@@ -323,3 +329,5 @@ Authors would like to thank Evan Gilman for his review of the initial text of th
 * Soften Information Disclosure considerations
 * Clarified various definitions
 * Synced up terminology with other documents
+* Bound credential issuers and trust material to exact Workload Identifier Origins
+* Clarified that a trusted domain string does not authorize a different URI scheme
