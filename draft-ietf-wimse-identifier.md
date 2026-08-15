@@ -263,7 +263,29 @@ Descriptive identifier paths are allowed and may be useful for auditing, authori
 
 ## Wildcard and Prefix Matching
 
-Consumers SHOULD NOT interpret Workload Identifiers using wildcard or prefix matching unless explicitly specified by policy. For example, treating all identifiers under prefix of `spiffe://example.org/ns/db/` as equivalent may lead to incorrect authorization.
+Consumers MUST use exact comparison of complete Workload Identifiers unless non-exact matching is explicitly enabled by policy. A policy that enables wildcard, prefix, or hierarchical matching MUST identify the applicable URI scheme and define an unambiguous matching algorithm over parsed URI components. Consumers MUST NOT use a raw textual prefix comparison as a hierarchical authorization check.
+
+Hierarchical matching MUST occur only after the Workload Identifier has been validated according to the applicable scheme. The policy pattern and candidate identifier MUST have the same scheme and authority. Matching MUST operate on complete path-segment boundaries using the same validated representation used for credential processing. A candidate matches a hierarchical path-prefix policy only when the policy path's complete segment sequence is an exact prefix of the candidate path's complete segment sequence. The policy MUST define the handling of percent-encoding, encoded delimiters, dot segments, empty segments, repeated separators, and trailing separators. A representation that could change a match boundary during later decoding or normalization MUST be rejected before authorization.
+
+For example, the presented identifier `wimse://example.org/service/payroll-attacker` begins with the policy text `wimse://example.org/service/pay`. After parsing, the paths contain these segments:
+
+| Value | Parsed path segments |
+| --- | --- |
+| Policy | `["service", "pay"]` |
+| Presented | `["service", "payroll-attacker"]` |
+
+Because `pay` and `payroll-attacker` are different complete segments, the presented identifier is not a member of the `/service/pay` hierarchy. Likewise, a candidate containing `/service/pay/../admin` cannot be authorized as a descendant of `/service/pay` and then normalized into `/service/admin`.
+
+An empty or root path pattern has no path segments. An ordinary sequence-prefix algorithm therefore treats it as a prefix of every path in the origin. Implementations MUST special-case these patterns and fail closed unless the policy explicitly grants origin-wide access. For a presented path `wimse://example.org/service/pay`, the required behavior is:
+
+| Policy | Policy segments | Presented segments | Fail-open default (incorrect) | Fail-closed default (correct) |
+| --- | --- | --- | --- | --- |
+| `wimse://example.org` | `[]` | `["service", "pay"]` | `ALLOW` | `DENY` |
+| `wimse://example.org/` | `[]` | `["service", "pay"]` | `ALLOW` | `DENY` |
+
+An explicit policy that intentionally grants access to every identifier in the origin MAY return `ALLOW`. Without that explicit origin-wide grant, `DENY` is the required result.
+
+Failure to enforce origin and path-segment boundaries can grant hierarchical privileges to a sibling workload or an identifier from another origin. Such an attack can use a valid credential and does not require credential forgery or signing-key compromise.
 
 # IANA Considerations
 
@@ -323,3 +345,5 @@ Authors would like to thank Evan Gilman for his review of the initial text of th
 * Soften Information Disclosure considerations
 * Clarified various definitions
 * Synced up terminology with other documents
+* Required scheme-aware and segment-aware hierarchical matching
+* Prohibited raw textual prefixes for hierarchical authorization
