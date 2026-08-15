@@ -114,9 +114,11 @@ wimse://trust.corp.example.com/workload/af3e86cb-7013-4e33-b717-11c4edd25679
 
 A Workload Identifier URI MUST NOT contain a query component, a fragment component, user information, or a port component.
 
-Implementations that generate, parse, or otherwise process Workload Identifiers MUST support identifiers with a total length of at least 2048 bytes. Workload Identifiers SHOULD NOT exceed 2048 bytes in length.
+Implementations that generate, parse, or otherwise process Workload Identifiers MUST support identifiers whose canonical ASCII URI serialization is up to and including 2048 octets. Workload Identifiers SHOULD NOT exceed 2048 octets in length.
 
 Individual Workload Identifier schemes MAY define additional syntax or processing requirements, provided they do not conflict with the requirements defined in this document.
+
+Each Workload Identifier scheme MUST define a canonical serialization and an identifier comparison algorithm. Issuers MUST emit identifiers in the canonical form defined by the scheme. Consumers MUST reject identifiers that are not in canonical form and MUST NOT repair or normalize a non-canonical credential subject into an authorization identity.
 
 ## Scheme Specific Portion
 
@@ -176,7 +178,14 @@ wimse://<trust-domain>/<path>
 
 The URI MUST satisfy all requirements defined in {{uri-requirements}}.
 
-The structure of the path component is deployment-specific and is not interpreted by this specification.
+The canonical serialization MUST use the literal lowercase prefix `wimse://`.
+The trust domain MUST contain only lowercase ASCII letters, digits, dots, hyphens, and underscores. It MUST NOT contain percent-encoding or end with a dot.
+
+The path MUST contain at least one non-empty segment. Each segment MUST contain only URI unreserved characters, as defined in {{Section 2.3 of URI}}. The path MUST NOT contain an empty segment, a `.` or `..` segment, percent-encoding, repeated slashes, or a trailing slash. The path is case-sensitive.
+
+Consumers MUST compare valid `wimse` Workload Identifiers byte-for-byte using their complete canonical ASCII URI serialization. The same serialization MUST be used for issuance, credential validation, trust lookup, authorization, mapping, caching, revocation, and auditing.
+
+The structure and meaning of canonical path segments are deployment-specific and are not interpreted by this specification.
 
 Examples:
 
@@ -232,6 +241,17 @@ Workload Identifiers are encoded as URIs and therefore rely on correct and secur
 Incorrect URI parsing can result in misinterpretation of identifier components, security policy bypass, or inconsistent trust domain evaluation across implementations.
 
 Implementations MUST enforce the URI requirements defined in this document, including the absence of query, fragment, user information, and port components. Failure to validate these constraints may allow identifiers to carry unintended or ambiguous semantics.
+
+Structural and canonical validation MUST complete before issuer selection, trust-anchor lookup, authorization, mapping, caching, revocation, or audit-key creation. A parsing or canonical validation failure MUST result in rejection. Components that receive a validated Workload Identifier MUST use the validated structured value or canonical serialization and MUST NOT reinterpret the original input.
+
+Using a standards-compliant URI parser does not by itself define identifier equality. For example, consider these two credential subjects:
+
+~~~
+wimse://trust.example/service/payment
+wimse://trust.example/service/%70ayment
+~~~
+
+An issuer using raw string equality can allocate these values to different principals. A consumer applying percent-encoding normalization can reduce both values to the first string. If authorization policy grants privileges to that resulting key, a valid credential for the second principal receives the first principal's privileges. The attack does not require credential forgery or compromise of a signing key. Requiring canonical issuance, rejecting non-canonical subjects, and using byte-for-byte comparison prevents this collision.
 
 Implementations MUST also take care to handle Workload Identifiers of the maximum supported length without causing excessive memory allocation, resource exhaustion, or denial-of-service conditions. Parsers SHOULD impose reasonable internal limits and reject identifiers that exceed implementation-defined constraints, consistent with the length requirements in this document.
 
@@ -323,3 +343,6 @@ Authors would like to thank Evan Gilman for his review of the initial text of th
 * Soften Information Disclosure considerations
 * Clarified various definitions
 * Synced up terminology with other documents
+* Defined canonical serialization and comparison for the `wimse` scheme
+* Required a non-empty `wimse` path and rejection of non-canonical subjects
+* Clarified inclusive identifier length measurement
