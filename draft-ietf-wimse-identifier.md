@@ -79,6 +79,10 @@ Workload:
 
 : Software executing for a specific purpose, potentially comprising one or more running instances. This may include microservices, containers, virtual machines, serverless functions, or similar components that initiate or receive network communications.
 
+Logical Workload Security Principal:
+
+: One or more workload instances that are intentionally treated as the same principal for authentication, authorization, revocation, and auditing.
+
 Workload Identifier:
 
 : A URI-based identifier assigned to a workload. A Workload Identifier MAY refer to a logical workload consisting of multiple instances, or to a specific workload instance, depending on the policy of the trust domain. The identifier is intended to be included in Workload Identity Credentials and interpreted as a complete URI according to the applicable URI scheme and policy of the trust domain.
@@ -124,9 +128,9 @@ This specification does not define additional structure or semantics for the Wor
 The structure of path component can be constrained by the scheme. Its contents are deployment-specific and are interpreted according to the scheme, policy of the trust domain, as implemented by the issuer or issuers authorized for that trust domain.
 The issuer defines the granularity at which identities are assigned.
 
-A Workload Identifier MAY represent a specific workload instance, or a logical workload consisting of multiple instances that share the same identity within the trust domain.
+A Workload Identifier MAY represent a specific workload instance or a Logical Workload Security Principal consisting of multiple instances that share the same identity within the trust domain.
 
-Multiple instances MAY share the same Workload Identifier when they are intended to be treated as the same workload for the purpose of authentication, authorization, and auditing.
+Multiple instances MAY share the same Workload Identifier only when trust-domain policy intentionally treats them as the same Logical Workload Security Principal.
 
 The path component of the URI MAY be an opaque value that is only meaningful to the issuing authority, or it MAY encode structured information used within the trust domain.
 
@@ -164,7 +168,9 @@ The authority component of the URI defines the trust domain which is responsible
 
 Workload Identifiers are interpreted as URIs, including the trust domain carried in the authority component. The identifier denotes the workload identity at the granularity assigned by the issuing trust domain, which may correspond to a service, workload class, deployment, individual workload instance, or another deployment-defined concept. Consumers MUST compare and authorize Workload Identifiers using the complete URI, rather than relying only on individual components such as the path.
 
-Issuers within a trust domain MUST ensure uniqueness of all Workload Identifiers they assign.
+At any point in time, a complete Workload Identifier MUST identify no more than one Logical Workload Security Principal within its Workload Identifier Origin.
+
+All issuers authorized for the same Workload Identifier Origin MUST coordinate allocation through an authoritative registry, disjoint issuer namespaces, or another mechanism that prevents distinct Logical Workload Security Principals from receiving the same complete Workload Identifier. Independent per-issuer uniqueness checks are insufficient when issuer allocation spaces can overlap. For example, two issuers can each determine locally that `wimse://example.org/service/payments` is unused and assign it to different principals. Both issuers preserve local uniqueness, but the origin does not.
 
 ## The "wimse" URI Scheme {#wimse-scheme}
 
@@ -188,7 +194,7 @@ wimse://prod.corp.example/workload/89a6ec51-f877-44c0-9501-b213597f2d1d
 
 ## Stability and Uniqueness
 
-Workload Identifiers are intended to be stable over time. An identifier assigned to a workload SHOULD NOT be reassigned to a different workload unless explicitly intended by the policies of the trust domain. Multiple workload instances MAY share the same Workload Identifier when they represent the same logical workload within the trust domain.
+Workload Identifiers are intended to be stable over time. An identifier assigned to a Logical Workload Security Principal SHOULD NOT be reassigned to a different principal. Any intentional reassignment MUST satisfy the requirements in {{identifier-reuse}}. Replacing workload instances or rotating their key material is not reassignment when the Logical Workload Security Principal remains the same.
 
 ## Workload Identifier Origin
 
@@ -249,9 +255,21 @@ Consumers MUST validate that the trust domain in the Workload Identifier matches
 
 Where appropriate, consumers should maintain an allowlist of trusted domains or trusted issuing authorities.
 
-## Identifier Reuse and Collision
+## Identifier Reuse and Collision {#identifier-reuse}
 
-Issuers SHOULD ensure that Workload Identifiers are not reused across different workloads unless such reuse is intentional and well-scoped. Reassignment of identifiers to unrelated entities can result in privilege escalation or confusion in audit trails.
+An issuer MUST NOT reassign a Workload Identifier to a different Logical Workload Security Principal while a credential, proof, authorization cache entry, external-handle mapping, or other security state can still authenticate, authorize, or attribute the previous principal using that identifier.
+
+Before reassignment, the trust-domain operator MUST ensure that credentials and proofs for the previous principal have expired or been revoked, that revocation and mapping updates have propagated to relying parties, and that authorization caches no longer bind the identifier to the previous principal. Historical audit records MUST retain enough information to attribute actions unambiguously to the principal that held the identifier at the time. Deployments SHOULD apply a quarantine interval that covers the maximum credential, proof, cache, mapping, and propagation lifetime.
+
+For example, consider this sequence:
+
+| Step | Identifier state |
+| --- | --- |
+| 1 | `wimse://example.org/service/reporting` identifies principal P0, which holds a valid credential. |
+| 2 | The identifier is reassigned to principal P1, and authorization policy grants P1 new privileges. |
+| 3 | P0 presents its unexpired credential, and a consumer selects P1's privileges using the reused identifier. |
+
+The credential in step 3 is valid and has not been forged. The privilege escalation occurs because the identifier was reassigned before the previous credential and related security state stopped being accepted.
 
 Consumers SHOULD assume that identifiers are permanent within their domain of interpretation and treat unexpected reuse with suspicion.
 
@@ -323,3 +341,5 @@ Authors would like to thank Evan Gilman for his review of the initial text of th
 * Soften Information Disclosure considerations
 * Clarified various definitions
 * Synced up terminology with other documents
+* Defined uniqueness over Logical Workload Security Principals and coordinated origin-wide allocation
+* Defined safe identifier reassignment across credential and security-state lifetimes
