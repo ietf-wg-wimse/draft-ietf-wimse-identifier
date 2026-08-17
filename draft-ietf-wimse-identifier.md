@@ -54,7 +54,7 @@ This document defines a canonical identifier for workloads, referred to as the W
 
 In modern distributed systems, workloads such as services, applications, or containerized tasks require cryptographically verifiable identities to support secure communication, access control, and auditability. As systems scale across trust domains, administrative boundaries, and heterogeneous platforms, the need for a consistent and interoperable identifier format becomes critical.
 
-This document defines the Workload Identifier, a URI-based {{!URI=RFC3986}} identifier intended to uniquely represent a workload within the context of an issuing authority. The identifier is designed to be stable, globally unique within a given trust domain, and suitable for use in digital credentials such as X.509 certificates , JSON Web Tokens (JWTs, {{?JWT=RFC7519}}), and other security artifacts.
+This document defines the Workload Identifier, a URI-based {{!URI=RFC3986}} identifier intended to uniquely represent a workload within the context of an issuing authority. The identifier is designed to be stable, globally unique within a given trust domain, and suitable for use in digital credentials such as X.509 certificates, JSON Web Tokens (JWTs {{?JWT=RFC7519}}), and other security artifacts.
 
 The Workload Identifier format is simple yet expressive. It enables organizations to define trust boundaries, delegate identity management, and identify workload instances and logical workloads in a uniform way across service meshes, cloud environments, and on-premises infrastructure. This specification defines the Workload Identifier used by the Workload Identity in Multi-System Environments (WIMSE) architecture {{?ARCH=I-D.ietf-wimse-arch}}. The format is defined in a general manner so that it can also be used by other systems that require stable, URI-based workload identities.
 
@@ -64,7 +64,7 @@ The primary goals of this specification are:
 - To establish requirements for issuers and consumers of such identifiers.
 - To promote interoperability across different identity systems and domains.
 
-This document does not prescribe how identifiers are issued or verified. Instead, it focuses on the identifier’s format, uniqueness guarantees, and its relationship to trust domains.
+This document does not prescribe how identifiers are issued or verified. Instead, it focuses on the identifier's format, uniqueness guarantees, and its relationship to trust domains.
 
 # Conventions and Definitions
 
@@ -103,7 +103,7 @@ The identifier is designed to be stable and suitable for inclusion in digital cr
 
 ## URI Requirements {#uri-requirements}
 
-A Workload Identifier MUST be an absolute URI, as defined in {{Section 4.3 of URI}}. In addition the URI MUST include a non-empty authority component that identifies the trust domain within which the identifier is scoped.
+A Workload Identifier MUST be an absolute URI, as defined in {{Section 4.3 of URI}}. In addition, the URI MUST include a non-empty authority component that identifies the trust domain within which the identifier is scoped.
 
 The scheme and scheme-specific syntax are not defined by this specification. The URI format allows different schemes (e.g., `spiffe` as defined in {{SPIFFE-ID}}, `wimse` defined in {{wimse-scheme}}) depending on deployment requirements.  Example identifiers:
 
@@ -121,7 +121,7 @@ Individual Workload Identifier schemes MAY define additional syntax or processin
 ## Scheme Specific Portion
 
 This specification does not define additional structure or semantics for the Workload Identifier beyond the generic URI syntax and the trust domain carried in the authority component. Trust domains are opaque strings formatted according to {{Section 3.2.2 of URI}}. A particular scheme may define additional semantics and constraints for the trust domain. The same trust domain may have different meaning within different schemes.
-The structure of path component can be constrained by the scheme. Its contents are deployment-specific and are interpreted according to the scheme, policy of the trust domain, as implemented by the issuer or issuers authorized for that trust domain.
+The structure of the path component can be constrained by the scheme. Its contents are deployment-specific and are interpreted according to the scheme and the policy of the trust domain, as implemented by the issuer or issuers authorized for that trust domain.
 The issuer defines the granularity at which identities are assigned.
 
 A Workload Identifier MAY represent a specific workload instance, or a logical workload consisting of multiple instances that share the same identity within the trust domain.
