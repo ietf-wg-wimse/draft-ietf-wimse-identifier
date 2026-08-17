@@ -93,7 +93,7 @@ Issuer:
 
 Consumer:
 
-: An entity that evaluates, verifies or uses a Workload Identifier for authentication, authorization, or auditing purposes, typically after obtaining it from a validated Workload Identity Credential. This includes relying parties, verifiers, and policy enforcement points.
+: An entity that evaluates, verifies or uses a Workload Identifier for authentication, authorization, or auditing purposes, typically after obtaining it from a validated Workload Identity Credential. This includes relying parties, verifiers, policy decision and policy enforcement points.
 
 # Workload Identifier Specification
 
