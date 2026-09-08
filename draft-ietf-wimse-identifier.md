@@ -221,6 +221,32 @@ Deployments using Workload Identifiers with the WIMSE credential formats defined
 
 Workload Identifiers are designed to be embedded in cryptographic credentials and security tokens that are used to assert the identity of workloads during authentication, authorization, and auditing. The representation of Workload Identifiers in WIMSE credentials formats is defined in {{WIMSE-CREDENTIALS}}.
 
+# Implementation Status
+
+<cref>Note to RFC Editor: please remove this section, as well as the reference to RFC 7942, before publication.</cref>
+
+This section records the status of known implementations of the protocol defined by this specification at the time of posting of this Internet-Draft, and is based on a proposal described in {{!RFC7942}}. The description of implementations in this section is intended to assist the IETF in its decision processes in progressing drafts to RFCs.  Please note that the listing of any individual implementation here does not imply endorsement by the IETF.  Furthermore, no effort has been spent to verify the information presented here that was supplied by IETF contributors. This is not intended as, and must not be construed to be, a catalog of available implementations or their features.  Readers are advised to note that other implementations may exist.
+
+According to RFC 7942, "this will allow reviewers and working groups to assign due consideration to documents that have the benefit of running code, which may serve as evidence of valuable experimentation and feedback that have made the implemented protocols more mature.  It is up to the individual working groups to use this information as they see fit".
+
+## wimsey
+
+* Organization: independent
+* Implementation: <https://github.com/kanywst/wimsey>
+* Maturity:
+    * Workload Identifier: alpha
+* Coverage: Parses and validates Workload Identifiers in both the `spiffe`
+  scheme and the `wimse` scheme of {{wimse-scheme}}, enforcing the
+  {{uri-requirements}} prohibitions on query, fragment, user information and
+  port components, and the 2048-byte length requirement. Because consumers are
+  required to compare the complete URI, it does not normalize: it rejects any
+  spelling RFC 3986 normalization would rewrite (an uppercase trust domain, a
+  dot segment, and a percent-escape that is lowercase or encodes an unreserved
+  character), so that comparison is always over one canonical form.
+* License: Apache 2.0
+* Contact: [kanywst on GitHub](https://github.com/kanywst)
+* Last updated: 08-Sep-2026
+
 # Security Considerations
 
 A Workload Identifier is intended to be used as a stable identifier for a workload identity. It is not, by itself, verifiable; instead, it can be carried in cryptographic credentials, such as X.509 certificates ({{Section 4.1 of WIMSE-CREDENTIALS}}) or JWTs ({{Section 3.1 of WIMSE-CREDENTIALS}}), that bind the identifier to key material. Because such credentials rely on correct interpretation of the Workload Identifier, identifiers need to be protected against spoofing, ambiguity, and misinterpretation. This section outlines security considerations for issuers, consumers, and system designers.
