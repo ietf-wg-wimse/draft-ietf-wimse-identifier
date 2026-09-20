@@ -120,7 +120,7 @@ Individual Workload Identifier schemes MAY define additional syntax or processin
 
 ## Scheme Specific Portion
 
-This specification does not define additional structure or semantics for the Workload Identifier beyond the generic URI syntax and the trust domain carried in the authority component. Trust domains are opaque strings formatted according to {{Section 3.2.2 of URI}}. A particular scheme may define additional semantics and constraints for the trust domain. The same trust domain may have different meaning within different schemes.
+This specification does not define additional structure or semantics for the Workload Identifier beyond the generic URI syntax and the trust domain carried in the authority component. Trust domains are opaque strings formatted according to {{Section 3.2.2 of URI}}, subject to the URI syntax and normalization rules defined in this document. A particular scheme may define additional semantics and constraints for the trust domain. The same trust domain may have different meaning within different schemes.
 The structure of path component can be constrained by the scheme. Its contents are deployment-specific and are interpreted according to the scheme, policy of the trust domain, as implemented by the issuer or issuers authorized for that trust domain.
 The issuer defines the granularity at which identities are assigned.
 
@@ -163,6 +163,10 @@ Other concepts may be represented in the Workload Identifier depending on what i
 The authority component of the URI defines the trust domain which is responsible for issuing, validating, and managing Workload Identifiers within its scope.  The trust domain SHOULD be a fully qualified domain name belonging to the organization defining the trust domain to help provide uniqueness for the trust domain identifier. While IP addresses are allowed as host names in the URI encoding rules, they MUST NOT be used to represent trust domains except in the case where they are needed for compatibility with legacy naming schemes.
 
 Workload Identifiers are interpreted as URIs, including the trust domain carried in the authority component. The identifier denotes the workload identity at the granularity assigned by the issuing trust domain, which may correspond to a service, workload class, deployment, individual workload instance, or another deployment-defined concept. Consumers MUST compare and authorize Workload Identifiers using the complete URI, rather than relying only on individual components such as the path.
+
+For identifier comparison, consumers MUST apply the syntax-based normalization specified in {{Section 6.2.2 of URI}} and then compare the complete normalized URIs byte-for-byte. Percent-encoded unreserved characters MUST be decoded before case normalization and dot-segment removal. No additional scheme-specific or protocol-based normalization is performed for this comparison. Identifiers with different schemes after normalization are distinct. These rules also define equivalence for issuer uniqueness requirements and authorization decisions.
+
+Individual schemes MAY further restrict valid identifier syntax. Normalization MUST NOT be used to make an otherwise invalid identifier acceptable. Comparison alone does not establish validity under a particular scheme.
 
 Issuers within a trust domain MUST ensure uniqueness of all Workload Identifiers they assign.
 
