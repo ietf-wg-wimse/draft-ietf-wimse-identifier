@@ -477,7 +477,7 @@ spiffe://prod.trust.domain/foo-service/sha256/c4dbb1a06030e142cb0ed4be6142196761
    auditing, authorization, and operations.  However, deployments that
    use descriptive paths should evaluate the information disclosure
    trade-offs and avoid exposing details that are not intended to be
-   visible to relying parties.
+   visible to consumers.
 
 7.6.  Wildcard and Prefix Matching
 
