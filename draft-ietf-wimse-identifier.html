@@ -1516,7 +1516,8 @@ wimse://trust.corp.example.com
 <a href="#section-7.3" class="section-number selfRef">7.3. </a><a href="#name-trust-domain-validation" class="section-name selfRef">Trust Domain Validation</a>
         </h3>
 <p id="section-7.3-1">Consumers <span class="bcp14">MUST</span> validate that the trust domain in the Workload Identifier matches an expected or explicitly trusted domain. Failure to do so may allow identifiers from unauthorized domains to be accepted as legitimate.<a href="#section-7.3-1" class="pilcrow">¶</a></p>
-<p id="section-7.3-2">Where appropriate, consumers should maintain an allowlist of trusted domains or trusted issuing authorities.<a href="#section-7.3-2" class="pilcrow">¶</a></p>
+<p id="section-7.3-2">Using an FQDN as a trust domain does not itself prove domain ownership or authority to issue credentials for that domain. Consumers <span class="bcp14">MUST</span> validate credentials using trust anchors associated with authorized issuers for that trust domain, as described in <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-wimse-workload-creds-02#section-3" class="relref">Section 3</a> of [<a href="#WIMSE-CREDENTIALS" class="cite xref">WIMSE-CREDENTIALS</a>]</span>.<a href="#section-7.3-2" class="pilcrow">¶</a></p>
+<p id="section-7.3-3">Where appropriate, consumers should maintain an allowlist of trusted domains or trusted issuing authorities.<a href="#section-7.3-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="identifier-reuse-and-collision">
