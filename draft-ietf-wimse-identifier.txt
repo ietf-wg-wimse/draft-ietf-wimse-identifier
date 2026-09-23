@@ -157,11 +157,15 @@ Table of Contents
 
    The following terms are used throughout this document:
 
-   Workload:  Software executing for a specific purpose, potentially
-      comprising one or more running instances.  This may include
+   Workload:  A workload is an independently addressable and executable
+      software entity.  A workload is a logical entity rather than
+      necessarily a single running process.  It may be implemented by
+      one or more workload instances and may expose, consume, or
+      participate in one or more services.  Examples include
       microservices, containers, virtual machines, serverless functions,
       or similar components that initiate or receive network
-      communications.
+      communications.  A workload typically interacts with other parts
+      of a larger system.
 
    Workload Identifier:  A URI-based identifier assigned to a workload.
       A Workload Identifier MAY refer to a logical workload consisting
