@@ -257,7 +257,7 @@ Consumers MUST validate that the trust domain in the Workload Identifier matches
 
 Using an FQDN as a trust domain does not itself prove domain ownership or authority to issue credentials for that domain. Consumers MUST validate credentials using trust anchors associated with authorized issuers for that trust domain, as described in {{Section 3 of WIMSE-CREDENTIALS}}.
 
-Where appropriate, consumers should maintain an allowlist of trusted domains or trusted issuing authorities.
+Where appropriate, consumers SHOULD maintain an allowlist of trusted domains or trusted issuing authorities.
 
 ## Identifier Reuse and Collision
 
@@ -267,9 +267,9 @@ Consumers SHOULD assume that identifiers are permanent within their domain of in
 
 ## Information Disclosure
 
-Because Workload Identifiers may encode topological or semantic information, they may inadvertently reveal deployment details. Issuers and system designers should take care not to expose sensitive naming conventions in externally visible identifiers.
+Because Workload Identifiers may encode topological or semantic information, they may inadvertently reveal deployment details. Issuers and system designers SHOULD take care not to expose sensitive naming conventions in externally visible identifiers.
 
-Descriptive identifier paths are allowed and may be useful for auditing, authorization, and operations. However, deployments that use descriptive paths should evaluate the information disclosure trade-offs and avoid exposing details that are not intended to be visible to consumers.
+Descriptive identifier paths are allowed and may be useful for auditing, authorization, and operations. However, deployments that use descriptive paths SHOULD evaluate the information disclosure trade-offs and avoid exposing details that are not intended to be visible to consumers.
 
 ## Wildcard and Prefix Matching
 
