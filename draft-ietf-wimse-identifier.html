@@ -1243,6 +1243,9 @@ svg {
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.11.2.3">
                 <p id="section-toc.1-1.11.2.3.1"><a href="#appendix-B.3" class="auto internal xref">B.3</a>.  <a href="#name-since-draft-ietf-wimse-identi" class="internal xref">since draft-ietf-wimse-identifier-02</a></p>
 </li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.11.2.4">
+                <p id="section-toc.1-1.11.2.4.1"><a href="#appendix-B.4" class="auto internal xref">B.4</a>.  <a href="#name-since-draft-ietf-wimse-identif" class="internal xref">since draft-ietf-wimse-identifier-03</a></p>
+</li>
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.12">
@@ -1258,7 +1261,7 @@ svg {
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
 <p id="section-1-1">In modern distributed systems, workloads such as services, applications, or containerized tasks require cryptographically verifiable identities to support secure communication, access control, and auditability. As systems scale across trust domains, administrative boundaries, and heterogeneous platforms, the need for a consistent and interoperable identifier format becomes critical.<a href="#section-1-1" class="pilcrow">¶</a></p>
-<p id="section-1-2">This document defines the Workload Identifier, a URI-based <span>[<a href="#URI" class="cite xref">URI</a>]</span> identifier intended to uniquely represent a workload within the context of an issuing authority. The identifier is designed to be stable, globally unique within a given trust domain, and suitable for use in digital credentials such as X.509 certificates , JSON Web Tokens (JWTs, <span>[<a href="#JWT" class="cite xref">JWT</a>]</span>), and other security artifacts.<a href="#section-1-2" class="pilcrow">¶</a></p>
+<p id="section-1-2">This document defines the Workload Identifier, a URI-based <span>[<a href="#URI" class="cite xref">URI</a>]</span> identifier intended to uniquely represent a workload within the context of an issuing authority. The identifier is designed to be stable, globally unique within a given trust domain, and suitable for use in digital credentials such as X.509 certificates, JSON Web Tokens (JWTs, <span>[<a href="#JWT" class="cite xref">JWT</a>]</span>), and other security artifacts.<a href="#section-1-2" class="pilcrow">¶</a></p>
 <p id="section-1-3">The Workload Identifier format is simple yet expressive. It enables organizations to define trust boundaries, delegate identity management, and identify workload instances and logical workloads in a uniform way across service meshes, cloud environments, and on-premises infrastructure. This specification defines the Workload Identifier used by the Workload Identity in Multi-System Environments (WIMSE) architecture <span>[<a href="#ARCH" class="cite xref">ARCH</a>]</span>. The format is defined in a general manner so that it can also be used by other systems that require stable, URI-based workload identities.<a href="#section-1-3" class="pilcrow">¶</a></p>
 <p id="section-1-4">The primary goals of this specification are:<a href="#section-1-4" class="pilcrow">¶</a></p>
 <ul class="normal">
@@ -1482,7 +1485,7 @@ wimse://trust.corp.example.com
       <h2 id="name-usage-in-credentials-and-to">
 <a href="#section-6" class="section-number selfRef">6. </a><a href="#name-usage-in-credentials-and-to" class="section-name selfRef">Usage in Credentials and Tokens</a>
       </h2>
-<p id="section-6-1">Workload Identifiers are designed to be embedded in cryptographic credentials and security tokens that are used to assert the identity of workloads during authentication, authorization, and auditing. The representation of Workload Identifiers in WIMSE credentials formats is defined in <span>[<a href="#WIMSE-CREDENTIALS" class="cite xref">WIMSE-CREDENTIALS</a>]</span>.<a href="#section-6-1" class="pilcrow">¶</a></p>
+<p id="section-6-1">Workload Identifiers are designed to be embedded in cryptographic credentials and security tokens that are used to assert the identity of workloads during authentication, authorization, and auditing. The representation of Workload Identifiers in WIMSE credential formats is defined in <span>[<a href="#WIMSE-CREDENTIALS" class="cite xref">WIMSE-CREDENTIALS</a>]</span>.<a href="#section-6-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="security-considerations">
@@ -1490,7 +1493,7 @@ wimse://trust.corp.example.com
       <h2 id="name-security-considerations">
 <a href="#section-7" class="section-number selfRef">7. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
       </h2>
-<p id="section-7-1">A Workload Identifier is intended to be used as a stable identifier for a workload identity. It is not, by itself, verifiable; instead, it can be carried in cryptographic credentials, such as X.509 certificates (<span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-wimse-workload-creds-02#section-4.1" class="relref">Section 4.1</a> of [<a href="#WIMSE-CREDENTIALS" class="cite xref">WIMSE-CREDENTIALS</a>]</span>) or JWTs (<span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-wimse-workload-creds-02#section-3.1" class="relref">Section 3.1</a> of [<a href="#WIMSE-CREDENTIALS" class="cite xref">WIMSE-CREDENTIALS</a>]</span>), that bind the identifier to key material. Because such credentials rely on correct interpretation of the Workload Identifier, identifiers need to be protected against spoofing, ambiguity, and misinterpretation. This section outlines security considerations for issuers, consumers, and system designers.<a href="#section-7-1" class="pilcrow">¶</a></p>
+<p id="section-7-1">A Workload Identifier is intended to be used as a stable identifier for a workload identity. It is not, by itself, verifiable; instead, it can be carried in cryptographic credentials, such as X.509 Workload Identity Certificates (<span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-wimse-workload-creds-02#section-6.1" class="relref">Section 6.1</a> of [<a href="#WIMSE-CREDENTIALS" class="cite xref">WIMSE-CREDENTIALS</a>]</span>) or Workload Identity Tokens (<span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-wimse-workload-creds-02#section-5.1" class="relref">Section 5.1</a> of [<a href="#WIMSE-CREDENTIALS" class="cite xref">WIMSE-CREDENTIALS</a>]</span>), that bind the identifier to key material. Because such credentials rely on correct interpretation of the Workload Identifier, identifiers need to be protected against spoofing, ambiguity, and misinterpretation. This section outlines security considerations for issuers, consumers, and system designers.<a href="#section-7-1" class="pilcrow">¶</a></p>
 <div id="uri-parsing-and-processing-considerations">
 <section id="section-7.1">
         <h3 id="name-uri-parsing-and-processing-">
@@ -1574,7 +1577,7 @@ wimse://trust.corp.example.com
           <dd class="break"></dd>
 <dt id="section-8.1-2.5">Applications/protocols that use this scheme name:</dt>
           <dd style="margin-left: 1.5em" id="section-8.1-2.6">
-            <p id="section-8.1-2.6.1">any application and protocol interacting with workload identifiers.<a href="#section-8.1-2.6.1" class="pilcrow">¶</a></p>
+            <p id="section-8.1-2.6.1">any application and protocol interacting with Workload Identifiers.<a href="#section-8.1-2.6.1" class="pilcrow">¶</a></p>
 </dd>
           <dd class="break"></dd>
 <dt id="section-8.1-2.7">Contact:</dt>
@@ -1727,6 +1730,21 @@ wimse://trust.corp.example.com
 </li>
           <li class="normal" id="appendix-B.3-1.3">
             <p id="appendix-B.3-1.3.1">Synced up terminology with other documents<a href="#appendix-B.3-1.3.1" class="pilcrow">¶</a></p>
+</li>
+        </ul>
+</section>
+</div>
+<div id="since-draft-ietf-wimse-identifier-03">
+<section id="appendix-B.4">
+        <h3 id="name-since-draft-ietf-wimse-identif">
+<a href="#appendix-B.4" class="section-number selfRef">B.4. </a><a href="#name-since-draft-ietf-wimse-identif" class="section-name selfRef">since draft-ietf-wimse-identifier-03</a>
+        </h3>
+<ul class="normal">
+<li class="normal" id="appendix-B.4-1.1">
+            <p id="appendix-B.4-1.1.1">Editorial: consistent capitalization of the defined terms "Workload Identifier" and "Workload Identity Certificate", aligning with draft-ietf-wimse-workload-creds and the WIMSE protocol drafts<a href="#appendix-B.4-1.1.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="appendix-B.4-1.2">
+            <p id="appendix-B.4-1.2.1">Fixed stale section references into draft-ietf-wimse-workload-creds<a href="#appendix-B.4-1.2.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>

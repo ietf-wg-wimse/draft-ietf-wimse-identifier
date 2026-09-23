@@ -103,6 +103,7 @@ Table of Contents
      B.1.  since draft-ietf-wimse-identifier-00
      B.2.  since draft-ietf-wimse-identifier-01
      B.3.  since draft-ietf-wimse-identifier-02
+     B.4.  since draft-ietf-wimse-identifier-03
    Authors' Addresses
 
 1.  Introduction
@@ -118,7 +119,7 @@ Table of Contents
    identifier intended to uniquely represent a workload within the
    context of an issuing authority.  The identifier is designed to be
    stable, globally unique within a given trust domain, and suitable for
-   use in digital credentials such as X.509 certificates , JSON Web
+   use in digital credentials such as X.509 certificates, JSON Web
    Tokens (JWTs, [JWT]), and other security artifacts.
 
    The Workload Identifier format is simple yet expressive.  It enables
@@ -399,20 +400,21 @@ spiffe://prod.trust.domain/foo-service/instance/89a6ec51-f877-44c0-9501-b213597f
    Workload Identifiers are designed to be embedded in cryptographic
    credentials and security tokens that are used to assert the identity
    of workloads during authentication, authorization, and auditing.  The
-   representation of Workload Identifiers in WIMSE credentials formats
-   is defined in [WIMSE-CREDENTIALS].
+   representation of Workload Identifiers in WIMSE credential formats is
+   defined in [WIMSE-CREDENTIALS].
 
 7.  Security Considerations
 
    A Workload Identifier is intended to be used as a stable identifier
    for a workload identity.  It is not, by itself, verifiable; instead,
    it can be carried in cryptographic credentials, such as X.509
-   certificates (Section 4.1 of [WIMSE-CREDENTIALS]) or JWTs
-   (Section 3.1 of [WIMSE-CREDENTIALS]), that bind the identifier to key
-   material.  Because such credentials rely on correct interpretation of
-   the Workload Identifier, identifiers need to be protected against
-   spoofing, ambiguity, and misinterpretation.  This section outlines
-   security considerations for issuers, consumers, and system designers.
+   Workload Identity Certificates (Section 6.1 of [WIMSE-CREDENTIALS])
+   or Workload Identity Tokens (Section 5.1 of [WIMSE-CREDENTIALS]),
+   that bind the identifier to key material.  Because such credentials
+   rely on correct interpretation of the Workload Identifier,
+   identifiers need to be protected against spoofing, ambiguity, and
+   misinterpretation.  This section outlines security considerations for
+   issuers, consumers, and system designers.
 
 7.1.  URI Parsing and Processing Considerations
 
@@ -511,7 +513,7 @@ spiffe://prod.trust.domain/foo-service/instance/89a6ec51-f877-44c0-9501-b213597f
    Status:  permanent
 
    Applications/protocols that use this scheme name:  any application
-      and protocol interacting with workload identifiers.
+      and protocol interacting with Workload Identifiers.
 
    Contact:  IETF Chair chair@ietf.org
 
@@ -615,6 +617,16 @@ B.3.  since draft-ietf-wimse-identifier-02
    *  Clarified various definitions
 
    *  Synced up terminology with other documents
+
+B.4.  since draft-ietf-wimse-identifier-03
+
+   *  Editorial: consistent capitalization of the defined terms
+      "Workload Identifier" and "Workload Identity Certificate",
+      aligning with draft-ietf-wimse-workload-creds and the WIMSE
+      protocol drafts
+
+   *  Fixed stale section references into draft-ietf-wimse-workload-
+      creds
 
 Authors' Addresses
 
