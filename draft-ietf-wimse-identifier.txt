@@ -168,12 +168,13 @@ Table of Contents
       of a larger system.
 
    Workload Identifier:  A URI-based identifier assigned to a workload.
-      A Workload Identifier MAY refer to a logical workload consisting
+      A Workload Identifier can refer to a logical workload consisting
       of multiple instances, or to a specific workload instance,
       depending on the policy of the trust domain.  The identifier is
-      intended to be included in Workload Identity Credentials and
-      interpreted as a complete URI according to the applicable URI
-      scheme and policy of the trust domain.
+      intended to be included in Workload Identity Credentials
+      (Section 1 of [WIMSE-CREDENTIALS]) and interpreted as a complete
+      URI according to the applicable URI scheme and policy of the trust
+      domain.
 
    Trust Domain:  A logical grouping of systems that share a common set
       of security controls and policies.  A trust domain establishes its
