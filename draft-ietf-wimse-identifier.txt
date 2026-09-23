@@ -130,7 +130,7 @@ Table of Contents
    Identifier used by the Workload Identity in Multi-System Environments
    (WIMSE) architecture [ARCH].  The format is defined in a general
    manner so that it can also be used by other systems that require
-   stable, URI-based workload identities.
+   stable, URI-based workload identifiers.
 
    The primary goals of this specification are:
 
@@ -242,7 +242,7 @@ wimse://trust.corp.example.com/workload/af3e86cb-7013-4e33-b717-11c4edd25679
    constrained by the scheme.  Its contents are deployment-specific and
    are interpreted according to the scheme, policy of the trust domain,
    as implemented by the issuer or issuers authorized for that trust
-   domain.  The issuer defines the granularity at which identities are
+   domain.  The issuer defines the granularity at which identifiers are
    assigned.
 
    A Workload Identifier MAY represent a specific workload instance, or
