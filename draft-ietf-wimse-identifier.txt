@@ -342,6 +342,11 @@ spiffe://prod.trust.domain/foo-service/sha256/c4dbb1a06030e142cb0ed4be6142196761
    A Workload Identifier Origin has no path component and is therefore
    not itself a valid Workload Identifier.
 
+   A Workload Identifier Origin is distinct from the Web Origin concept
+   defined in [WEB-ORIGIN].  It identifies a workload namespace and does
+   not imply the same-origin policy or origin-processing rules defined
+   for the Web.
+
    Workload Identifier Origins serve as hints about the set of
    identifiers an entity may present in a particular protocol instance
    or usage context without revealing specific identifier.
@@ -565,6 +570,11 @@ spiffe://prod.trust.domain/foo-service/sha256/c4dbb1a06030e142cb0ed4be6142196761
               January 2025,
               <https://github.com/spiffe/spiffe/blob/main/standards/
               SPIFFE-ID.md>.
+
+   [WEB-ORIGIN]
+              Barth, A., "The Web Origin Concept", RFC 6454,
+              DOI 10.17487/RFC6454, December 2011,
+              <https://www.rfc-editor.org/rfc/rfc6454>.
 
 Appendix A.  Acknowledgments
 
