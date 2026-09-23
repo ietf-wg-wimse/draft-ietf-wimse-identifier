@@ -469,7 +469,7 @@ spiffe://prod.trust.domain/foo-service/instance/89a6ec51-f877-44c0-9501-b213597f
    with authorized issuers for that trust domain, as described in
    Section 3 of [WIMSE-CREDENTIALS].
 
-   Where appropriate, consumers should maintain an allowlist of trusted
+   Where appropriate, consumers SHOULD maintain an allowlist of trusted
    domains or trusted issuing authorities.
 
 7.4.  Identifier Reuse and Collision
@@ -486,12 +486,12 @@ spiffe://prod.trust.domain/foo-service/instance/89a6ec51-f877-44c0-9501-b213597f
 
    Because Workload Identifiers may encode topological or semantic
    information, they may inadvertently reveal deployment details.
-   Issuers and system designers should take care not to expose sensitive
+   Issuers and system designers SHOULD take care not to expose sensitive
    naming conventions in externally visible identifiers.
 
    Descriptive identifier paths are allowed and may be useful for
    auditing, authorization, and operations.  However, deployments that
-   use descriptive paths should evaluate the information disclosure
+   use descriptive paths SHOULD evaluate the information disclosure
    trade-offs and avoid exposing details that are not intended to be
    visible to consumers.
 

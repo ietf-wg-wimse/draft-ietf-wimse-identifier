@@ -1522,7 +1522,7 @@ wimse://trust.corp.example.com
         </h3>
 <p id="section-7.3-1">Consumers <span class="bcp14">MUST</span> validate that the trust domain in the Workload Identifier matches an expected or explicitly trusted domain. Failure to do so may allow identifiers from unauthorized domains to be accepted as legitimate.<a href="#section-7.3-1" class="pilcrow">¶</a></p>
 <p id="section-7.3-2">Using an FQDN as a trust domain does not itself prove domain ownership or authority to issue credentials for that domain. Consumers <span class="bcp14">MUST</span> validate credentials using trust anchors associated with authorized issuers for that trust domain, as described in <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-wimse-workload-creds-02#section-3" class="relref">Section 3</a> of [<a href="#WIMSE-CREDENTIALS" class="cite xref">WIMSE-CREDENTIALS</a>]</span>.<a href="#section-7.3-2" class="pilcrow">¶</a></p>
-<p id="section-7.3-3">Where appropriate, consumers should maintain an allowlist of trusted domains or trusted issuing authorities.<a href="#section-7.3-3" class="pilcrow">¶</a></p>
+<p id="section-7.3-3">Where appropriate, consumers <span class="bcp14">SHOULD</span> maintain an allowlist of trusted domains or trusted issuing authorities.<a href="#section-7.3-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="identifier-reuse-and-collision">
@@ -1539,8 +1539,8 @@ wimse://trust.corp.example.com
         <h3 id="name-information-disclosure">
 <a href="#section-7.5" class="section-number selfRef">7.5. </a><a href="#name-information-disclosure" class="section-name selfRef">Information Disclosure</a>
         </h3>
-<p id="section-7.5-1">Because Workload Identifiers may encode topological or semantic information, they may inadvertently reveal deployment details. Issuers and system designers should take care not to expose sensitive naming conventions in externally visible identifiers.<a href="#section-7.5-1" class="pilcrow">¶</a></p>
-<p id="section-7.5-2">Descriptive identifier paths are allowed and may be useful for auditing, authorization, and operations. However, deployments that use descriptive paths should evaluate the information disclosure trade-offs and avoid exposing details that are not intended to be visible to consumers.<a href="#section-7.5-2" class="pilcrow">¶</a></p>
+<p id="section-7.5-1">Because Workload Identifiers may encode topological or semantic information, they may inadvertently reveal deployment details. Issuers and system designers <span class="bcp14">SHOULD</span> take care not to expose sensitive naming conventions in externally visible identifiers.<a href="#section-7.5-1" class="pilcrow">¶</a></p>
+<p id="section-7.5-2">Descriptive identifier paths are allowed and may be useful for auditing, authorization, and operations. However, deployments that use descriptive paths <span class="bcp14">SHOULD</span> evaluate the information disclosure trade-offs and avoid exposing details that are not intended to be visible to consumers.<a href="#section-7.5-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="wildcard-and-prefix-matching">
