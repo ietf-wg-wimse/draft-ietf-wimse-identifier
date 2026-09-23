@@ -303,8 +303,9 @@ spiffe://prod.trust.domain/foo-service/instance/89a6ec51-f877-44c0-9501-b213597f
    Identifiers using the complete URI, rather than relying only on
    individual components such as the path.
 
-   Issuers within a trust domain MUST ensure uniqueness of all Workload
-   Identifiers they assign.
+   Each trust domain MUST coordinate Workload Identifier assignment
+   across all of its issuers to ensure that different workloads are
+   assigned distinct Workload Identifiers.
 
 4.4.  The "wimse" URI Scheme
 
