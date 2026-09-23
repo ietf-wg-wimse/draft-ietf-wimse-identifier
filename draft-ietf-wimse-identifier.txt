@@ -285,7 +285,7 @@ spiffe://prod.trust.domain/foo-service/sha256/c4dbb1a06030e142cb0ed4be6142196761
    qualified domain name belonging to the organization defining the
    trust domain to help provide uniqueness for the trust domain
    identifier.  While IP addresses are allowed as host names in the URI
-   encoding rules, they MUST NOT be used to represent trust domains
+   encoding rules, they SHOULD NOT be used to represent trust domains
    except in the case where they are needed for compatibility with
    legacy naming schemes.
 
