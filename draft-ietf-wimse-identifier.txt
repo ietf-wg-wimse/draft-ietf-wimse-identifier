@@ -414,9 +414,10 @@ spiffe://prod.trust.domain/foo-service/sha256/c4dbb1a06030e142cb0ed4be6142196761
    Implementations MUST also take care to handle Workload Identifiers of
    the maximum supported length without causing excessive memory
    allocation, resource exhaustion, or denial-of-service conditions.
-   Parsers SHOULD impose reasonable internal limits and reject
-   identifiers that exceed implementation-defined constraints,
-   consistent with the length requirements in this document.
+   Implementations MUST NOT reject an otherwise valid Workload
+   Identifier on the basis of length if its total length is at most 2048
+   bytes.  Implementations MAY reject Workload Identifiers longer than
+   2048 bytes according to implementation-defined limits.
 
 7.2.  Identifier Authenticity
 
