@@ -1391,12 +1391,12 @@ spiffe://prod.trust.domain/ns/prod-01/sa/foo-service/iid-1f814646-87b5-4e26-bb55
 </div>
 <ul class="normal">
 <li class="normal" id="section-4.2-12.1">
-            <p id="section-4.2-12.1.1">Specific code for an application role<a href="#section-4.2-12.1.1" class="pilcrow">¶</a></p>
+            <p id="section-4.2-12.1.1">Opaque identifier of a specific workload instance within an application role<a href="#section-4.2-12.1.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 <div class="alignLeft art-text artwork" id="section-4.2-13">
 <pre>
-spiffe://prod.trust.domain/foo-service/sha256/c4dbb1a06030e142cb0ed4be61421967618289a19c0c7760bdd745ac67779ca7
+spiffe://prod.trust.domain/foo-service/instance/89a6ec51-f877-44c0-9501-b213597f2d1d
 </pre><a href="#section-4.2-13" class="pilcrow">¶</a>
 </div>
 <p id="section-4.2-14">Other concepts may be represented in the Workload Identifier depending on what is important in the system and what information is available when the identity is issued. The path component is interpreted according to the policy of the trust domain, subject to any syntax or semantic constraints defined by the URI scheme.<a href="#section-4.2-14" class="pilcrow">¶</a></p>
@@ -1584,7 +1584,12 @@ wimse://trust.corp.example.com
           <dd class="break"></dd>
 <dt id="section-8.1-2.9">Change controller:</dt>
           <dd style="margin-left: 1.5em" id="section-8.1-2.10">
-            <p id="section-8.1-2.10.1">IESG iesg@ietf.org<a href="#section-8.1-2.10.1" class="pilcrow">¶</a></p>
+            <p id="section-8.1-2.10.1">IETF<a href="#section-8.1-2.10.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-8.1-2.11">CRI Scheme Number:</dt>
+          <dd style="margin-left: 1.5em" id="section-8.1-2.12">
+            <p id="section-8.1-2.12.1">TBA from the First Come First Served range<a href="#section-8.1-2.12.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
 </dl>
