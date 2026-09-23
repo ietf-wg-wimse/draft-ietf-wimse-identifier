@@ -5,8 +5,8 @@
 Workload Identity in Multi System Environments              Y. Rosomakho
 Internet-Draft                                                   Zscaler
 Intended status: Standards Track                              J. Salowey
-Expires: 7 January 2027                               Palo Alto Networks
-                                                             6 July 2026
+Expires: 27 March 2027                                Palo Alto Networks
+                                                       23 September 2026
 
 
                           Workload Identifier
@@ -56,7 +56,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 7 January 2027.
+   This Internet-Draft will expire on 27 March 2027.
 
 Copyright Notice
 
@@ -204,6 +204,8 @@ Table of Contents
    authority component that identifies the trust domain within which the
    identifier is scoped.
 
+   A Workload Identifier MUST contain a non-empty path component.
+
    The scheme and scheme-specific syntax are not defined by this
    specification.  The URI format allows different schemes (e.g., spiffe
    as defined in [SPIFFE-ID], wimse defined in Section 4.4) depending on
@@ -331,6 +333,9 @@ spiffe://prod.trust.domain/foo-service/sha256/c4dbb1a06030e142cb0ed4be6142196761
    which a Workload Identifier is meaningful for a given use case.  An
    origin consists of the URI scheme and trust domain components of a
    Workload Identifier, omitting the path component.
+
+   A Workload Identifier Origin has no path component and is therefore
+   not itself a valid Workload Identifier.
 
    Workload Identifier Origins serve as hints about the set of
    identifiers an entity may present in a particular protocol instance
@@ -522,9 +527,9 @@ spiffe://prod.trust.domain/foo-service/sha256/c4dbb1a06030e142cb0ed4be6142196761
    [ARCH]     Salowey, J. A., Rosomakho, Y., and H. Tschofenig,
               "Workload Identity in a Multi System Environment (WIMSE)
               Architecture", Work in Progress, Internet-Draft, draft-
-              ietf-wimse-arch-07, 2 March 2026,
+              ietf-wimse-arch-08, 6 July 2026,
               <https://datatracker.ietf.org/doc/html/draft-ietf-wimse-
-              arch-07>.
+              arch-08>.
 
    [IANA-URISCHEMES]
               IANA, "Uniform Resource Identifier (URI) Schemes",
