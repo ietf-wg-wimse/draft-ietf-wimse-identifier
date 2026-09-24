@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-09-22T03:23:59.500290+00:00",
+  "timestamp": "2026-09-24T03:14:16.440077+00:00",
   "repo": "ietf-wg-wimse/draft-ietf-wimse-identifier",
   "labels": [
     {
@@ -988,7 +988,7 @@
       "id": "I_kwDOOowVDc8AAAABNRAHEw",
       "title": "IP-address exception is not testable",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/79",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -997,8 +997,8 @@
       "labels": [],
       "body": "[From Karthik Rampalli](https://mailarchive.ietf.org/arch/msg/wimse/lzjcKSWaypoSkfRyAelq-CfI-Hk/)\n\nSection 4.3: the IP-address exception (\"except in the case where they are needed for compatibility with legacy naming schemes\") is not testable; a consumer cannot distinguish a legacy deployment from a spoofed one. Either drop the exception or add that consumers MAY reject IP-based trust domains.",
       "createdAt": "2026-08-18T18:53:29Z",
-      "updatedAt": "2026-08-18T19:20:59Z",
-      "closedAt": null,
+      "updatedAt": "2026-09-23T15:13:15Z",
+      "closedAt": "2026-09-23T15:13:15Z",
       "comments": [
         {
           "author": "yaroslavros",
@@ -1032,7 +1032,7 @@
       "id": "I_kwDOOowVDc8AAAABNRA3Tg",
       "title": "Exceeding implementation-defined constraints",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/81",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -1041,8 +1041,8 @@
       "labels": [],
       "body": "[From Karthik Rampalli](https://mailarchive.ietf.org/arch/msg/wimse/lzjcKSWaypoSkfRyAelq-CfI-Hk/)\n\nSection 7.1: \"reject identifiers that exceed implementation-defined constraints\" can be read as permitting rejection below 2048 bytes, contradicting Section 4.1. Suggest: MUST NOT reject on length at or below 2048 bytes, MAY reject above.",
       "createdAt": "2026-08-18T18:54:57Z",
-      "updatedAt": "2026-08-18T19:22:30Z",
-      "closedAt": null,
+      "updatedAt": "2026-09-23T15:14:07Z",
+      "closedAt": "2026-09-23T15:14:07Z",
       "comments": []
     },
     {
@@ -2512,24 +2512,26 @@
       "id": "PR_kwDOOowVDc7ycvq4",
       "title": "Updated IANA considerations",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/62",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Addresses feedback from IANA",
       "createdAt": "2026-07-16T10:04:13Z",
-      "updatedAt": "2026-07-16T10:04:14Z",
+      "updatedAt": "2026-09-23T15:20:13Z",
       "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "baseRefName": "main",
       "baseRefOid": "70a396559efd7d392be3d43daa88e65a537cb955",
       "headRepository": "yaroslavros/draft-ietf-wimse-identifier",
       "headRefName": "main",
       "headRefOid": "469020470c87e772cb526552a295ae631bef6917",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-09-23T15:20:13Z",
+      "mergedAt": "2026-09-23T15:20:13Z",
+      "mergedBy": "yaroslavros",
+      "mergeCommit": {
+        "oid": "469020470c87e772cb526552a295ae631bef6917"
+      },
       "comments": [],
       "reviews": []
     },
@@ -2538,24 +2540,26 @@
       "id": "PR_kwDOOowVDc77otjh",
       "title": "Align wording & casing across documents",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/63",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "arndt-s",
       "authorAssociation": "NONE",
       "assignees": [],
       "labels": [],
       "body": "See https://github.com/ietf-wg-wimse/draft-ietf-wimse-s2s-protocol/pull/283 in creds drafts.",
       "createdAt": "2026-08-06T14:26:08Z",
-      "updatedAt": "2026-09-20T14:36:43Z",
+      "updatedAt": "2026-09-23T15:24:33Z",
       "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "baseRefName": "main",
       "baseRefOid": "70a396559efd7d392be3d43daa88e65a537cb955",
       "headRepository": "arndt-s/draft-ietf-wimse-identifier",
       "headRefName": "arndt/align-wording",
       "headRefOid": "29a5814db3bfc798a028741733cbd3b194c97756",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-09-23T15:24:33Z",
+      "mergedAt": "2026-09-23T15:24:33Z",
+      "mergedBy": "yaroslavros",
+      "mergeCommit": {
+        "oid": "f38c53daddc38089c11924f9a3c6dbdb9f01b662"
+      },
       "comments": [],
       "reviews": [
         {
@@ -2569,6 +2573,19 @@
           "body": "",
           "createdAt": "2026-09-20T14:36:43Z",
           "updatedAt": "2026-09-20T14:36:43Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOOowVDc8AAAABO30UFw",
+          "commit": {
+            "abbreviatedOid": "29a5814"
+          },
+          "author": "jsalowey",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-23T15:24:24Z",
+          "updatedAt": "2026-09-23T15:24:24Z",
           "comments": []
         }
       ]
@@ -2607,11 +2624,13 @@
       "state": "OPEN",
       "author": "fkautz",
       "authorAssociation": "NONE",
-      "assignees": [],
+      "assignees": [
+        "yaroslavros"
+      ],
       "labels": [],
       "body": "## Summary\n\nThis PR requires consumers to verify that a credential issuer and its trust material are authorized for the exact Workload Identifier Origin asserted by the credential.\n\nAn origin includes both the URI scheme and trust domain.\n\n## Problem\n\nThe draft requires a trusted domain or issuing authority but does not require a binding between them. These checks can succeed independently:\n\n- The credential signature is valid.\n- The issuer is accepted.\n- The claimed authority is trusted.\n- The issuer is not authorized for the claimed origin.\n\nFor example, an issuer authorized for:\n\n```text\nspiffe://trust.example\n```\n\ncan assert:\n\n```text\nwimse://trust.example/service/payment\n```\n\nA policy that checks only the issuer and `trust.example` can accept the credential even though the issuer was never authorized for the `wimse://trust.example` origin.\n\nTrusting an issuer for one origin is like trusting a certification authority for one namespace. It does not authorize that issuer for every namespace containing the same text.\n\n## Risk\n\nA valid credential can impersonate a privileged workload in another origin.\n\nThe attack:\n\n- Uses a valid signature.\n- Uses an accepted issuer.\n- Uses a trusted authority string.\n- Does not require credential forgery.\n- Does not require compromise of a signing key authorized for the target origin.\n\nThe impact is high when a consumer accepts multiple schemes, authorities, or issuers without an exact issuer-to-origin mapping.\n\n## Evidence\n\nTwo runnable counterexamples and an authorized control are available here:\n\nhttps://github.com/fkautz/wimse-security-counterexamples/tree/725f5de3c046eedd270d2afbdfd4b9cdc46dcded/issuer-origin-binding\n\nThe counterexamples cover:\n\n1. The same authority under different URI schemes.\n2. The same URI scheme under different authorities.\n\nBoth attacks produce:\n\n```text\nsignature_valid: true\nissuer_accepted: true\nauthority_trusted: true\nissuer_origin_authorized: false\nweak_policy: ALLOW\nstrict_policy: DENY\n```\n\nThe authorized control produces:\n\n```text\nauthorized_control.strict_policy: ALLOW\n```\n\n## Changes\n\nThis PR:\n\n- Defines the URI scheme as part of the origin security boundary.\n- Treats origins with different schemes as distinct.\n- Requires trust policy to use the complete Workload Identifier Origin.\n- Requires bindings between accepted origins and authorized issuers or trust material.\n- Rejects identifiers when no issuer-to-origin binding exists.\n- Allows equivalent origin-to-issuer, issuer-to-origin, or credential-format bindings.\n- Permits a fixed-scheme deployment when that restriction is explicit and enforced.\n",
       "createdAt": "2026-08-15T16:39:33Z",
-      "updatedAt": "2026-08-15T16:39:33Z",
+      "updatedAt": "2026-09-23T15:27:53Z",
       "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "baseRefName": "main",
       "baseRefOid": "70a396559efd7d392be3d43daa88e65a537cb955",
@@ -2682,24 +2701,26 @@
       "id": "PR_kwDOOowVDc8AAAABAC_AWQ",
       "title": "Change identity to identifier in a few places",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/70",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "fandreas",
-      "authorAssociation": "NONE",
+      "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "The identity is used in a few places where it should rather be identifier - this fixes that. ",
       "createdAt": "2026-08-17T18:09:20Z",
-      "updatedAt": "2026-09-20T14:43:44Z",
+      "updatedAt": "2026-09-23T15:32:17Z",
       "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "baseRefName": "main",
       "baseRefOid": "70a396559efd7d392be3d43daa88e65a537cb955",
       "headRepository": "fandreas/draft-ietf-wimse-identifier",
       "headRefName": "identity-and-identifier",
       "headRefOid": "c6cd79fed525da933066386fa0ca61bd1d347ab9",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-09-23T15:32:17Z",
+      "mergedAt": "2026-09-23T15:32:17Z",
+      "mergedBy": "yaroslavros",
+      "mergeCommit": {
+        "oid": "77482bd3857d259551d832554c53e4af75193607"
+      },
       "comments": [],
       "reviews": [
         {
@@ -2713,6 +2734,19 @@
           "body": "",
           "createdAt": "2026-09-20T14:43:44Z",
           "updatedAt": "2026-09-20T14:43:44Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOOowVDc8AAAABO352zQ",
+          "commit": {
+            "abbreviatedOid": "c6cd79f"
+          },
+          "author": "jsalowey",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-23T15:32:16Z",
+          "updatedAt": "2026-09-23T15:32:16Z",
           "comments": []
         }
       ]
@@ -2756,24 +2790,26 @@
       "id": "PR_kwDOOowVDc8AAAABADYfCQ",
       "title": "SHOULDs in Security Considerations",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/73",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "fandreas",
-      "authorAssociation": "NONE",
+      "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "Changed a few \"should\" to \"SHOULD\" per RFC 2119",
       "createdAt": "2026-08-17T19:09:42Z",
-      "updatedAt": "2026-09-20T15:34:38Z",
+      "updatedAt": "2026-09-23T15:34:24Z",
       "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "baseRefName": "main",
-      "baseRefOid": "70a396559efd7d392be3d43daa88e65a537cb955",
+      "baseRefOid": "77482bd3857d259551d832554c53e4af75193607",
       "headRepository": "fandreas/draft-ietf-wimse-identifier",
       "headRefName": "spec-language",
-      "headRefOid": "5e5d3f6684f4a75d69e5f5274b4880ef56419564",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "f98df3677881ec4713c05e288fe79e1168e5f283",
+      "closedAt": "2026-09-23T15:34:24Z",
+      "mergedAt": "2026-09-23T15:34:24Z",
+      "mergedBy": "yaroslavros",
+      "mergeCommit": {
+        "oid": "9c2a97bdb1666463dcd2e75d1becd8cdbdec911c"
+      },
       "comments": [
         {
           "author": "yaroslavros",
@@ -2795,6 +2831,19 @@
           "body": "",
           "createdAt": "2026-09-20T14:43:20Z",
           "updatedAt": "2026-09-20T14:43:20Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOOowVDc8AAAABO37LAg",
+          "commit": {
+            "abbreviatedOid": "f98df36"
+          },
+          "author": "yaroslavros",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-23T15:34:06Z",
+          "updatedAt": "2026-09-23T15:34:06Z",
           "comments": []
         }
       ]
@@ -2851,7 +2900,7 @@
       "labels": [],
       "body": "An Implementation Status entry for `wimsey` (<https://github.com/kanywst/wimsey>), which implements the Workload Identifier. The document has no Implementation Status section yet, so this adds one, worded as in draft-ietf-wimse-http-signature and draft-ietf-wimse-workload-creds.\n\nPer Section 4.3, `wimsey` does not normalize: it rejects any spelling RFC 3986 normalization would rewrite, so comparison is always over one form. Whether the draft intends normalizing or rejecting was raised on the list and looks still open; if the WG settles it the other way, the entry should change with it.\n",
       "createdAt": "2026-09-08T14:20:02Z",
-      "updatedAt": "2026-09-20T14:41:24Z",
+      "updatedAt": "2026-09-23T13:20:23Z",
       "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "baseRefName": "main",
       "baseRefOid": "70a396559efd7d392be3d43daa88e65a537cb955",
@@ -2869,6 +2918,20 @@
           "body": "This is very useful information, but I don't think we should be adding this to the draft given that we are past WGLC.\r\nIt will certainly help in Shepherd's review for the IESG.",
           "createdAt": "2026-09-20T14:41:24Z",
           "updatedAt": "2026-09-20T14:41:24Z"
+        },
+        {
+          "author": "astrogilda",
+          "authorAssociation": "NONE",
+          "body": "@yaroslavros the WGLC objection cuts the other way, and RFC 7942 says so itself.\n\nIt calls the section \"inappropriate for inclusion in a published RFC\" and asks authors to have the Editor remove it.\n\nSo the section never reaches the RFC, which makes after WGLC the moment it costs nothing.\n\n@kanywst adding that note to the RFC Editor answers the objection.\n",
+          "createdAt": "2026-09-23T02:14:38Z",
+          "updatedAt": "2026-09-23T02:14:38Z"
+        },
+        {
+          "author": "kanywst",
+          "authorAssociation": "NONE",
+          "body": "@astrogilda the note is already there, just under the heading.\n\n@yaroslavros fine either way, your call.",
+          "createdAt": "2026-09-23T13:20:23Z",
+          "updatedAt": "2026-09-23T13:20:23Z"
         }
       ],
       "reviews": []
@@ -2878,52 +2941,84 @@
       "id": "PR_kwDOOowVDc8AAAABEUMQoA",
       "title": "Path MUST NOT be empty for identifiers",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/99",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Addresses https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/69",
       "createdAt": "2026-09-20T15:00:58Z",
-      "updatedAt": "2026-09-20T15:00:59Z",
+      "updatedAt": "2026-09-23T15:05:03Z",
       "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "baseRefName": "main",
       "baseRefOid": "70a396559efd7d392be3d43daa88e65a537cb955",
       "headRepository": "yaroslavros/draft-ietf-wimse-identifier",
       "headRefName": "root-path",
       "headRefOid": "929b5dc1410479b84c214a0f2f9b48798d70b5c9",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-09-23T15:05:03Z",
+      "mergedAt": "2026-09-23T15:05:03Z",
+      "mergedBy": "yaroslavros",
+      "mergeCommit": {
+        "oid": "70f46d77d1a8c325d1335a8103355772246129f7"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOOowVDc8AAAABO3moww",
+          "commit": {
+            "abbreviatedOid": "929b5dc"
+          },
+          "author": "jsalowey",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-23T15:04:53Z",
+          "updatedAt": "2026-09-23T15:04:53Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 100,
       "id": "PR_kwDOOowVDc8AAAABEUNzdA",
       "title": "Added FQDN as a trust domain security consideration",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/100",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "To address https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/76",
       "createdAt": "2026-09-20T15:07:08Z",
-      "updatedAt": "2026-09-20T15:07:09Z",
+      "updatedAt": "2026-09-23T15:06:13Z",
       "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "baseRefName": "main",
       "baseRefOid": "70a396559efd7d392be3d43daa88e65a537cb955",
       "headRepository": "yaroslavros/draft-ietf-wimse-identifier",
       "headRefName": "fqdn-owners",
       "headRefOid": "179c62bfb2297c4dad8e2bdcb2dc9203aefc1709",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-09-23T15:06:13Z",
+      "mergedAt": "2026-09-23T15:06:13Z",
+      "mergedBy": "yaroslavros",
+      "mergeCommit": {
+        "oid": "06066088344eb8ca04e4261d3ae21ac603451298"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOOowVDc8AAAABO3nKBg",
+          "commit": {
+            "abbreviatedOid": "179c62b"
+          },
+          "author": "jsalowey",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-23T15:05:36Z",
+          "updatedAt": "2026-09-23T15:05:36Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 101,
@@ -2933,11 +3028,13 @@
       "state": "OPEN",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
-      "assignees": [],
+      "assignees": [
+        "yaroslavros"
+      ],
       "labels": [],
       "body": "Addresses https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/77",
       "createdAt": "2026-09-20T15:26:06Z",
-      "updatedAt": "2026-09-20T15:26:06Z",
+      "updatedAt": "2026-09-23T15:11:38Z",
       "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "baseRefName": "main",
       "baseRefOid": "70a396559efd7d392be3d43daa88e65a537cb955",
@@ -2948,7 +3045,15 @@
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
-      "comments": [],
+      "comments": [
+        {
+          "author": "yaroslavros",
+          "authorAssociation": "COLLABORATOR",
+          "body": "As discussed, we should prohibit dot segments and they are a security problem.",
+          "createdAt": "2026-09-23T15:11:34Z",
+          "updatedAt": "2026-09-23T15:11:34Z"
+        }
+      ],
       "reviews": []
     },
     {
@@ -2956,286 +3061,462 @@
       "id": "PR_kwDOOowVDc8AAAABEUTfKA",
       "title": "Improved wording around IP address exception",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/102",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Resolves https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/79",
       "createdAt": "2026-09-20T15:30:32Z",
-      "updatedAt": "2026-09-20T15:30:33Z",
+      "updatedAt": "2026-09-23T15:13:14Z",
       "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "baseRefName": "main",
       "baseRefOid": "70a396559efd7d392be3d43daa88e65a537cb955",
       "headRepository": "yaroslavros/draft-ietf-wimse-identifier",
       "headRefName": "ip-exception",
       "headRefOid": "d44b1533ffd2f887f062efe69ea72bf328809c65",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-09-23T15:13:13Z",
+      "mergedAt": "2026-09-23T15:13:13Z",
+      "mergedBy": "yaroslavros",
+      "mergeCommit": {
+        "oid": "08d669a608c84af852033ba69dac3c209aa7304c"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOOowVDc8AAAABO3sJAg",
+          "commit": {
+            "abbreviatedOid": "d44b153"
+          },
+          "author": "jsalowey",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-23T15:12:44Z",
+          "updatedAt": "2026-09-23T15:12:44Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 103,
       "id": "PR_kwDOOowVDc8AAAABEUUPCA",
       "title": "Clarified length restriction",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/103",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Resolves https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/81",
       "createdAt": "2026-09-20T15:33:34Z",
-      "updatedAt": "2026-09-20T15:33:35Z",
+      "updatedAt": "2026-09-23T15:14:07Z",
       "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "baseRefName": "main",
       "baseRefOid": "70a396559efd7d392be3d43daa88e65a537cb955",
       "headRepository": "yaroslavros/draft-ietf-wimse-identifier",
       "headRefName": "exceeding-constraints",
       "headRefOid": "8cd10227349ef217ba108fbf2fee22032838ae3c",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-09-23T15:14:06Z",
+      "mergedAt": "2026-09-23T15:14:06Z",
+      "mergedBy": "yaroslavros",
+      "mergeCommit": {
+        "oid": "36ba90bb621007095ed098064235c655e0aa83ad"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOOowVDc8AAAABO3svRQ",
+          "commit": {
+            "abbreviatedOid": "8cd1022"
+          },
+          "author": "jsalowey",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-23T15:13:35Z",
+          "updatedAt": "2026-09-23T15:13:35Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 104,
       "id": "PR_kwDOOowVDc8AAAABEUVcUA",
       "title": "Synced up workload definition with architecture",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/104",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "To address https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/83",
       "createdAt": "2026-09-20T15:38:33Z",
-      "updatedAt": "2026-09-20T15:38:34Z",
+      "updatedAt": "2026-09-23T15:14:53Z",
       "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "baseRefName": "main",
       "baseRefOid": "70a396559efd7d392be3d43daa88e65a537cb955",
       "headRepository": "yaroslavros/draft-ietf-wimse-identifier",
       "headRefName": "workload-definition",
       "headRefOid": "c135ea80c3faed1ff21122c020d81dd2099c5b25",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-09-23T15:14:53Z",
+      "mergedAt": "2026-09-23T15:14:52Z",
+      "mergedBy": "yaroslavros",
+      "mergeCommit": {
+        "oid": "ea239a238e0746b6148f3b5d2c86bb1cb5591170"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOOowVDc8AAAABO3tenw",
+          "commit": {
+            "abbreviatedOid": "c135ea8"
+          },
+          "author": "jsalowey",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-23T15:14:40Z",
+          "updatedAt": "2026-09-23T15:14:40Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 105,
       "id": "PR_kwDOOowVDc8AAAABEUXqaQ",
       "title": "Refer to credentials draft for Credential term introduction",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/105",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Addresses https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/84",
       "createdAt": "2026-09-20T15:47:34Z",
-      "updatedAt": "2026-09-20T15:47:35Z",
+      "updatedAt": "2026-09-23T15:15:45Z",
       "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "baseRefName": "main",
       "baseRefOid": "70a396559efd7d392be3d43daa88e65a537cb955",
       "headRepository": "yaroslavros/draft-ietf-wimse-identifier",
       "headRefName": "workload-credential",
       "headRefOid": "ea4e6d86b338970367e85f63b01d75b7cd9efedc",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-09-23T15:15:44Z",
+      "mergedAt": "2026-09-23T15:15:44Z",
+      "mergedBy": "yaroslavros",
+      "mergeCommit": {
+        "oid": "e6e5378827d2eb8148867f51817f49a30d74fd2b"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOOowVDc8AAAABO3t6JA",
+          "commit": {
+            "abbreviatedOid": "ea4e6d8"
+          },
+          "author": "jsalowey",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-23T15:15:17Z",
+          "updatedAt": "2026-09-23T15:15:17Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 106,
       "id": "PR_kwDOOowVDc8AAAABEUYRIg",
       "title": "Remove normative MAY from definition",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/106",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Addresses https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/85",
       "createdAt": "2026-09-20T15:50:07Z",
-      "updatedAt": "2026-09-20T15:50:08Z",
+      "updatedAt": "2026-09-23T15:16:40Z",
       "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "baseRefName": "main",
-      "baseRefOid": "70a396559efd7d392be3d43daa88e65a537cb955",
+      "baseRefOid": "e6e5378827d2eb8148867f51817f49a30d74fd2b",
       "headRepository": "yaroslavros/draft-ietf-wimse-identifier",
       "headRefName": "normative-may",
-      "headRefOid": "3d4629e68e6484eb1be7705dd6e0a54e19122a8f",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "c5787aa5c90c783e69d912388024403a16539dc3",
+      "closedAt": "2026-09-23T15:16:40Z",
+      "mergedAt": "2026-09-23T15:16:40Z",
+      "mergedBy": "yaroslavros",
+      "mergeCommit": {
+        "oid": "7c414fdd57ec371c6c6dfbb0d4482d6b75494dec"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOOowVDc8AAAABO3uPJw",
+          "commit": {
+            "abbreviatedOid": "3d4629e"
+          },
+          "author": "jsalowey",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-23T15:15:47Z",
+          "updatedAt": "2026-09-23T15:15:47Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 107,
       "id": "PR_kwDOOowVDc8AAAABEUY1YA",
       "title": "Replaced relying parties with consumers",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/107",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Addresses https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/96",
       "createdAt": "2026-09-20T15:52:28Z",
-      "updatedAt": "2026-09-20T15:52:28Z",
+      "updatedAt": "2026-09-23T15:17:02Z",
       "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "baseRefName": "main",
       "baseRefOid": "70a396559efd7d392be3d43daa88e65a537cb955",
       "headRepository": "yaroslavros/draft-ietf-wimse-identifier",
       "headRefName": "relying-consumers",
       "headRefOid": "a95e3d44df5ab50e96d4caea07f7a79f88c1e278",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-09-23T15:17:02Z",
+      "mergedAt": "2026-09-23T15:17:01Z",
+      "mergedBy": "yaroslavros",
+      "mergeCommit": {
+        "oid": "ee619f701c7492dadc76fce369bd5bd0c43b4163"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOOowVDc8AAAABO3u-kg",
+          "commit": {
+            "abbreviatedOid": "a95e3d4"
+          },
+          "author": "jsalowey",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-23T15:16:51Z",
+          "updatedAt": "2026-09-23T15:16:51Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 108,
       "id": "PR_kwDOOowVDc8AAAABEUZ15Q",
       "title": "Mapping can be maintained inside a credential",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/108",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Addresses https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/92",
       "createdAt": "2026-09-20T15:56:33Z",
-      "updatedAt": "2026-09-20T15:56:34Z",
+      "updatedAt": "2026-09-23T15:18:05Z",
       "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "baseRefName": "main",
       "baseRefOid": "70a396559efd7d392be3d43daa88e65a537cb955",
       "headRepository": "yaroslavros/draft-ietf-wimse-identifier",
       "headRefName": "mapping-credential",
       "headRefOid": "2ee99fc8aaeefcebad1d149469649e93b6f8d87f",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-09-23T15:18:04Z",
+      "mergedAt": "2026-09-23T15:18:04Z",
+      "mergedBy": "yaroslavros",
+      "mergeCommit": {
+        "oid": "b3a5de1902cd8e096c57a95bbc750086b5fd31c4"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOOowVDc8AAAABO3vj9Q",
+          "commit": {
+            "abbreviatedOid": "2ee99fc"
+          },
+          "author": "jsalowey",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-23T15:17:41Z",
+          "updatedAt": "2026-09-23T15:17:41Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 109,
       "id": "PR_kwDOOowVDc8AAAABEUayqA",
       "title": "Workload Identifier Origin is not Web Origin",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/109",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "To address https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/89",
       "createdAt": "2026-09-20T16:00:34Z",
-      "updatedAt": "2026-09-20T16:00:35Z",
+      "updatedAt": "2026-09-23T15:19:19Z",
       "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "baseRefName": "main",
-      "baseRefOid": "70a396559efd7d392be3d43daa88e65a537cb955",
+      "baseRefOid": "b3a5de1902cd8e096c57a95bbc750086b5fd31c4",
       "headRepository": "yaroslavros/draft-ietf-wimse-identifier",
       "headRefName": "origin-not-origin",
-      "headRefOid": "99b83b500b42be4001257f517562a71180d8f530",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "addaee75a42e89d1cf48d091b41ea98fa3da0140",
+      "closedAt": "2026-09-23T15:19:19Z",
+      "mergedAt": "2026-09-23T15:19:19Z",
+      "mergedBy": "yaroslavros",
+      "mergeCommit": {
+        "oid": "4bd2a2ab82a775c3e56d31443afe96e9b0f03507"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOOowVDc8AAAABO3wF3g",
+          "commit": {
+            "abbreviatedOid": "99b83b5"
+          },
+          "author": "jsalowey",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-23T15:18:26Z",
+          "updatedAt": "2026-09-23T15:18:26Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 110,
       "id": "PR_kwDOOowVDc8AAAABEUck5Q",
       "title": "Replaced code example",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/110",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Addresses https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/87",
       "createdAt": "2026-09-20T16:06:54Z",
-      "updatedAt": "2026-09-20T16:06:55Z",
+      "updatedAt": "2026-09-23T15:20:11Z",
       "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "baseRefName": "main",
       "baseRefOid": "70a396559efd7d392be3d43daa88e65a537cb955",
       "headRepository": "yaroslavros/draft-ietf-wimse-identifier",
       "headRefName": "code-not-code",
       "headRefOid": "773003a9639289db4c0aa08e69d9abf8db9ec90b",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-09-23T15:20:11Z",
+      "mergedAt": "2026-09-23T15:20:11Z",
+      "mergedBy": "yaroslavros",
+      "mergeCommit": {
+        "oid": "c831e26f68a700f14493a92b9a3461a971dfb7f5"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOOowVDc8AAAABO3w9FA",
+          "commit": {
+            "abbreviatedOid": "773003a"
+          },
+          "author": "jsalowey",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-23T15:19:40Z",
+          "updatedAt": "2026-09-23T15:19:40Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 111,
       "id": "PR_kwDOOowVDc8AAAABEUdpmw",
       "title": "Resolve contradictions on scheme definitions",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/111",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Addresses https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/86",
       "createdAt": "2026-09-20T16:11:15Z",
-      "updatedAt": "2026-09-20T16:11:16Z",
+      "updatedAt": "2026-09-23T15:22:12Z",
       "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "baseRefName": "main",
-      "baseRefOid": "70a396559efd7d392be3d43daa88e65a537cb955",
+      "baseRefOid": "c831e26f68a700f14493a92b9a3461a971dfb7f5",
       "headRepository": "yaroslavros/draft-ietf-wimse-identifier",
       "headRefName": "scheme-defined",
-      "headRefOid": "a54538542207042abc82052ae476e6423e30d448",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "5c04b44df44f3d5f2f515f94bda2f1e364a48aed",
+      "closedAt": "2026-09-23T15:22:12Z",
+      "mergedAt": "2026-09-23T15:22:12Z",
+      "mergedBy": "yaroslavros",
+      "mergeCommit": {
+        "oid": "74d8feec6394c7d155fd2e5a0425b5d22ff56eb5"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOOowVDc8AAAABO3x5wQ",
+          "commit": {
+            "abbreviatedOid": "a545385"
+          },
+          "author": "jsalowey",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-23T15:20:59Z",
+          "updatedAt": "2026-09-23T15:20:59Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 112,
       "id": "PR_kwDOOowVDc8AAAABEgOvdg",
       "title": "Trust domain may have multiple issuers to coordinate",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/112",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Addresses https://github.com/ietf-wg-wimse/draft-ietf-wimse-s2s-protocol/issues/336",
       "createdAt": "2026-09-21T23:57:04Z",
-      "updatedAt": "2026-09-21T23:57:05Z",
+      "updatedAt": "2026-09-23T15:24:50Z",
       "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "baseRefName": "main",
       "baseRefOid": "70a396559efd7d392be3d43daa88e65a537cb955",
       "headRepository": "yaroslavros/draft-ietf-wimse-identifier",
       "headRefName": "issuer-coordination",
       "headRefOid": "6c891e7253988c0eb4a99d0eac2014fead3bbff0",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-09-23T15:24:49Z",
+      "mergedAt": "2026-09-23T15:24:49Z",
+      "mergedBy": "yaroslavros",
+      "mergeCommit": {
+        "oid": "e0f411920d1dc6c6f9b5ef3265a121373a84322d"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOOowVDc8AAAABO3ynvw",
+          "commit": {
+            "abbreviatedOid": "6c891e7"
+          },
+          "author": "jsalowey",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-23T15:22:00Z",
+          "updatedAt": "2026-09-23T15:22:00Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
