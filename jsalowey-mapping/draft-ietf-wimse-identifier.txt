@@ -380,7 +380,9 @@ spiffe://prod.trust.domain/foo-service/instance/89a6ec51-f877-44c0-9501-b213597f
    service name and a trust domain.  In this case the correctness of the
    mapping function and the integrity of the mapping information is
    critical.  Failure to ensure the integrity and correctness can result
-   in spoofing of workloads.
+   in spoofing of workloads.  Consumers MUST NOT assume that the
+   Workload Identifier can be derived from network-layer information
+   such as IP address, DNS name, or request path without such mapping.
 
    This mapping is outside the scope of this specification and MAY be
    provided by configuration, service discovery systems, orchestration
@@ -394,10 +396,6 @@ spiffe://prod.trust.domain/foo-service/instance/89a6ec51-f877-44c0-9501-b213597f
    such a mapping MUST validate the credential and trust its issuer to
    assert the binding between the external handle and the Workload
    Identifier.
-
-   Consumers MUST NOT assume that the Workload Identifier can be derived
-   from network-layer information such as IP address, DNS name, or
-   request path without such mapping.
 
    Deployments using Workload Identifiers with the WIMSE credential
    formats defined in [WIMSE-CREDENTIALS] MUST ensure that a consistent
