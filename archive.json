@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-09-24T03:14:16.440077+00:00",
+  "timestamp": "2026-09-27T03:45:55.379731+00:00",
   "repo": "ietf-wg-wimse/draft-ietf-wimse-identifier",
   "labels": [
     {
@@ -917,9 +917,17 @@
       "labels": [],
       "body": "[From Toshiyuki Sato](https://mailarchive.ietf.org/arch/msg/wimse/jR16qhAwrMgc-YRgTa8xPjYsb3Q/)\n\n\u00a75 (Identifier Interpretation and Mapping) requires a deployment-defined mapping between external handles (DNS names, service names, load-balancer addresses) and the Workload Identifier, but says nothing about the integrity of the mapping source itself. If the service-discovery or orchestration system supplying that mapping is spoofed or misconfigured, a consumer can be led to accept traffic under the wrong external-handle-to-identifier association \u2014 which undermines the trust-domain binding \u00a77.3 is otherwise careful about. I'd note this is the same seam as an open item I raised on mutual-tls-02's DNS-vs-workload-identity server validation (\u00a73.2.1 there): the two documents are describing the same boundary from opposite sides, and neither currently states who's responsible for the mapping's trustworthiness. Worth resolving as one issue across both drafts rather than two.",
       "createdAt": "2026-08-18T18:49:32Z",
-      "updatedAt": "2026-08-18T19:13:11Z",
+      "updatedAt": "2026-09-25T05:05:00Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "jsalowey",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I think the important aspect here is that the peer MUST know the WIMSE identifier it is expecting to talk to. And it MUST validate that the WIMSE identifier authenticated in the WIMSE credential is the same as the one it intended to talk to.  Now there are several possible places to have mappings one is to map a wimse identifier to an addressable endpoint. If this mapping is compromised then the peer should not accept the credential of the wrong endpoint. For a WIMSE system the WIMSE identifier bears this responsibility. it is the WIMSE identifier must be the intended endpoint and the presented credential must match that identifier.  \n\nNow mapping could also be used to map a quantity to a WIMSE identifier. such as a service account to a WIMSE identifier.  A compromise in this mapping can result in a spoofed connection so the integrity of this mapping is critical. \n",
+          "createdAt": "2026-09-25T05:05:00Z",
+          "updatedAt": "2026-09-25T05:05:00Z"
+        }
+      ]
     },
     {
       "number": 76,
@@ -1326,7 +1334,7 @@
       "id": "I_kwDOOowVDc8AAAABNREbiQ",
       "title": "Relying parties -> Consumers",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/96",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -1335,8 +1343,8 @@
       "labels": [],
       "body": "[From Pieter Kasselman](https://mailarchive.ietf.org/arch/msg/wimse/z09d0ZsaC8lFgFFFX-N_1A7dWmI/)\n\nSection 7.5: Consider replacing \u201crelying parties\u201d with \u201cConsumers\u201d\nto be consistent with rest of the document (relying parties is one\ntype of Consumer)\n",
       "createdAt": "2026-08-18T19:01:53Z",
-      "updatedAt": "2026-08-18T19:32:37Z",
-      "closedAt": null,
+      "updatedAt": "2026-09-25T04:51:07Z",
+      "closedAt": "2026-09-25T04:51:07Z",
       "comments": []
     },
     {
@@ -2900,7 +2908,7 @@
       "labels": [],
       "body": "An Implementation Status entry for `wimsey` (<https://github.com/kanywst/wimsey>), which implements the Workload Identifier. The document has no Implementation Status section yet, so this adds one, worded as in draft-ietf-wimse-http-signature and draft-ietf-wimse-workload-creds.\n\nPer Section 4.3, `wimsey` does not normalize: it rejects any spelling RFC 3986 normalization would rewrite, so comparison is always over one form. Whether the draft intends normalizing or rejecting was raised on the list and looks still open; if the WG settles it the other way, the entry should change with it.\n",
       "createdAt": "2026-09-08T14:20:02Z",
-      "updatedAt": "2026-09-23T13:20:23Z",
+      "updatedAt": "2026-09-25T15:34:13Z",
       "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "baseRefName": "main",
       "baseRefOid": "70a396559efd7d392be3d43daa88e65a537cb955",
@@ -2922,9 +2930,9 @@
         {
           "author": "astrogilda",
           "authorAssociation": "NONE",
-          "body": "@yaroslavros the WGLC objection cuts the other way, and RFC 7942 says so itself.\n\nIt calls the section \"inappropriate for inclusion in a published RFC\" and asks authors to have the Editor remove it.\n\nSo the section never reaches the RFC, which makes after WGLC the moment it costs nothing.\n\n@kanywst adding that note to the RFC Editor answers the objection.\n",
+          "body": "@yaroslavros the WGLC objection cuts the other way, and RFC 7942 says so itself.\n\nIt calls the section \"inappropriate for inclusion in a published RFC\" and asks authors to have the Editor remove it.\n\nSo the section never reaches the RFC, and adding it after WGLC changes nothing that gets published. The note to the RFC Editor is already under the heading, so the section comes out before publication, as RFC 7942 intends.\n\nEdited on September 25: I had asked for that note, and it was already in the PR, as @kanywst pointed out.\n",
           "createdAt": "2026-09-23T02:14:38Z",
-          "updatedAt": "2026-09-23T02:14:38Z"
+          "updatedAt": "2026-09-25T15:30:40Z"
         },
         {
           "author": "kanywst",
@@ -2932,6 +2940,13 @@
           "body": "@astrogilda the note is already there, just under the heading.\n\n@yaroslavros fine either way, your call.",
           "createdAt": "2026-09-23T13:20:23Z",
           "updatedAt": "2026-09-23T13:20:23Z"
+        },
+        {
+          "author": "astrogilda",
+          "authorAssociation": "NONE",
+          "body": "@kanywst, thank you, you're right: the note was already there, and I've corrected my comment above.\n",
+          "createdAt": "2026-09-25T15:34:13Z",
+          "updatedAt": "2026-09-25T15:34:13Z"
         }
       ],
       "reviews": []
@@ -3515,6 +3530,59 @@
           "createdAt": "2026-09-23T15:22:00Z",
           "updatedAt": "2026-09-23T15:22:00Z",
           "comments": []
+        }
+      ]
+    },
+    {
+      "number": 113,
+      "id": "PR_kwDOOowVDc8AAAABFDulSQ",
+      "title": "Enhance WIMSE identifier mapping and validation requirements",
+      "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/113",
+      "state": "OPEN",
+      "author": "jsalowey",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Clarified requirements for WIMSE identifier validation and mapping integrity to prevent spoofing. addressing #75",
+      "createdAt": "2026-09-25T05:25:27Z",
+      "updatedAt": "2026-09-25T05:38:17Z",
+      "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
+      "baseRefName": "main",
+      "baseRefOid": "9c2a97bdb1666463dcd2e75d1becd8cdbdec911c",
+      "headRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
+      "headRefName": "jsalowey-mapping",
+      "headRefOid": "4e2ca10c790f72399e0c069157ef155dd219cbe6",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOOowVDc8AAAABPLpMXw",
+          "commit": {
+            "abbreviatedOid": "4e2ca10"
+          },
+          "author": "jsalowey",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-09-25T05:34:56Z",
+          "updatedAt": "2026-09-25T05:38:17Z",
+          "comments": [
+            {
+              "originalPosition": 1,
+              "body": "I think this sentence is problematic.  There may be multiple identifiers in the certificate or credential, but WIMSE systems need to validate the WIMSE identifier in the credential.  It is an interesting question if they should also validate additional network identifiers if the are present in the credential.\n\n\n```suggestion\nThe mapping MAY also be conveyed within a Workload Identity Credential, where supported by the credential format and deployment policy. For example, a Workload Identity Certificate can contain both a DNS name and a Workload Identifier in its SubjectAltName extension ({{Section 6.1 of !WIMSE-CREDENTIALS=I-D.ietf-wimse-workload-creds}}). WIMSE consumers relying on such a mapping MUST validate the credential and check that the WIMSE identifier matches the identifier of the system they intended to connect to.  It is assumed that the issuer validates the binding between the external handle and the Workload Identifier so the consumer SHOULD also validate the external handle in the credential matches the corresponding external handle arrived at in the mapping function. \n```",
+              "createdAt": "2026-09-25T05:34:56Z",
+              "updatedAt": "2026-09-25T05:38:17Z"
+            },
+            {
+              "originalPosition": 15,
+              "body": "I'm not sure what this is requiring and what the value is here. ",
+              "createdAt": "2026-09-25T05:37:50Z",
+              "updatedAt": "2026-09-25T05:38:17Z"
+            }
+          ]
         }
       ]
     }
