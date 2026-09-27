@@ -200,7 +200,7 @@ A Workload Identifier Origin has no path component and is therefore not itself a
 
 A Workload Identifier Origin is distinct from the Web Origin concept defined in {{?WEB-ORIGIN=RFC6454}}. It identifies a workload namespace and does not imply the same-origin policy or origin-processing rules defined for the Web.
 
-Workload Identifier Origins serve as hints about the set of identifiers an entity may present in a particular protocol instance or usage context without revealing specific identifier.
+Workload Identifier Origins serve as hints about the set of identifiers an entity may present in a particular protocol instance or usage context without revealing a specific identifier.
 
 Examples of Workload Identifier Origins:
 
