@@ -95,7 +95,7 @@ Consumer:
 
 : An entity that evaluates, verifies or uses a Workload Identifier for authentication, authorization, or auditing purposes, typically after obtaining it from a validated Workload Identity Credential. This includes relying parties, verifiers, and policy enforcement points.
 
-# Workload Identifier Specification
+# Workload Identifier Specification {#workload-id}
 
 A Workload Identifier is a URI {{URI}} that uniquely identifies a workload. It encodes both the trust domain and a workload-specific path, enabling unambiguous identification of workloads across administrative and organizational boundaries.
 
@@ -235,7 +235,7 @@ A Workload Identifier is intended to be used as a stable identifier for a worklo
 
 ## URI Parsing and Processing Considerations
 
-Workload Identifiers are encoded as URIs and therefore rely on correct and secure URI parsing. Implementations MUST apply a standards-compliant URI parser.
+Workload Identifiers are encoded as URIs and therefore rely on correct and secure URI parsing. Implementations MUST parse URIs according to {{workload-id}}.
 
 Incorrect URI parsing can result in misinterpretation of identifier components, security policy bypass, or inconsistent trust domain evaluation across implementations.
 
