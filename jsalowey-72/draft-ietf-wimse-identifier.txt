@@ -5,8 +5,8 @@
 Workload Identity in Multi System Environments              Y. Rosomakho
 Internet-Draft                                                   Zscaler
 Intended status: Standards Track                              J. Salowey
-Expires: 31 March 2027                                Palo Alto Networks
-                                                       27 September 2026
+Expires: 1 April 2027                                 Palo Alto Networks
+                                                       28 September 2026
 
 
                           Workload Identifier
@@ -56,7 +56,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 31 March 2027.
+   This Internet-Draft will expire on 1 April 2027.
 
 Copyright Notice
 
@@ -630,6 +630,8 @@ B.4.  since draft-ietf-wimse-identifier-03
 
    *  Fixed stale section references into draft-ietf-wimse-workload-
       creds
+
+   *  Workload uniqueness clarifications
 
 Authors' Addresses
 
