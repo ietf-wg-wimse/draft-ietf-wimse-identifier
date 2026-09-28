@@ -342,3 +342,4 @@ Authors would like to thank Evan Gilman for his review of the initial text of th
 
 * Editorial: consistent capitalization of the defined terms "Workload Identifier" and "Workload Identity Certificate", aligning with draft-ietf-wimse-workload-creds and the WIMSE protocol drafts
 * Fixed stale section references into draft-ietf-wimse-workload-creds
+* Updated Identity Mapping section
