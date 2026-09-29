@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-09-27T03:45:55.379731+00:00",
+  "timestamp": "2026-09-29T04:20:17.512690+00:00",
   "repo": "ietf-wg-wimse/draft-ietf-wimse-identifier",
   "labels": [
     {
@@ -857,7 +857,7 @@
       "id": "I_kwDOOowVDc8AAAABNDj_LA",
       "title": "Root path-ed identifiers",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/69",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "arndt-s",
       "authorAssociation": "NONE",
       "assignees": [
@@ -866,8 +866,8 @@
       "labels": [],
       "body": "Is `wimse://example.org` a valid Workload Identifier or is the path required? The current document doesn't say and leaves it up for interpretation.",
       "createdAt": "2026-08-17T11:00:45Z",
-      "updatedAt": "2026-08-18T19:11:06Z",
-      "closedAt": null,
+      "updatedAt": "2026-09-27T16:28:58Z",
+      "closedAt": "2026-09-27T16:28:58Z",
       "comments": [
         {
           "author": "arndt-s",
@@ -892,16 +892,24 @@
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/72",
       "state": "OPEN",
       "author": "fandreas",
-      "authorAssociation": "NONE",
+      "authorAssociation": "CONTRIBUTOR",
       "assignees": [
         "jsalowey"
       ],
       "labels": [],
       "body": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/blob/70a396559efd7d392be3d43daa88e65a537cb955/draft-ietf-wimse-identifier.md?plain=1#L57\n\nThe document is a bit inconsistent in how it describes uniqueness of workload identifiers. Here it says \"globally unique within a given trust domain\". The \"within a given trust domain\" doesn't make sense. It's either globally unique or it isn't. \n\nLater on, in Section 4, it then goes on to say that (referencing the workload identifier) \"It encodes both the trust domain and a workload-specific path\". Taken together, this suggests that there is a requirement for the trust domain to have a globally unique name, however that's not called out anywhere. ",
       "createdAt": "2026-08-17T18:30:31Z",
-      "updatedAt": "2026-08-18T19:11:47Z",
+      "updatedAt": "2026-09-28T00:00:08Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "jsalowey",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Opened PR.",
+          "createdAt": "2026-09-28T00:00:08Z",
+          "updatedAt": "2026-09-28T00:00:08Z"
+        }
+      ]
     },
     {
       "number": 75,
@@ -934,7 +942,7 @@
       "id": "I_kwDOOowVDc8AAAABNQ-fmQ",
       "title": "FQDN \"legitimate owners\"",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/76",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -943,8 +951,8 @@
       "labels": [],
       "body": "[From Toshiyuki Sato](https://mailarchive.ietf.org/arch/msg/wimse/jR16qhAwrMgc-YRgTa8xPjYsb3Q/)\n\n\u00a74.3 recommends the trust domain be a FQDN \"to help provide uniqueness\" (SHOULD-level), but nothing here \u2014 or cross-referenced \u2014 requires that only the legitimate owner of that FQDN can mint identifiers under it. I'd assume that assurance comes from whatever PKI issues the credentials carrying the identifier (per [WIMSE-CREDENTIALS]), but the dependency isn't stated. A one-line pointer would close this.",
       "createdAt": "2026-08-18T18:50:12Z",
-      "updatedAt": "2026-08-18T19:15:10Z",
-      "closedAt": null,
+      "updatedAt": "2026-09-27T16:29:06Z",
+      "closedAt": "2026-09-27T16:29:06Z",
       "comments": [
         {
           "author": "yaroslavros",
@@ -978,7 +986,7 @@
       "id": "I_kwDOOowVDc8AAAABNQ_hRQ",
       "title": "Cross-issuer uniqueness within a trust domain",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/78",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -987,9 +995,17 @@
       "labels": [],
       "body": "[From Karthik Rampalli](https://mailarchive.ietf.org/arch/msg/wimse/lzjcKSWaypoSkfRyAelq-CfI-Hk/)\n\n\nSection 4.3 says \"Issuers within a trust domain MUST ensure uniqueness of all Workload Identifiers they assign,\" and Section 4.2 anticipates multiple issuers per trust domain. As written, two issuers can each satisfy the requirement individually while assigning the same identifier to different workloads. Suggest rewording so uniqueness holds across all issuers of the trust domain, with the trust domain responsible for coordination.",
       "createdAt": "2026-08-18T18:52:11Z",
-      "updatedAt": "2026-08-18T19:18:42Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2026-09-27T23:34:26Z",
+      "closedAt": "2026-09-27T23:34:26Z",
+      "comments": [
+        {
+          "author": "jsalowey",
+          "authorAssociation": "COLLABORATOR",
+          "body": "This is now addressed in section 4.3\n\nEach trust domain MUST coordinate Workload Identifier assignment across all of its issuers to ensure that different workloads are assigned distinct Workload Identifiers.",
+          "createdAt": "2026-09-27T23:34:26Z",
+          "updatedAt": "2026-09-27T23:34:26Z"
+        }
+      ]
     },
     {
       "number": 79,
@@ -1026,12 +1042,12 @@
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
-        "jsalowey"
+        "yaroslavros"
       ],
       "labels": [],
       "body": "[From Karthik Rampalli](https://mailarchive.ietf.org/arch/msg/wimse/lzjcKSWaypoSkfRyAelq-CfI-Hk/)\n\nSections 4.3/7.3: state whether an internationalized trust domain is carried as an A-label or U-label. It matters for allowlist matching and homoglyph confusion.",
       "createdAt": "2026-08-18T18:54:22Z",
-      "updatedAt": "2026-08-18T19:21:46Z",
+      "updatedAt": "2026-09-27T23:44:36Z",
       "closedAt": null,
       "comments": []
     },
@@ -1058,7 +1074,7 @@
       "id": "I_kwDOOowVDc8AAAABNRBBPQ",
       "title": "Normative allowlist",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/82",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -1067,8 +1083,8 @@
       "labels": [],
       "body": "[From Karthik Rampalli](https://mailarchive.ietf.org/arch/msg/wimse/lzjcKSWaypoSkfRyAelq-CfI-Hk/)\n\nSection 7.3: \"consumers should maintain an allowlist\": if normative, capitalize SHOULD.\n",
       "createdAt": "2026-08-18T18:55:17Z",
-      "updatedAt": "2026-09-20T15:34:26Z",
-      "closedAt": null,
+      "updatedAt": "2026-09-27T16:29:20Z",
+      "closedAt": "2026-09-27T16:29:20Z",
       "comments": [
         {
           "author": "yaroslavros",
@@ -1084,7 +1100,7 @@
       "id": "I_kwDOOowVDc8AAAABNRB4ew",
       "title": "Workload Definition Drift",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/83",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -1093,8 +1109,8 @@
       "labels": [],
       "body": "[From Pieter Kasselman](https://mailarchive.ietf.org/arch/msg/wimse/z09d0ZsaC8lFgFFFX-N_1A7dWmI/)\n\nSection 3: Workload Definition Drift: The draft defines a workload\na little bit differently from the architecture doc. I propose that\ninstead of repeating the definition, perhaps reference the workload\ndefinition in the WIMSE architecture document, rather than repeating\nit.\n",
       "createdAt": "2026-08-18T18:57:03Z",
-      "updatedAt": "2026-09-20T15:39:39Z",
-      "closedAt": null,
+      "updatedAt": "2026-09-27T16:29:31Z",
+      "closedAt": "2026-09-27T16:29:31Z",
       "comments": [
         {
           "author": "yaroslavros",
@@ -1110,7 +1126,7 @@
       "id": "I_kwDOOowVDc8AAAABNRCDEA",
       "title": "Reference to Workload Identity Credential",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/84",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -1119,8 +1135,8 @@
       "labels": [],
       "body": "[From Pieter Kasselman](https://mailarchive.ietf.org/arch/msg/wimse/z09d0ZsaC8lFgFFFX-N_1A7dWmI/)\n\nSection 3: Add a reference to Workload Identity Credential: The\nterm is used, but it is not defined. Perhaps just reference the WIMSE\narchitecture document where it is defined? Alternatively, since it is\nnever used elsewhere in the text, it could be omitted, or a section\ncan be added to discuss the use of Workload Identifiers in Workload\nIdentity Credentials (or reference the Workload Identity Credentials\nDraft).",
       "createdAt": "2026-08-18T18:57:24Z",
-      "updatedAt": "2026-08-18T19:23:24Z",
-      "closedAt": null,
+      "updatedAt": "2026-09-27T16:29:38Z",
+      "closedAt": "2026-09-27T16:29:38Z",
       "comments": []
     },
     {
@@ -1128,7 +1144,7 @@
       "id": "I_kwDOOowVDc8AAAABNRCTEw",
       "title": "Separate definition description from the normative requirement",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/85",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -1137,8 +1153,8 @@
       "labels": [],
       "body": "[From Pieter Kasselman](https://mailarchive.ietf.org/arch/msg/wimse/z09d0ZsaC8lFgFFFX-N_1A7dWmI/)\n\nSection 3: It feels strange to see a normative MAY in the\ndefinition. Is it possible to separate the definition description from\nthe normative requirement?",
       "createdAt": "2026-08-18T18:57:54Z",
-      "updatedAt": "2026-08-18T19:24:01Z",
-      "closedAt": null,
+      "updatedAt": "2026-09-27T16:29:44Z",
+      "closedAt": "2026-09-27T16:29:44Z",
       "comments": []
     },
     {
@@ -1146,7 +1162,7 @@
       "id": "I_kwDOOowVDc8AAAABNRCd1g",
       "title": "Contradictions on scheme definitions",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/86",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -1155,8 +1171,8 @@
       "labels": [],
       "body": "[From Pieter Kasselman](https://mailarchive.ietf.org/arch/msg/wimse/z09d0ZsaC8lFgFFFX-N_1A7dWmI/)\n\nSection 4.3: Contradictions on scheme definitions - Section 4.2\nclaims that no scheme is defined in this spec (This specification does\nnot define additional structure or semantics for the Workload\nIdentifier beyond the generic URI syntax and the trust domain carried\nin the authority component.\u201d - I read that as \u201cthis is just a URI\u201d),\nbut then section 4.4 defines the wimse scheme. Perhaps some\nclarification on the text in section 4.2 is needed to declare that\nthis document does define the wimse scheme, and then describe the\nlimits of that definition?",
       "createdAt": "2026-08-18T18:58:11Z",
-      "updatedAt": "2026-08-18T19:24:37Z",
-      "closedAt": null,
+      "updatedAt": "2026-09-27T16:29:48Z",
+      "closedAt": "2026-09-27T16:29:48Z",
       "comments": []
     },
     {
@@ -1164,7 +1180,7 @@
       "id": "I_kwDOOowVDc8AAAABNRCsJA",
       "title": "\"code\" definition",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/87",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -1173,8 +1189,8 @@
       "labels": [],
       "body": "[From Pieter Kasselman](https://mailarchive.ietf.org/arch/msg/wimse/z09d0ZsaC8lFgFFFX-N_1A7dWmI/)\n\nSection 4.2 refers to \u201ccode\u201d but does not define what code or how\nthat code is used (e.g. is this a hash of the binary of the\nexecutable?).",
       "createdAt": "2026-08-18T18:58:34Z",
-      "updatedAt": "2026-08-18T19:26:52Z",
-      "closedAt": null,
+      "updatedAt": "2026-09-27T16:30:06Z",
+      "closedAt": "2026-09-27T16:30:06Z",
       "comments": []
     },
     {
@@ -1191,16 +1207,24 @@
       "labels": [],
       "body": "[From Pieter Kasselman](https://mailarchive.ietf.org/arch/msg/wimse/z09d0ZsaC8lFgFFFX-N_1A7dWmI/)\n\nSection 4.6 (Editorial): \"without revealing specific identifier\" -> \"without revealing a specific identifier\".",
       "createdAt": "2026-08-18T18:58:54Z",
-      "updatedAt": "2026-08-18T19:27:18Z",
+      "updatedAt": "2026-09-27T23:59:33Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "jsalowey",
+          "authorAssociation": "COLLABORATOR",
+          "body": "#115",
+          "createdAt": "2026-09-27T23:59:33Z",
+          "updatedAt": "2026-09-27T23:59:33Z"
+        }
+      ]
     },
     {
       "number": 89,
       "id": "I_kwDOOowVDc8AAAABNRDFLA",
       "title": "Origin reference to RFC6454",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/89",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -1209,8 +1233,8 @@
       "labels": [],
       "body": "[From Pieter Kasselman](https://mailarchive.ietf.org/arch/msg/wimse/z09d0ZsaC8lFgFFFX-N_1A7dWmI/)\n\nSection 4.6: Workload Identifier Origin - Is this the same origin\nconcepts as in RFC 6454? Should it reference RFC 6454?",
       "createdAt": "2026-08-18T18:59:18Z",
-      "updatedAt": "2026-08-18T19:28:31Z",
-      "closedAt": null,
+      "updatedAt": "2026-09-27T16:30:08Z",
+      "closedAt": "2026-09-27T16:30:08Z",
       "comments": [
         {
           "author": "yaroslavros",
@@ -1226,7 +1250,7 @@
       "id": "I_kwDOOowVDc8AAAABNRDUXA",
       "title": "Risks of reassigning a workload identifier",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/90",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -1235,9 +1259,17 @@
       "labels": [],
       "body": "[From Pieter Kasselman](https://mailarchive.ietf.org/arch/msg/wimse/z09d0ZsaC8lFgFFFX-N_1A7dWmI/)\n\nSection 4.5: Consider adding text that describes the harms that may\narise from reassigning a workload identifier.\n",
       "createdAt": "2026-08-18T18:59:43Z",
-      "updatedAt": "2026-08-18T19:28:49Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2026-09-27T23:43:48Z",
+      "closedAt": "2026-09-27T23:43:48Z",
+      "comments": [
+        {
+          "author": "jsalowey",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Addressed in section 7.4",
+          "createdAt": "2026-09-27T23:43:48Z",
+          "updatedAt": "2026-09-27T23:43:48Z"
+        }
+      ]
     },
     {
       "number": 91,
@@ -1253,16 +1285,24 @@
       "labels": [],
       "body": "[From Pieter Kasselman](https://mailarchive.ietf.org/arch/msg/wimse/z09d0ZsaC8lFgFFFX-N_1A7dWmI/)\n\nSection 4.5: Consider adding text describing how a hierarchical\nidentifier lets authorization logic operate on a subset of the path\n(e.g. by ignoring the more specific parts of the path which may\nindicate an instance).",
       "createdAt": "2026-08-18T19:00:09Z",
-      "updatedAt": "2026-08-18T19:29:18Z",
+      "updatedAt": "2026-09-27T23:50:48Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "jsalowey",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Section 4.2 now provides some annotated examples.  I'm not sure that we want to get more detailed than this.  If we really want to describe hierarchical processing then we should define a scheme for it. ",
+          "createdAt": "2026-09-27T23:50:48Z",
+          "updatedAt": "2026-09-27T23:50:48Z"
+        }
+      ]
     },
     {
       "number": 92,
       "id": "I_kwDOOowVDc8AAAABNRDy_A",
       "title": "Mapping can be maintained inside a credential",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/92",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -1271,8 +1311,8 @@
       "labels": [],
       "body": "[From Pieter Kasselman](https://mailarchive.ietf.org/arch/msg/wimse/z09d0ZsaC8lFgFFFX-N_1A7dWmI/)\n\nSection 5: Consider calling out that the mapping can be maintained\ninside a credential (e.g. \u201cTo enable correct authentication decisions,\nimplementations MUST support a deployment-defined mapping between the\nexternal handle used to access a workload and the Workload Identifier\nexpected for that workload.\u201d - > \u201cTo enable correct authentication\ndecisions, implementations MUST support a deployment-defined mapping\nbetween the external handle used to access a workload and the Workload\nIdentifier expected for that workload. The mapping MAY be maintained\ninside the workload Identity Credential as defined in\n[WIMSE-CREDENTIALS].",
       "createdAt": "2026-08-18T19:00:36Z",
-      "updatedAt": "2026-08-18T19:29:51Z",
-      "closedAt": null,
+      "updatedAt": "2026-09-27T16:30:11Z",
+      "closedAt": "2026-09-27T16:30:10Z",
       "comments": []
     },
     {
@@ -1298,7 +1338,7 @@
       "id": "I_kwDOOowVDc8AAAABNREJLw",
       "title": "Editorial",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/94",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -1307,16 +1347,24 @@
       "labels": [],
       "body": "[From Pieter Kasselman](https://mailarchive.ietf.org/arch/msg/wimse/z09d0ZsaC8lFgFFFX-N_1A7dWmI/)\n\nSection 6 (Editorial): \u201cThe representation of Workload Identifiers\nin WIMSE credentials formats \u201c - > \u201cThe representation of Workload\nIdentifiers in WIMSE credential formats \u201c\n",
       "createdAt": "2026-08-18T19:01:16Z",
-      "updatedAt": "2026-08-18T19:30:12Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2026-09-27T23:38:38Z",
+      "closedAt": "2026-09-27T23:38:38Z",
+      "comments": [
+        {
+          "author": "jsalowey",
+          "authorAssociation": "COLLABORATOR",
+          "body": "already fixed.",
+          "createdAt": "2026-09-27T23:38:32Z",
+          "updatedAt": "2026-09-27T23:38:32Z"
+        }
+      ]
     },
     {
       "number": 95,
       "id": "I_kwDOOowVDc8AAAABNRESDQ",
       "title": "Editorial",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/95",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -1325,9 +1373,17 @@
       "labels": [],
       "body": "[From Pieter Kasselman](https://mailarchive.ietf.org/arch/msg/wimse/z09d0ZsaC8lFgFFFX-N_1A7dWmI/)\n\nSection 7 Editorial: Section 7 cross-references section headers in\nthe Workload Identity Credentials draft, which appears to have moved.\nCurrently it references Section 3.1 and 4.1 when it should be\nreferencing Section 5.1 and Section 6.1.\n",
       "createdAt": "2026-08-18T19:01:34Z",
-      "updatedAt": "2026-08-18T19:30:20Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2026-09-27T23:40:49Z",
+      "closedAt": "2026-09-27T23:40:49Z",
+      "comments": [
+        {
+          "author": "jsalowey",
+          "authorAssociation": "COLLABORATOR",
+          "body": "resolved already",
+          "createdAt": "2026-09-27T23:40:49Z",
+          "updatedAt": "2026-09-27T23:40:49Z"
+        }
+      ]
     },
     {
       "number": 96,
@@ -1361,9 +1417,17 @@
       "labels": [],
       "body": "[From Pieter Kasselman](https://mailarchive.ietf.org/arch/msg/wimse/z09d0ZsaC8lFgFFFX-N_1A7dWmI/)\n\nSection  7.6 : URI Parsing: \u201cImplementations MUST apply a\nstandards-compliant URI parser.\u201d - It is unclear which standard should\nbe applied - e.g. RFC 3986 (are there specific aspects of RFC 3986\nthat should apply)?\n",
       "createdAt": "2026-08-18T19:02:14Z",
-      "updatedAt": "2026-08-18T19:33:04Z",
+      "updatedAt": "2026-09-27T23:59:06Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "jsalowey",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Parsing is discussed extensively in section 4 which references the appropriate specs.  see #116",
+          "createdAt": "2026-09-27T23:59:06Z",
+          "updatedAt": "2026-09-27T23:59:06Z"
+        }
+      ]
     }
   ],
   "pulls": [
@@ -2861,24 +2925,26 @@
       "id": "PR_kwDOOowVDc8AAAABADzCOQ",
       "title": "Editorial nit fixes",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/74",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "fandreas",
-      "authorAssociation": "NONE",
+      "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "Minor editorial nit fixes",
       "createdAt": "2026-08-17T20:17:16Z",
-      "updatedAt": "2026-09-20T14:42:50Z",
+      "updatedAt": "2026-09-27T16:57:43Z",
       "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "baseRefName": "main",
-      "baseRefOid": "70a396559efd7d392be3d43daa88e65a537cb955",
+      "baseRefOid": "9c2a97bdb1666463dcd2e75d1becd8cdbdec911c",
       "headRepository": "fandreas/draft-ietf-wimse-identifier",
       "headRefName": "editorial_v2",
-      "headRefOid": "d133831d5a8fe6e0ea1f2b515ac98d5fb3756194",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "c6f80664b771870cabef53236fb513d1596b0f78",
+      "closedAt": "2026-09-27T16:57:43Z",
+      "mergedAt": "2026-09-27T16:57:43Z",
+      "mergedBy": "yaroslavros",
+      "mergeCommit": {
+        "oid": "3f6cb1042f68b29f12018a32be4cddbcb5e01ca9"
+      },
       "comments": [],
       "reviews": [
         {
@@ -3049,13 +3115,13 @@
       "labels": [],
       "body": "Addresses https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/77",
       "createdAt": "2026-09-20T15:26:06Z",
-      "updatedAt": "2026-09-23T15:11:38Z",
+      "updatedAt": "2026-09-27T23:04:42Z",
       "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "baseRefName": "main",
-      "baseRefOid": "70a396559efd7d392be3d43daa88e65a537cb955",
+      "baseRefOid": "9c2a97bdb1666463dcd2e75d1becd8cdbdec911c",
       "headRepository": "yaroslavros/draft-ietf-wimse-identifier",
       "headRefName": "comparision-normalization",
-      "headRefOid": "9346b4bbc1c676821eb09bd85b601395a4678181",
+      "headRefOid": "085bf4ed381f88a52c505c350c4dcea3a3f25a47",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -3067,9 +3133,30 @@
           "body": "As discussed, we should prohibit dot segments and they are a security problem.",
           "createdAt": "2026-09-23T15:11:34Z",
           "updatedAt": "2026-09-23T15:11:34Z"
+        },
+        {
+          "author": "yaroslavros",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@jsalowey as discussed, I have added text to prohibit dot-segments and few additional security considerations.\r\nPlease approve.",
+          "createdAt": "2026-09-27T16:47:13Z",
+          "updatedAt": "2026-09-27T16:47:13Z"
         }
       ],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOOowVDc8AAAABPdibgQ",
+          "commit": {
+            "abbreviatedOid": "085bf4e"
+          },
+          "author": "jsalowey",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-27T23:04:42Z",
+          "updatedAt": "2026-09-27T23:04:42Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 102,
@@ -3545,13 +3632,13 @@
       "labels": [],
       "body": "Clarified requirements for WIMSE identifier validation and mapping integrity to prevent spoofing. addressing #75",
       "createdAt": "2026-09-25T05:25:27Z",
-      "updatedAt": "2026-09-25T05:38:17Z",
+      "updatedAt": "2026-09-28T00:05:00Z",
       "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "baseRefName": "main",
       "baseRefOid": "9c2a97bdb1666463dcd2e75d1becd8cdbdec911c",
       "headRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "headRefName": "jsalowey-mapping",
-      "headRefOid": "4e2ca10c790f72399e0c069157ef155dd219cbe6",
+      "headRefOid": "b0386127da97fa66be643e0465b3bc313901cac3",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -3585,6 +3672,84 @@
           ]
         }
       ]
+    },
+    {
+      "number": 114,
+      "id": "PR_kwDOOowVDc8AAAABFZxciA",
+      "title": "Clarify Workload Identifier uniqueness and stability #72",
+      "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/114",
+      "state": "OPEN",
+      "author": "jsalowey",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Updated the description of the Workload Identifier to clarify its uniqueness and stability within trust domains. Adjusted the formatting of the Trust Domain Validation section for consistency. Address issue #72",
+      "createdAt": "2026-09-27T23:27:28Z",
+      "updatedAt": "2026-09-28T00:06:12Z",
+      "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
+      "baseRefName": "main",
+      "baseRefOid": "3f6cb1042f68b29f12018a32be4cddbcb5e01ca9",
+      "headRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
+      "headRefName": "jsalowey-72",
+      "headRefOid": "7b2474d8c673368db7411dbc05619e741accda22",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 115,
+      "id": "PR_kwDOOowVDc8AAAABFZ1lRQ",
+      "title": "Fix typo in Workload Identifier Origins description",
+      "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/115",
+      "state": "OPEN",
+      "author": "jsalowey",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Address issue #88",
+      "createdAt": "2026-09-27T23:41:56Z",
+      "updatedAt": "2026-09-27T23:41:57Z",
+      "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
+      "baseRefName": "main",
+      "baseRefOid": "3f6cb1042f68b29f12018a32be4cddbcb5e01ca9",
+      "headRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
+      "headRefName": "jsalowey-88",
+      "headRefOid": "e0ded8fd44e0541cc8f2e7514ec2a370db7b48cc",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 116,
+      "id": "PR_kwDOOowVDc8AAAABFZ6j7w",
+      "title": "Update Workload Identifier specification and URI parsing",
+      "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/116",
+      "state": "OPEN",
+      "author": "jsalowey",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Clarify the specification and processing requirements for Workload Identifiers. address issue #97",
+      "createdAt": "2026-09-27T23:58:26Z",
+      "updatedAt": "2026-09-27T23:58:27Z",
+      "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
+      "baseRefName": "main",
+      "baseRefOid": "3f6cb1042f68b29f12018a32be4cddbcb5e01ca9",
+      "headRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
+      "headRefName": "jsalowey-patch-1",
+      "headRefOid": "1248288f2ecb7de7f398056e645e3203b8ef7593",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
