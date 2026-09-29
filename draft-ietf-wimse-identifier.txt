@@ -443,8 +443,8 @@ spiffe://prod.trust.domain/foo-service/instance/89a6ec51-f877-44c0-9501-b213597f
 7.1.  URI Parsing and Processing Considerations
 
    Workload Identifiers are encoded as URIs and therefore rely on
-   correct and secure URI parsing.  Implementations MUST apply a
-   standards-compliant URI parser.
+   correct and secure URI parsing.  Implementations MUST parse URIs
+   according to Section 4.
 
    Incorrect URI parsing can result in misinterpretation of identifier
    components, security policy bypass, or inconsistent trust domain
