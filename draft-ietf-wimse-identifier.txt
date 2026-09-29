@@ -118,9 +118,9 @@ Table of Contents
    This document defines the Workload Identifier, a URI-based [URI]
    identifier intended to uniquely represent a workload within the
    context of an issuing authority.  The identifier is designed to be
-   stable, globally unique within a given trust domain, and suitable for
-   use in digital credentials such as X.509 certificates, JSON Web
-   Tokens (JWTs [JWT]), and other security artifacts.
+   stable, unique within a given trust domain, and suitable for use in
+   digital credentials such as X.509 certificates, JSON Web Tokens (JWTs
+   [JWT]), and other security artifacts.
 
    The Workload Identifier format is simple yet expressive.  It enables
    organizations to define trust boundaries, delegate identity
@@ -196,7 +196,9 @@ Table of Contents
    A Workload Identifier is a URI [URI] that uniquely identifies a
    workload.  It encodes both the trust domain and a workload-specific
    path, enabling unambiguous identification of workloads across
-   administrative and organizational boundaries.
+   administrative and organizational boundaries.  Since there is no
+   global authority for trust domains, trust domains must be validated
+   as described in Section 7.3.
 
    The identifier is designed to be stable and suitable for inclusion in
    digital credentials such as X.509 certificates and security tokens.
@@ -658,6 +660,8 @@ B.4.  since draft-ietf-wimse-identifier-03
 
    *  Fixed stale section references into draft-ietf-wimse-workload-
       creds
+
+   *  Workload uniqueness clarifications
 
 Authors' Addresses
 
