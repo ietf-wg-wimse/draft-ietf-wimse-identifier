@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-09-29T04:20:17.512690+00:00",
+  "timestamp": "2026-10-01T04:15:50.978820+00:00",
   "repo": "ietf-wg-wimse/draft-ietf-wimse-identifier",
   "labels": [
     {
@@ -890,7 +890,7 @@
       "id": "I_kwDOOowVDc8AAAABNGhM-A",
       "title": "Global uniqueness of workload identifiers",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/72",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "fandreas",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [
@@ -899,8 +899,8 @@
       "labels": [],
       "body": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/blob/70a396559efd7d392be3d43daa88e65a537cb955/draft-ietf-wimse-identifier.md?plain=1#L57\n\nThe document is a bit inconsistent in how it describes uniqueness of workload identifiers. Here it says \"globally unique within a given trust domain\". The \"within a given trust domain\" doesn't make sense. It's either globally unique or it isn't. \n\nLater on, in Section 4, it then goes on to say that (referencing the workload identifier) \"It encodes both the trust domain and a workload-specific path\". Taken together, this suggests that there is a requirement for the trust domain to have a globally unique name, however that's not called out anywhere. ",
       "createdAt": "2026-08-17T18:30:31Z",
-      "updatedAt": "2026-09-28T00:00:08Z",
-      "closedAt": null,
+      "updatedAt": "2026-09-29T13:24:48Z",
+      "closedAt": "2026-09-29T13:24:48Z",
       "comments": [
         {
           "author": "jsalowey",
@@ -1198,7 +1198,7 @@
       "id": "I_kwDOOowVDc8AAAABNRC3BQ",
       "title": "Editorial",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/88",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -1207,8 +1207,8 @@
       "labels": [],
       "body": "[From Pieter Kasselman](https://mailarchive.ietf.org/arch/msg/wimse/z09d0ZsaC8lFgFFFX-N_1A7dWmI/)\n\nSection 4.6 (Editorial): \"without revealing specific identifier\" -> \"without revealing a specific identifier\".",
       "createdAt": "2026-08-18T18:58:54Z",
-      "updatedAt": "2026-09-27T23:59:33Z",
-      "closedAt": null,
+      "updatedAt": "2026-09-29T13:24:30Z",
+      "closedAt": "2026-09-29T13:24:30Z",
       "comments": [
         {
           "author": "jsalowey",
@@ -1276,7 +1276,7 @@
       "id": "I_kwDOOowVDc8AAAABNRDjOw",
       "title": "Hierarchical identifier",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/91",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -1285,8 +1285,8 @@
       "labels": [],
       "body": "[From Pieter Kasselman](https://mailarchive.ietf.org/arch/msg/wimse/z09d0ZsaC8lFgFFFX-N_1A7dWmI/)\n\nSection 4.5: Consider adding text describing how a hierarchical\nidentifier lets authorization logic operate on a subset of the path\n(e.g. by ignoring the more specific parts of the path which may\nindicate an instance).",
       "createdAt": "2026-08-18T19:00:09Z",
-      "updatedAt": "2026-09-27T23:50:48Z",
-      "closedAt": null,
+      "updatedAt": "2026-09-29T13:24:21Z",
+      "closedAt": "2026-09-29T13:24:21Z",
       "comments": [
         {
           "author": "jsalowey",
@@ -1408,7 +1408,7 @@
       "id": "I_kwDOOowVDc8AAAABNREnxA",
       "title": "URI parser standard reference",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/97",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -1417,8 +1417,8 @@
       "labels": [],
       "body": "[From Pieter Kasselman](https://mailarchive.ietf.org/arch/msg/wimse/z09d0ZsaC8lFgFFFX-N_1A7dWmI/)\n\nSection  7.6 : URI Parsing: \u201cImplementations MUST apply a\nstandards-compliant URI parser.\u201d - It is unclear which standard should\nbe applied - e.g. RFC 3986 (are there specific aspects of RFC 3986\nthat should apply)?\n",
       "createdAt": "2026-08-18T19:02:14Z",
-      "updatedAt": "2026-09-27T23:59:06Z",
-      "closedAt": null,
+      "updatedAt": "2026-09-29T13:24:08Z",
+      "closedAt": "2026-09-29T13:24:08Z",
       "comments": [
         {
           "author": "jsalowey",
@@ -3106,7 +3106,7 @@
       "id": "PR_kwDOOowVDc8AAAABEUSb7w",
       "title": "Clarified normalisation and comparision",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/101",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -3115,17 +3115,19 @@
       "labels": [],
       "body": "Addresses https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/77",
       "createdAt": "2026-09-20T15:26:06Z",
-      "updatedAt": "2026-09-27T23:04:42Z",
+      "updatedAt": "2026-09-29T13:18:02Z",
       "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "baseRefName": "main",
-      "baseRefOid": "9c2a97bdb1666463dcd2e75d1becd8cdbdec911c",
+      "baseRefOid": "3f6cb1042f68b29f12018a32be4cddbcb5e01ca9",
       "headRepository": "yaroslavros/draft-ietf-wimse-identifier",
       "headRefName": "comparision-normalization",
-      "headRefOid": "085bf4ed381f88a52c505c350c4dcea3a3f25a47",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "278fcc2adacb3ed57fb5e3cc755a44ebb7500ed3",
+      "closedAt": "2026-09-29T13:18:02Z",
+      "mergedAt": "2026-09-29T13:18:01Z",
+      "mergedBy": "yaroslavros",
+      "mergeCommit": {
+        "oid": "38a096750a6ac0d5c4b9488a483c532fed05a901"
+      },
       "comments": [
         {
           "author": "yaroslavros",
@@ -3678,78 +3680,126 @@
       "id": "PR_kwDOOowVDc8AAAABFZxciA",
       "title": "Clarify Workload Identifier uniqueness and stability #72",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/114",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "jsalowey",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Updated the description of the Workload Identifier to clarify its uniqueness and stability within trust domains. Adjusted the formatting of the Trust Domain Validation section for consistency. Address issue #72",
       "createdAt": "2026-09-27T23:27:28Z",
-      "updatedAt": "2026-09-28T00:06:12Z",
+      "updatedAt": "2026-09-29T13:19:24Z",
       "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "baseRefName": "main",
       "baseRefOid": "3f6cb1042f68b29f12018a32be4cddbcb5e01ca9",
       "headRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "headRefName": "jsalowey-72",
       "headRefOid": "7b2474d8c673368db7411dbc05619e741accda22",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-09-29T13:19:23Z",
+      "mergedAt": "2026-09-29T13:19:23Z",
+      "mergedBy": "yaroslavros",
+      "mergeCommit": {
+        "oid": "260e633165bb2d0bead3b9c08cdf8e9526e8bb76"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOOowVDc8AAAABPxLASQ",
+          "commit": {
+            "abbreviatedOid": "7b2474d"
+          },
+          "author": "yaroslavros",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-29T13:19:16Z",
+          "updatedAt": "2026-09-29T13:19:16Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 115,
       "id": "PR_kwDOOowVDc8AAAABFZ1lRQ",
       "title": "Fix typo in Workload Identifier Origins description",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/115",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "jsalowey",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Address issue #88",
       "createdAt": "2026-09-27T23:41:56Z",
-      "updatedAt": "2026-09-27T23:41:57Z",
+      "updatedAt": "2026-09-29T13:19:47Z",
       "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "baseRefName": "main",
       "baseRefOid": "3f6cb1042f68b29f12018a32be4cddbcb5e01ca9",
       "headRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "headRefName": "jsalowey-88",
       "headRefOid": "e0ded8fd44e0541cc8f2e7514ec2a370db7b48cc",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-09-29T13:19:47Z",
+      "mergedAt": "2026-09-29T13:19:47Z",
+      "mergedBy": "yaroslavros",
+      "mergeCommit": {
+        "oid": "a8cbc7c5f9abb90389846eddbd4d1ae280a5ade8"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOOowVDc8AAAABPxLSUg",
+          "commit": {
+            "abbreviatedOid": "e0ded8f"
+          },
+          "author": "yaroslavros",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-29T13:19:40Z",
+          "updatedAt": "2026-09-29T13:19:40Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 116,
       "id": "PR_kwDOOowVDc8AAAABFZ6j7w",
       "title": "Update Workload Identifier specification and URI parsing",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/116",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "jsalowey",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Clarify the specification and processing requirements for Workload Identifiers. address issue #97",
       "createdAt": "2026-09-27T23:58:26Z",
-      "updatedAt": "2026-09-27T23:58:27Z",
+      "updatedAt": "2026-09-29T13:23:41Z",
       "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "baseRefName": "main",
       "baseRefOid": "3f6cb1042f68b29f12018a32be4cddbcb5e01ca9",
       "headRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "headRefName": "jsalowey-patch-1",
       "headRefOid": "1248288f2ecb7de7f398056e645e3203b8ef7593",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-09-29T13:23:41Z",
+      "mergedAt": "2026-09-29T13:23:41Z",
+      "mergedBy": "yaroslavros",
+      "mergeCommit": {
+        "oid": "e7ab98ea0184293802af1be422d642b8b6655ec8"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOOowVDc8AAAABPxOGrg",
+          "commit": {
+            "abbreviatedOid": "1248288"
+          },
+          "author": "yaroslavros",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-29T13:23:32Z",
+          "updatedAt": "2026-09-29T13:23:32Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
