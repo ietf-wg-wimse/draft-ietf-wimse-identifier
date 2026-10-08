@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-10-01T04:15:50.978820+00:00",
+  "timestamp": "2026-10-08T04:35:59.678198+00:00",
   "repo": "ietf-wg-wimse/draft-ietf-wimse-identifier",
   "labels": [
     {
@@ -2974,7 +2974,7 @@
       "labels": [],
       "body": "An Implementation Status entry for `wimsey` (<https://github.com/kanywst/wimsey>), which implements the Workload Identifier. The document has no Implementation Status section yet, so this adds one, worded as in draft-ietf-wimse-http-signature and draft-ietf-wimse-workload-creds.\n\nPer Section 4.3, `wimsey` does not normalize: it rejects any spelling RFC 3986 normalization would rewrite, so comparison is always over one form. Whether the draft intends normalizing or rejecting was raised on the list and looks still open; if the WG settles it the other way, the entry should change with it.\n",
       "createdAt": "2026-09-08T14:20:02Z",
-      "updatedAt": "2026-09-25T15:34:13Z",
+      "updatedAt": "2026-10-07T23:35:08Z",
       "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
       "baseRefName": "main",
       "baseRefOid": "70a396559efd7d392be3d43daa88e65a537cb955",
@@ -3013,6 +3013,13 @@
           "body": "@kanywst, thank you, you're right: the note was already there, and I've corrected my comment above.\n",
           "createdAt": "2026-09-25T15:34:13Z",
           "updatedAt": "2026-09-25T15:34:13Z"
+        },
+        {
+          "author": "astrogilda",
+          "authorAssociation": "NONE",
+          "body": "@kanywst, thanks again for pointing out that the RFC Editor note was already there. This is a different request.\n\nI'm writing a paper for the journal Empirical Software Engineering on whether separate builds of one spec make the same mistakes. wimsey refuses spellings that other implementations might normalize, which is the kind of split the paper is about. My in-toto predicate for recording adversarial test runs (attestation#570) has two outside verifiers, too few to answer. Would you build one in Go or Rust from its spec? It reads one statement and says whether it is valid, and why not; the spec is about 22,000 words.\n\nI'd like you as a co-author: you'd see your results first, then have a few days on the draft before I submit on 14 October.\n\nIf you're in, please post your code's link and commit here by 12:00 UTC on 10 October. Fresh test statements come after that, from a public random number nobody can predict, so they can't be shaped around your build. The spec, the output format and the consent terms are on this page: https://github.com/probityai/agent-evidence-vectors/blob/study/emse-2026-invitations/docs/study/emse-2026/builders.md",
+          "createdAt": "2026-10-07T23:35:08Z",
+          "updatedAt": "2026-10-07T23:35:08Z"
         }
       ],
       "reviews": []
