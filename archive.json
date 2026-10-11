@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-10-08T04:35:59.678198+00:00",
+  "timestamp": "2026-10-11T04:06:42.210139+00:00",
   "repo": "ietf-wg-wimse/draft-ietf-wimse-identifier",
   "labels": [
     {
@@ -968,7 +968,7 @@
       "id": "I_kwDOOowVDc8AAAABNQ_OPA",
       "title": "Comparison and normalization are unspecified",
       "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/77",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "yaroslavros",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -977,8 +977,8 @@
       "labels": [],
       "body": "[From Karthik Rampalli](https://mailarchive.ietf.org/arch/msg/wimse/lzjcKSWaypoSkfRyAelq-CfI-Hk/)\n\n\nComparison and normalization are unspecified. Section 4.3 requires consumers to \"compare and authorize Workload Identifiers using the complete URI\" but never says which comparison. RFC 3986 Section 6.2 defines a ladder from simple string comparison to syntax-based normalization, and compliant implementations differ on where they stop. Divergences the current text permits:\n\n- Case: scheme and host are case-insensitive per RFC 3986 Section 6.2.2.1. Is wimse://[Trust.Example.com/svc](http://trust.example.com/svc) the same identifier as wimse://[trust.example.com/svc](http://trust.example.com/svc)? One conformant consumer can say yes and another no. The same tension exists with Section 4.2 calling trust domains \"opaque strings.\"\n\n- Percent-encoding: is /a%62c the same as /abc? Under RFC 3986 normalization, yes; under string comparison, no.\n- Dot segments: is /a/../b the same as /b? A consumer that applies path normalization collapses them; one that treats the path as opaque does not.\n\nThis also leaves Section 4.3's issuer uniqueness requirement ill-defined (unique under which equivalence relation?) and weakens Section 7.6: a party who can obtain an equivalent-but-differently-encoded identifier can land on either side of an allow or deny rule depending on the consumer's normalization behavior.\n\nSPIFFE closed this by restricting syntax (lowercase trust domain, restricted path character set, no percent-encoding, no dot segments) so byte-for-byte comparison is safe. I suggest the wimse scheme do the same: define a canonical form in Section 4.4 (lowercase scheme and authority; forbid percent-encoding, dot segments, and empty segments), state that comparison is byte equality of that form, and state that identifiers under other schemes are compared per their own specifications and never across schemes.",
       "createdAt": "2026-08-18T18:51:34Z",
-      "updatedAt": "2026-08-18T19:17:55Z",
-      "closedAt": null,
+      "updatedAt": "2026-10-08T09:41:18Z",
+      "closedAt": "2026-10-08T09:41:18Z",
       "comments": []
     },
     {
