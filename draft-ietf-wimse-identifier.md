@@ -223,7 +223,7 @@ In many deployments, workloads are accessed using external handles such as DNS n
 
 To enable correct authentication decisions, implementations MUST support a deployment-defined mapping between the external handle used to access a workload and the Workload Identifier expected for that workload.
 
-This mapping is outside the scope of this specification and MAY be provided by configuration, service discovery systems, orchestration platforms, or other local policy mechanisms.
+This mapping is outside the scope of this specification and may be provided by configuration, service discovery systems, orchestration platforms, or other local policy mechanisms.
 
 The mapping MAY also be conveyed within a Workload Identity Credential, where supported by the credential format and deployment policy. For example, a Workload Identity Certificate can contain both a DNS name and a Workload Identifier in its SubjectAltName extension ({{Section 6.1 of !WIMSE-CREDENTIALS=I-D.ietf-wimse-workload-creds}}). Consumers relying on such a mapping MUST validate the credential and trust its issuer to assert the binding between the external handle and the Workload Identifier.
 
