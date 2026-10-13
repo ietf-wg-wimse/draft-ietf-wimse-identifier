@@ -166,6 +166,8 @@ Other concepts may be represented in the Workload Identifier depending on what i
 
 The authority component of the URI defines the trust domain which is responsible for issuing, validating, and managing Workload Identifiers within its scope.  The trust domain SHOULD be a fully qualified domain name belonging to the organization defining the trust domain to help provide uniqueness for the trust domain identifier. While IP addresses are allowed as host names in the URI encoding rules, they SHOULD NOT be used to represent trust domains except in the case where they are needed for compatibility with legacy naming schemes.
 
+When a trust domain is an internationalized domain name, its internationalized labels MUST be represented as A-labels as defined in {{Section 2.3.2.1 of !IDNA=RFC5890}}. U-labels and their percent-encoded UTF-8 representations MUST NOT be used.
+
 Workload Identifiers are interpreted as URIs, including the trust domain carried in the authority component. The identifier denotes the workload identity at the granularity assigned by the issuing trust domain, which may correspond to a service, workload class, deployment, individual workload instance, or another deployment-defined concept. Consumers MUST compare and authorize Workload Identifiers using the complete URI, rather than relying only on individual components such as the path.
 
 For identifier comparison, consumers MUST apply the syntax-based normalization specified in {{Section 6.2.2 of URI}} and then compare the complete normalized URIs byte-for-byte. Percent-encoded unreserved characters MUST be decoded before case normalization. No additional scheme-specific or protocol-based normalization is performed for this comparison. Identifiers with different schemes after normalization are distinct. These rules also define equivalence for issuer uniqueness requirements and authorization decisions.
@@ -266,6 +268,8 @@ Consumers MUST validate that the trust domain in the Workload Identifier matches
 Using an FQDN as a trust domain does not itself prove domain ownership or authority to issue credentials for that domain. Consumers MUST validate credentials using trust anchors associated with authorized issuers for that trust domain, as described in {{Section 3 of WIMSE-CREDENTIALS}}.
 
 Where appropriate, consumers SHOULD maintain an allowlist of trusted domains or trusted issuing authorities.
+
+Trust-domain allowlist matching MUST use the ASCII representation and the comparison rules defined in this document. Displaying internationalized names as Unicode can introduce confusion between visually similar names; such visual similarity does not establish trust-domain equivalence.
 
 ## Identifier Reuse and Collision
 
