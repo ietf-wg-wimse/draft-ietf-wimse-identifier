@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-10-11T04:06:42.210139+00:00",
+  "timestamp": "2026-10-15T03:16:59.174280+00:00",
   "repo": "ietf-wg-wimse/draft-ietf-wimse-identifier",
   "labels": [
     {
@@ -3807,6 +3807,58 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 117,
+      "id": "PR_kwDOOowVDc8AAAABIJ4gDA",
+      "title": "Added IDNA considerations",
+      "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/117",
+      "state": "OPEN",
+      "author": "yaroslavros",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Addresses https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/80",
+      "createdAt": "2026-10-13T10:59:59Z",
+      "updatedAt": "2026-10-13T11:00:00Z",
+      "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
+      "baseRefName": "main",
+      "baseRefOid": "e7ab98ea0184293802af1be422d642b8b6655ec8",
+      "headRepository": "yaroslavros/draft-ietf-wimse-identifier",
+      "headRefName": "i18n",
+      "headRefOid": "6b30cfbbbb49287d47b9cf34206a2063cd1cd588",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 118,
+      "id": "PR_kwDOOowVDc8AAAABIJ6Y0w",
+      "title": "Informative may",
+      "url": "https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/pull/118",
+      "state": "OPEN",
+      "author": "yaroslavros",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Addresses https://github.com/ietf-wg-wimse/draft-ietf-wimse-identifier/issues/93",
+      "createdAt": "2026-10-13T11:02:50Z",
+      "updatedAt": "2026-10-13T11:02:51Z",
+      "baseRepository": "ietf-wg-wimse/draft-ietf-wimse-identifier",
+      "baseRefName": "main",
+      "baseRefOid": "e7ab98ea0184293802af1be422d642b8b6655ec8",
+      "headRepository": "yaroslavros/draft-ietf-wimse-identifier",
+      "headRefName": "lowercase-may",
+      "headRefOid": "f53502a9331de3a4ef886249d78ac4fa73600e7e",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
