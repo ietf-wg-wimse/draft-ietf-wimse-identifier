@@ -16,18 +16,18 @@
 <meta content="draft-ietf-wimse-identifier-latest" name="ietf.draft">
 <!-- Generator version information:
   xml2rfc 3.34.1
-    Python 3.14.7
-    ConfigArgParse 1.7.7
+    Python 3.14.8
+    ConfigArgParse 1.8.0
     google-i18n-address 3.1.1
     intervaltree 3.2.1
     Jinja2 3.1.6
     lxml 6.1.1
     natsort 8.4.0
-    platformdirs 4.11.10
+    platformdirs 4.13.4
     pycountry 24.6.1
     PyYAML 6.0.3
     requests 2.33.1
-    wcwidth 0.8.4
+    wcwidth 0.9.2
 -->
 <link href="draft-ietf-wimse-identifier.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
@@ -1043,11 +1043,11 @@ svg {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">Workload Identifier</td>
-<td class="right">September 2026</td>
+<td class="right">October 2026</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Rosomakho &amp; Salowey</td>
-<td class="center">Expires 2 April 2027</td>
+<td class="center">Expires 26 April 2027</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1060,12 +1060,12 @@ svg {
 <dd class="internet-draft">draft-ietf-wimse-identifier-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2026-09-29" class="published">29 September 2026</time>
+<time datetime="2026-10-23" class="published">23 October 2026</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2027-04-02">2 April 2027</time></dd>
+<dd class="expires"><time datetime="2027-04-26">26 April 2027</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1119,7 +1119,7 @@ svg {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 2 April 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 26 April 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1477,7 +1477,7 @@ wimse://trust.corp.example.com
 <p id="section-5-1">Workload Identifiers are carried in credentials and tokens and are used for authentication, authorization, and auditing. However, the identifier itself does not define how a workload is reached over the network.<a href="#section-5-1" class="pilcrow">¶</a></p>
 <p id="section-5-2">In many deployments, workloads are accessed using external handles such as DNS names, service names, load balancer addresses, or routing paths. These handles are deployment-specific and do not necessarily match the Workload Identifier presented in credentials.<a href="#section-5-2" class="pilcrow">¶</a></p>
 <p id="section-5-3">To enable correct authentication decisions, implementations <span class="bcp14">MUST</span> support a deployment-defined mapping between the external handle used to access a workload and the Workload Identifier expected for that workload.<a href="#section-5-3" class="pilcrow">¶</a></p>
-<p id="section-5-4">This mapping is outside the scope of this specification and <span class="bcp14">MAY</span> be provided by configuration, service discovery systems, orchestration platforms, or other local policy mechanisms.<a href="#section-5-4" class="pilcrow">¶</a></p>
+<p id="section-5-4">This mapping is outside the scope of this specification and may be provided by configuration, service discovery systems, orchestration platforms, or other local policy mechanisms.<a href="#section-5-4" class="pilcrow">¶</a></p>
 <p id="section-5-5">The mapping <span class="bcp14">MAY</span> also be conveyed within a Workload Identity Credential, where supported by the credential format and deployment policy. For example, a Workload Identity Certificate can contain both a DNS name and a Workload Identifier in its SubjectAltName extension (<span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-wimse-workload-creds-02#section-6.1" class="relref">Section 6.1</a> of [<a href="#WIMSE-CREDENTIALS" class="cite xref">WIMSE-CREDENTIALS</a>]</span>). Consumers relying on such a mapping <span class="bcp14">MUST</span> validate the credential and trust its issuer to assert the binding between the external handle and the Workload Identifier.<a href="#section-5-5" class="pilcrow">¶</a></p>
 <p id="section-5-6">Consumers <span class="bcp14">MUST NOT</span> assume that the Workload Identifier can be derived from network-layer information such as IP address, DNS name, or request path without such mapping.<a href="#section-5-6" class="pilcrow">¶</a></p>
 <p id="section-5-7">Deployments using Workload Identifiers with the WIMSE credential formats defined in <span>[<a href="#WIMSE-CREDENTIALS" class="cite xref">WIMSE-CREDENTIALS</a>]</span> <span class="bcp14">MUST</span> ensure that a consistent mapping exists between workload access handles and the Workload Identifiers contained in credentials.<a href="#section-5-7" class="pilcrow">¶</a></p>
