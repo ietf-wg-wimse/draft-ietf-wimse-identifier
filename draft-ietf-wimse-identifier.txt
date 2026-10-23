@@ -302,6 +302,11 @@ spiffe://prod.trust.domain/foo-service/instance/89a6ec51-f877-44c0-9501-b213597f
    except in the case where they are needed for compatibility with
    legacy naming schemes.
 
+   When a trust domain is an internationalized domain name, its
+   internationalized labels MUST be represented as A-labels as defined
+   in Section 2.3.2.1 of [IDNA].  U-labels and their percent-encoded
+   UTF-8 representations MUST NOT be used.
+
    Workload Identifiers are interpreted as URIs, including the trust
    domain carried in the authority component.  The identifier denotes
    the workload identity at the granularity assigned by the issuing
@@ -504,6 +509,12 @@ spiffe://prod.trust.domain/foo-service/instance/89a6ec51-f877-44c0-9501-b213597f
    Where appropriate, consumers SHOULD maintain an allowlist of trusted
    domains or trusted issuing authorities.
 
+   Trust-domain allowlist matching MUST use the ASCII representation and
+   the comparison rules defined in this document.  Displaying
+   internationalized names as Unicode can introduce confusion between
+   visually similar names; such visual similarity does not establish
+   trust-domain equivalence.
+
 7.4.  Identifier Reuse and Collision
 
    Issuers SHOULD ensure that Workload Identifiers are not reused across
@@ -561,6 +572,11 @@ spiffe://prod.trust.domain/foo-service/instance/89a6ec51-f877-44c0-9501-b213597f
 9.  References
 
 9.1.  Normative References
+
+   [IDNA]     Klensin, J., "Internationalized Domain Names for
+              Applications (IDNA): Definitions and Document Framework",
+              RFC 5890, DOI 10.17487/RFC5890, August 2010,
+              <https://www.rfc-editor.org/rfc/rfc5890>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
