@@ -397,10 +397,18 @@ spiffe://prod.trust.domain/foo-service/instance/89a6ec51-f877-44c0-9501-b213597f
    paths.  These handles are deployment-specific and do not necessarily
    match the Workload Identifier presented in credentials.
 
-   To enable correct authentication decisions, implementations MUST
-   support a deployment-defined mapping between the external handle used
-   to access a workload and the Workload Identifier expected for that
-   workload.
+   To enable correct authentication decisions, WIMSE credentials MUST be
+   validated and WIMSE identifiers MUST be processed according to the
+   deployment policy.
+
+   In some cases a system may use a mapping function to derive the WIMSE
+   identifier for a peer using various pieces of information such as a
+   service name and a trust domain.  In this case the correctness of the
+   mapping function and the integrity of the mapping information is
+   critical.  Failure to ensure the integrity and correctness can result
+   in spoofing of workloads.  Consumers MUST NOT assume that the
+   Workload Identifier can be derived from network-layer information
+   such as IP address, DNS name, or request path without such mapping.
 
    This mapping is outside the scope of this specification and may be
    provided by configuration, service discovery systems, orchestration
@@ -410,14 +418,14 @@ spiffe://prod.trust.domain/foo-service/instance/89a6ec51-f877-44c0-9501-b213597f
    Credential, where supported by the credential format and deployment
    policy.  For example, a Workload Identity Certificate can contain
    both a DNS name and a Workload Identifier in its SubjectAltName
-   extension (Section 6.1 of [WIMSE-CREDENTIALS]).  Consumers relying on
-   such a mapping MUST validate the credential and trust its issuer to
-   assert the binding between the external handle and the Workload
-   Identifier.
-
-   Consumers MUST NOT assume that the Workload Identifier can be derived
-   from network-layer information such as IP address, DNS name, or
-   request path without such mapping.
+   extension (Section 6.1 of [WIMSE-CREDENTIALS]).  WIMSE consumers
+   relying on such a mapping MUST validate the credential and check that
+   the WIMSE identifier matches the identifier of the system they
+   intended to connect to.  It is assumed that the issuer validates the
+   binding between the external handle and the Workload Identifier so
+   the consumer SHOULD also validate the external handle in the
+   credential matches the corresponding external handle arrived at in
+   the mapping function.
 
    Deployments using Workload Identifiers with the WIMSE credential
    formats defined in [WIMSE-CREDENTIALS] MUST ensure that a consistent
@@ -676,6 +684,8 @@ B.4.  since draft-ietf-wimse-identifier-03
 
    *  Fixed stale section references into draft-ietf-wimse-workload-
       creds
+
+   *  Updated Identity Mapping section
 
    *  Workload uniqueness clarifications
 
